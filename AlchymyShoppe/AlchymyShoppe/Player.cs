@@ -8,8 +8,12 @@ namespace AlchymyShoppe
 {
     class Player
     {
-        public String name { get; set; }
-        public int gold { get; set; }
-
+        private String name { get; set; }
+        private int gold { get; set; }
+        public Player(String name, int gold)
+        {
+            this.name = name;
+            this.gold = gold;
+        }
     }
 }

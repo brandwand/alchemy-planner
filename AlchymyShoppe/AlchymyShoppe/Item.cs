@@ -9,11 +9,11 @@ namespace AlchymyShoppe
    
     abstract class  Item
     {
-        public String name { get; set; }
-        public int price { get; set; }
-        public String rarity { get; set; }
-        public String effect { get; set; }
-        public Item(String name, int price, String rarity, String rffect)
+        private String name { get; set; }
+        private int price { get; set; }
+        private ItemRaritys rarity { get; set; }
+        private AlchymicEffects effect { get; set; }
+        private Item(String name, int price, ItemRaritys rarity, AlchymicEffects effect)
         {
             this.name = name;
             this.price = price;
