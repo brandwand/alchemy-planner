@@ -9,39 +9,39 @@ namespace AlchymyShoppe
     class Ingredient
     {
         String name = "";
-        Effect[] effects = new Effect[0]();
+        AlchymicEffect[] alchymicEffects = new AlchymicEffect[0]();
         int price = 0;
 
-        public Ingredient(String name, Effect[] effects, int price)
+        public Ingredient(String name, AlchymicEffect[] effects, int price)
         {
             this.name = name;
-            this.setEffects(effects);
+            this.setAlchymicEffects(effects);
             this.price = price;
         }
 
-        public Effect[] getEffects()
+        public AlchymicEffect[] getAlchymicEffects()
         {
-            return this.effects;
+            return this.alchymicEffects;
         }
 
-        public void setEffects(params Effect[] effects)
+        public void setAlchymicEffects(params AlchymicEffect[] effects)
         {
-            foreach (Effect e in effects)
+            foreach (AlchymicEffect e in effects)
             {
-                this.addEffect(e);
+                this.addAlchymicEffect(e);
             }
         }
 
-        public void addEffect(Effect effect)
+        public void addAlchymicEffect(AlchymicEffect alchymicEffect)
         {
-            Effect[] newEffects = new Effect[(effects.Length + 1)]();
-            for(int i = 0; i < effects.Length; i++)
+            AlchymicEffect[] newAlchymicEffects = new AlchymicEffect[(alchymicEffects.Length + 1)]();
+            for(int i = 0; i < alchymicEffects.Length; i++)
             {
-                newEffects[i] = effects[i];
+                newAlchymicEffects[i] = alchymicEffects[i];
 
             }
-            newEffects[newEffects.Length-1] = effect;
-            this.setEffects(newEffects);
+            newAlchymicEffects[newAlchymicEffects.Length-1] = alchymicEffect;
+            this.setAlchymicEffects(newAlchymicEffects);
         }
     }
 }
