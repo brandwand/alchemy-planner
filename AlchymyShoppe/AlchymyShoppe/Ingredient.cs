@@ -9,11 +9,12 @@ namespace AlchymyShoppe
     class Ingredient
     {
         String name = "";
-        AlchymicEffect[] alchymicEffects = new AlchymicEffect[0]();
+        AlchymicEffect[] alchymicEffects = new AlchymicEffect[0];
         int price = 0;
 
         public Ingredient(String name, AlchymicEffect[] effects, int price)
         {
+            int[] bob = new int[3];
             this.name = name;
             this.setAlchymicEffects(effects);
             this.price = price;
@@ -34,7 +35,7 @@ namespace AlchymyShoppe
 
         public void addAlchymicEffect(AlchymicEffect alchymicEffect)
         {
-            AlchymicEffect[] newAlchymicEffects = new AlchymicEffect[(alchymicEffects.Length + 1)]();
+            AlchymicEffect[] newAlchymicEffects = new AlchymicEffect[(alchymicEffects.Length + 1)];
             for(int i = 0; i < alchymicEffects.Length; i++)
             {
                 newAlchymicEffects[i] = alchymicEffects[i];
