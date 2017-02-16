@@ -1,2 +1,0 @@
-C:\Users\Brandon\Documents\alchymyshoppe\alchemy-planner\AlchymyShoppe\AlchymyShoppe\bin\Debug\AlchymyShoppe.exe.config
-D:\School\PRO100 - Intro Software Projects Second Try\GitHub\alchemy-planner\AlchymyShoppe\AlchymyShoppe\bin\Debug\AlchymyShoppe.exe.config
