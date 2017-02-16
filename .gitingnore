@@ -9,10 +9,12 @@
 *.userosscache
 *.sln.docstates
 
+AlchymyShoppe/AlchymyShoppe/obj/
+AlchymyShoppe/AlchymyShoppe/bin/
+AlchymyShoppe/obj/
+AlchymyShoppe/bin/
 obj/
 bin/
-obj
-bin
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
