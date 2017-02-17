@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace AlchymyShoppe
 {
     /// <summary>
-    /// To be used as an end result of a combination of ingredients
+    /// Item to be used as an end result of a combination of Ingredients
     /// </summary>
     class Potion : Item
     {
         #region Constructors
         /// <summary>
-        /// Takes in the required parameters and makes a Potion
+        /// Makes a Potion
         /// </summary>
         /// <param name="name">Name of the Potion</param>
         /// <param name="price">Base Price of the Potion</param>
@@ -25,11 +25,11 @@ namespace AlchymyShoppe
             this.price = price;
             this.rarity = rarity;
             this.effects.Clear();
-            this.effects = Brew(effects);
+            this.effects = new List<AlchymicEffect>(effects);
         }
 
         /// <summary>
-        /// Takes in the required parameters and makes a Potion
+        /// Makes a Potion
         /// </summary>
         /// <param name="name">Name of the Potion</param>
         /// <param name="price">Base Price of the Potion</param>
@@ -40,10 +40,15 @@ namespace AlchymyShoppe
             this.name = name;
             this.price = price;
             this.rarity = rarity;
-            this.effects = Brew(effects);
+            this.effects = effects;
         }
         #endregion
         #region Functions
+        /// <summary>
+        /// Takes in an array of AlchymicEffects and crafts them into a Potion
+        /// </summary>
+        /// <param name="effects"></param>
+        /// <returns></returns>
         public List<AlchymicEffect> Brew(params AlchymicEffect[] effects)
         {
             //Convert effects into a List
@@ -80,6 +85,10 @@ namespace AlchymyShoppe
             return appearMoreThanOnce;
         }
 
+        /// <summary>
+        /// Generates a proper Potion name ex. "Legendary Potion of Healing, Invisibilty and Paralysis"
+        /// </summary>
+        /// <returns></returns>
         private String GenerateName()
         {
             String name = "";
@@ -91,6 +100,7 @@ namespace AlchymyShoppe
 
         public String ConvertRarityToString()
         {
+
             return "";
         }
         #endregion
