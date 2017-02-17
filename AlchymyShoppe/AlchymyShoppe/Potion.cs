@@ -11,6 +11,7 @@ namespace AlchymyShoppe
     /// </summary>
     class Potion : Item
     {
+        #region Constructors
         /// <summary>
         /// Takes in the required parameters and makes a Potion
         /// </summary>
@@ -20,7 +21,7 @@ namespace AlchymyShoppe
         /// <param name="effects">Effects from the Ingredients that make the Potion</param>
         public Potion(String name, int price, Rarity rarity, params AlchymicEffect[] effects) : base(name, price, rarity, effects)
         {
-            this.name = name;
+            this.name = GenerateName();
             this.price = price;
             this.rarity = rarity;
             this.effects.Clear();
@@ -41,7 +42,8 @@ namespace AlchymyShoppe
             this.rarity = rarity;
             this.effects = Brew(effects);
         }
-
+        #endregion
+        #region Functions
         public List<AlchymicEffect> Brew(params AlchymicEffect[] effects)
         {
             //Convert effects into a List
@@ -78,5 +80,19 @@ namespace AlchymyShoppe
             return appearMoreThanOnce;
         }
 
+        private String GenerateName()
+        {
+            String name = "";
+
+            name += ConvertRarityToString();
+
+            return name;
+        }
+
+        public String ConvertRarityToString()
+        {
+            return "";
+        }
+        #endregion
     }
 }

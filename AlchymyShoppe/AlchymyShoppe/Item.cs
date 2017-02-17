@@ -12,7 +12,7 @@ namespace AlchymyShoppe
         public String name { get; set; }
         public int price { get; set; }
         public Rarity rarity { get; set; }
-        public List<AlchymicEffect> effects = new List<AlchymicEffect>();
+        public List<AlchymicEffect> effects { get; set; }
 
 
         public Item(String name, int price, Rarity rarity, params AlchymicEffect[] effects)
