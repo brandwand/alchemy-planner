@@ -6,43 +6,21 @@ using System.Threading.Tasks;
 
 namespace AlchymyShoppe
 {
-    class Ingredient
+    class Ingredient : Item
     {
         String name = "";
         AlchymicEffect[] alchymicEffects = new AlchymicEffect[0];
         int price = 0;
 
-        public Ingredient(String name, AlchymicEffect[] effects, int price)
+        public Ingredient(String name, int price, ItemRarity rarity, AlchymicEffect[] effects)
         {
-            int[] bob = new int[3];
-            this.name = name;
-            this.setAlchymicEffects(effects);
-            this.price = price;
+            super(name, price, rarity, effects);
         }
 
         public AlchymicEffect[] getAlchymicEffects()
         {
             return this.alchymicEffects;
         }
-
-        public void setAlchymicEffects(params AlchymicEffect[] effects)
-        {
-            foreach (AlchymicEffect e in effects)
-            {
-                this.addAlchymicEffect(e);
-            }
-        }
-
-        public void addAlchymicEffect(AlchymicEffect alchymicEffect)
-        {
-            AlchymicEffect[] newAlchymicEffects = new AlchymicEffect[(alchymicEffects.Length + 1)];
-            for(int i = 0; i < alchymicEffects.Length; i++)
-            {
-                newAlchymicEffects[i] = alchymicEffects[i];
-
-            }
-            newAlchymicEffects[newAlchymicEffects.Length-1] = alchymicEffect;
-            this.setAlchymicEffects(newAlchymicEffects);
-        }
+        
     }
 }
