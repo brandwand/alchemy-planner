@@ -11,7 +11,7 @@ namespace AlchymyShoppe
     {
         public String name { get; set; }
         public int price { get; set; }
-        public String rarity { get; set; }
+        private ItemRaritys rarity { get; set; }
         public List<AlchymicEffect> effects = new List<AlchymicEffect>();
 
 
