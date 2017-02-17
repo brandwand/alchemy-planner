@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace AlchymyShoppe
 {
-    class AlchymicEffects
+    enum AlchymicEffect
     {
-        enum AlchymicEffect { Heal, Regenerate, Damage, Speed, Strength,
-            Insivibility, Charisma, Paralysis, Mana, Nightvision};
-    }
+        Heal, Regenerate, Damage, Speed, Strength,
+        Insivibility, Charisma, Paralysis, Mana, Nightvision
+    };
 }

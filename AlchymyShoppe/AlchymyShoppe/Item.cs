@@ -12,13 +12,74 @@ namespace AlchymyShoppe
         public String name { get; set; }
         public int price { get; set; }
         public String rarity { get; set; }
-        public String effect { get; set; }
-        public Item(String name, int price, String rarity, String rffect)
+        public List<AlchymicEffect> effects = new List<AlchymicEffect>();
+
+
+        public Item(String name, int price, String rarity, params AlchymicEffect[] effects)
         {
             this.name = name;
             this.price = price;
             this.rarity = rarity;
-            this.effect = effect;
+            this.effects.Clear();
+            foreach (AlchymicEffect effect in effects)
+            {
+                this.effects.Add(effect);
+            }
         }
+
+        public Item(String name, int price, String rarity, List<AlchymicEffect> effects)
+        {
+            this.name = name;
+            this.price = price;
+            this.rarity = rarity;
+            this.effects = effects;
+        }
+
+        public void AddEffect(AlchymicEffect effect)
+        {
+            if (!this.effects.Contains(effect))
+                this.effects.Add(effect);
+        }
+
+        public void AddEffects(params AlchymicEffect[] effects)
+        {
+            foreach (AlchymicEffect effect in effects)
+            {
+                if(!this.effects.Contains(effect))
+                    this.effects.Add(effect);
+            }
+        }
+
+        public void AddEffects(List<AlchymicEffect> effects)
+        {
+            foreach (AlchymicEffect effect in effects)
+            {
+                if (!this.effects.Contains(effect))
+                    this.effects.Add(effect);
+            }
+        }
+
+        public void RemoveEffect(AlchymicEffect effect)
+        {
+            effects.Remove(effect);
+        }
+
+        public void RemoveEffects(params AlchymicEffect[] effects)
+        {
+            foreach (AlchymicEffect effect in effects)
+            {
+                this.effects.Remove(effect);
+            }
+        }
+
+        public void RemoveEffects(List<AlchymicEffect> effects)
+        {
+            foreach (AlchymicEffect effect in effects)
+            {
+                this.effects.Remove(effect);
+            }
+        }
+
+
     }
 }

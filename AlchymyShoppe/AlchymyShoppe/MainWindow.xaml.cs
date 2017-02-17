@@ -23,6 +23,7 @@ namespace AlchymyShoppe
         public MainWindow()
         {
             InitializeComponent();
+            
 
         }
     }
