@@ -18,7 +18,7 @@ namespace AlchymyShoppe
         /// <param name="price">Base Price of the Potion</param>
         /// <param name="rarity">Rarity of the Item</param>
         /// <param name="effects">Effects from the Ingredients that make the Potion</param>
-        public Potion(String name, int price, String rarity, params AlchymicEffect[] effects) : base(name, price, rarity, effects)
+        public Potion(String name, int price, Rarity rarity, params AlchymicEffect[] effects) : base(name, price, rarity, effects)
         {
             this.name = name;
             this.price = price;
@@ -34,7 +34,7 @@ namespace AlchymyShoppe
         /// <param name="price">Base Price of the Potion</param>
         /// <param name="rarity">Rarity of the Item</param>
         /// <param name="effects">Effects from the Ingredients that make the Potion</param>
-        public Potion(String name, int price, String rarity, List<AlchymicEffect> effects) : base(name, price, rarity, effects)
+        public Potion(String name, int price, Rarity rarity, List<AlchymicEffect> effects) : base(name, price, rarity, effects)
         {
             this.name = name;
             this.price = price;

@@ -11,11 +11,11 @@ namespace AlchymyShoppe
     {
         public String name { get; set; }
         public int price { get; set; }
-        private ItemRaritys rarity { get; set; }
+        public Rarity rarity { get; set; }
         public List<AlchymicEffect> effects = new List<AlchymicEffect>();
 
 
-        public Item(String name, int price, String rarity, params AlchymicEffect[] effects)
+        public Item(String name, int price, Rarity rarity, params AlchymicEffect[] effects)
         {
             this.name = name;
             this.price = price;
@@ -27,7 +27,7 @@ namespace AlchymyShoppe
             }
         }
 
-        public Item(String name, int price, String rarity, List<AlchymicEffect> effects)
+        public Item(String name, int price, Rarity rarity, List<AlchymicEffect> effects)
         {
             this.name = name;
             this.price = price;
