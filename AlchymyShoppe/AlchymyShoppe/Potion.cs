@@ -7,41 +7,48 @@ using System.Threading.Tasks;
 namespace AlchymyShoppe
 {
     /// <summary>
-    /// To be used as an end result of a combination of ingredients
+    /// Item to be used as an end result of a combination of Ingredients
     /// </summary>
     class Potion : Item
     {
+        #region Constructors
         /// <summary>
-        /// Takes in the required parameters and makes a Potion
+        /// Makes a Potion
         /// </summary>
         /// <param name="name">Name of the Potion</param>
         /// <param name="price">Base Price of the Potion</param>
         /// <param name="rarity">Rarity of the Item</param>
         /// <param name="effects">Effects from the Ingredients that make the Potion</param>
-        public Potion(String name, int price, String rarity, params AlchymicEffect[] effects) : base(name, price, rarity, effects)
+        public Potion(String name, int price, Rarity rarity, params AlchymicEffect[] effects) : base(name, price, rarity, effects)
         {
-            this.name = name;
+            this.name = GenerateName();
             this.price = price;
             this.rarity = rarity;
             this.effects.Clear();
-            this.effects = Brew(effects);
+            this.effects = new List<AlchymicEffect>(effects);
         }
 
         /// <summary>
-        /// Takes in the required parameters and makes a Potion
+        /// Makes a Potion
         /// </summary>
         /// <param name="name">Name of the Potion</param>
         /// <param name="price">Base Price of the Potion</param>
         /// <param name="rarity">Rarity of the Item</param>
         /// <param name="effects">Effects from the Ingredients that make the Potion</param>
-        public Potion(String name, int price, String rarity, List<AlchymicEffect> effects) : base(name, price, rarity, effects)
+        public Potion(String name, int price, Rarity rarity, List<AlchymicEffect> effects) : base(name, price, rarity, effects)
         {
             this.name = name;
             this.price = price;
             this.rarity = rarity;
-            this.effects = Brew(effects);
+            this.effects = effects;
         }
-
+        #endregion
+        #region Functions
+        /// <summary>
+        /// Takes in an array of AlchymicEffects and crafts them into a Potion
+        /// </summary>
+        /// <param name="effects"></param>
+        /// <returns></returns>
         public List<AlchymicEffect> Brew(params AlchymicEffect[] effects)
         {
             //Convert effects into a List
@@ -78,5 +85,24 @@ namespace AlchymyShoppe
             return appearMoreThanOnce;
         }
 
+        /// <summary>
+        /// Generates a proper Potion name ex. "Legendary Potion of Healing, Invisibilty and Paralysis"
+        /// </summary>
+        /// <returns></returns>
+        private String GenerateName()
+        {
+            String name = "";
+
+            name += ConvertRarityToString();
+
+            return name;
+        }
+
+        public String ConvertRarityToString()
+        {
+
+            return "";
+        }
+        #endregion
     }
 }

@@ -6,6 +6,5 @@ using System.Threading.Tasks;
 
 namespace AlchymyShoppe
 {
-    enum Rarity { Rubbish, Inferior, Common, Uncommon, Rare, Epic, Legendary, Godlike };
-
+    public enum Rarity { Rubbish, Inferior, Common, Uncommon, Rare, Epic, Legendary, Godlike }
 }
