@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace AlchymyShoppe
 {
-    public static class Chest
+    static class Chest
     {
-        public Inventory LoadInventory()
+        public static Inventory LoadInventory()
         {
-
+            Inventory inventory = new Inventory(3);
+            return inventory;
         }
-        public bool SaveInventory()
+        public static bool SaveInventory()
         {
-
+            return false;
         }
     }
 }
