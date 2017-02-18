@@ -45,46 +45,8 @@ namespace AlchymyShoppe
         #endregion
 
         #region Functions
-        /// <summary>
-        /// Takes in an array of AlchymicEffects and crafts them into a Potion
-        /// </summary>
-        /// <param name="effects"></param>
-        /// <returns></returns>
-        public List<AlchymicEffect> Brew(params AlchymicEffect[] effects)
-        {
-            //Convert effects into a List
-            List<AlchymicEffect> effectsList = new List<AlchymicEffect>();
-            foreach (AlchymicEffect effect in effects)
-            {
-                effectsList.Add(effect);
-            }
-            return Brew(effectsList);
-        }
 
-        public List<AlchymicEffect> Brew(List<AlchymicEffect> effects)
-        {
-            //   List of effects that appear in the list more than once 
-            // we're going to keep these
-            List<AlchymicEffect> appearMoreThanOnce = new List<AlchymicEffect>();
-
-            // List that will save whether that ingredient has appeared yet
-            List<AlchymicEffect> appearedOnce = new List<AlchymicEffect>();
-
-            foreach (AlchymicEffect effect in effects)
-            {
-                if(appearedOnce.Contains(effect))
-                {
-                    if(!appearMoreThanOnce.Contains(effect))
-                        appearMoreThanOnce.Add(effect);
-                }
-                else
-                {
-                    appearedOnce.Add(effect);
-                }
-            }
-
-            return appearMoreThanOnce;
-        }
+    
 
         /// <summary>
         /// Generates a proper Potion name ex. "Legendary Potion of Healing, Invisibilty and Paralysis"
