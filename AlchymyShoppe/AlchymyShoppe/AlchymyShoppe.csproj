@@ -55,9 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AlchymicEffects.cs" />
-    <Compile Include="ItemRarity.cs" />
+    <Compile Include="AlchemyTable.cs" />
+    <Compile Include="Ingredient.cs" />
+    <Compile Include="Inventory.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="Recipe.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

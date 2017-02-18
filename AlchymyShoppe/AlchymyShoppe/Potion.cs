@@ -43,7 +43,6 @@ namespace AlchymyShoppe
             this.effects = effects;
         }
         #endregion
-
         #region Functions
         /// <summary>
         /// Takes in an array of AlchymicEffects and crafts them into a Potion
@@ -95,64 +94,15 @@ namespace AlchymyShoppe
             String name = "";
 
             name += ConvertRarityToString();
-            name += " Potion of ";
-            name += ConvertEffectsToString();
 
             return name;
         }
 
-        private String ConvertRarityToString()
+        public String ConvertRarityToString()
         {
-            String rarityString = "";
 
-            if (rarity == Rarity.Rubbish)        { rarityString = "Rubbish"; }
-            else if (rarity == Rarity.Inferior)  { rarityString = "Inferior"; }
-            else if (rarity == Rarity.Common)    { rarityString = "Common"; }
-            else if (rarity == Rarity.Uncommon)  { rarityString = "Uncommon"; }
-            else if (rarity == Rarity.Rare)      { rarityString = "Rare"; }
-            else if (rarity == Rarity.Epic)      { rarityString = "Epic"; }
-            else if (rarity == Rarity.Legendary) { rarityString = "Legendary"; }
-            else if (rarity == Rarity.Godlike)   { rarityString = "Godlike"; }
-
-            return rarityString;
+            return "";
         }
-
-        private string ConvertEffectsToString()
-        {
-            String effectsString = "";
-            int effectCount = 0;
-
-            foreach(AlchymicEffect effect in effects)
-            {
-                if (effectCount != 0)
-                {
-                    if(effectCount == effects.Count - 1)
-                    {
-                        effectsString += " and ";
-                    }
-                    else
-                    {
-                        effectsString += ", ";
-                    }
-                }
-
-                if (effect == AlchymicEffect.RestoreHealth)     { effectsString += "Healing"; }
-                else if (effect == AlchymicEffect.RestoreMana)  { effectsString += "Mana Restoration"; }
-                else if (effect == AlchymicEffect.Regenerate)   { effectsString += "Regeneration"; }
-                else if (effect == AlchymicEffect.Speed)        { effectsString += "Speed"; }
-                else if (effect == AlchymicEffect.Strength)     { effectsString += "Strength"; }
-                else if (effect == AlchymicEffect.Charisma)     { effectsString += "Charsima"; }
-                else if (effect == AlchymicEffect.Damage)       { effectsString += "Damage"; }
-                else if (effect == AlchymicEffect.Paralysis)    { effectsString += "Paralysis"; }
-                else if (effect == AlchymicEffect.Insivibility) { effectsString += "Invisibility"; }
-                else if (effect == AlchymicEffect.Nightvision)  { effectsString += "Nightvision"; }
-                else if (effect == AlchymicEffect.None)         { effectsString += "Mundanity"; }
-
-            }
-
-            return effectsString;
-        }
-        
         #endregion
     }
 }
