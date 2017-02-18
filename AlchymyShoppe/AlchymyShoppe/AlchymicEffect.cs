@@ -8,7 +8,8 @@ namespace AlchymyShoppe
 {
     enum AlchymicEffect
     {
-        Heal, Regenerate, Damage, Speed, Strength,
-        Insivibility, Charisma, Paralysis, Mana, Nightvision
+        RestoreHealth, RestoreMana, Regenerate, Damage, Speed,
+        Strength, Insivibility, Charisma, Paralysis, Nightvision,
+        None
     };
 }
