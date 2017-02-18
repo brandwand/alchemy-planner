@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AlchymicEffects.cs" />
+    <Compile Include="Chest.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="ItemRaritys.cs" />
     <Page Include="MainWindow.xaml">
