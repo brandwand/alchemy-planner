@@ -9,7 +9,7 @@ namespace AlchymyShoppe
     /// <summary>
     /// Item to be used as an end result of a combination of Ingredients
     /// </summary>
-    class Potion : Item
+    class Potion : AlchymicItem
     {
         #region Constructors
         /// <summary>

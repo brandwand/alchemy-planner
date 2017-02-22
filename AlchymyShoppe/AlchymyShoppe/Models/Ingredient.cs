@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlchymyShoppe
 {
-    class Ingredient : Item
+    class Ingredient : AlchymicItem
     {
         public Ingredient(String name, int price, Rarity rarity, AlchymicEffect[] effects) : base(name, price, rarity, effects){}
     }

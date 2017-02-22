@@ -124,12 +124,19 @@ namespace AlchymyShoppe
             return appearMoreThanOnce;
         }
 
+
         public List<AlchymicEffect> ingredientEffectConverter(List<Ingredient> ingredients)
         {
+            List<AlchymicEffect> effectsList = new List<AlchymicEffect>();
             foreach (Ingredient ingredient in ingredients)
             {
+                foreach (AlchymicEffect effect in ingredient.effects)
+                {
+                    effectsList.Add(effect);
 
+                }
             }
+            return effectsList;
         }
 
     }
