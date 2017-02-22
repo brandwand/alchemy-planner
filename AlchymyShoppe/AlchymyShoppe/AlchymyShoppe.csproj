@@ -55,9 +55,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AlchymicEffect.cs" />
-    <Compile Include="Chest.cs" />
-    <Compile Include="Inventory.cs" />
     <Compile Include="Item.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
