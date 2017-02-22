@@ -74,7 +74,7 @@ namespace AlchymyShoppe
             this.ingredient1 = ingredient1;
             this.ingredient2 = ingredient2;
             this.ingredient3 = ingredient3;
-            this.potion = potion;
+            this.craftedPotion = potion;
         }
 
 

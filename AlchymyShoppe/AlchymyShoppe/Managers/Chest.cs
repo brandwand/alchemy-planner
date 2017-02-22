@@ -10,7 +10,7 @@ namespace AlchymyShoppe
     {
         public static Inventory LoadInventory(Inventory inventory)
         {
-            return inventory;
+            return null;
         }
         public static bool SaveInventory(Inventory inventory)
         {

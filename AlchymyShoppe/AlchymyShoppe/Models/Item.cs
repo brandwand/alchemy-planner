@@ -15,7 +15,6 @@ namespace AlchymyShoppe
         public int price { get; set; }
         public Rarity rarity { get; set; }
         public List<AlchymicEffect> effects { get; set; }
-
         /// <summary>
         /// Creates an Item using the data it takes in
         /// </summary>
@@ -34,7 +33,6 @@ namespace AlchymyShoppe
                 this.effects.Add(effect);
             }
         }
-
         /// <summary>
         /// Creates an Item using the data it takes in
         /// </summary>
@@ -49,7 +47,6 @@ namespace AlchymyShoppe
             this.rarity = rarity;
             this.effects = effects;
         }
-
         /// <summary>
         /// Adds an AlchymicEffect to effects, the Item's AlchymicEffects List
         /// </summary>
@@ -59,7 +56,6 @@ namespace AlchymyShoppe
             if (!this.effects.Contains(effect))
                 this.effects.Add(effect);
         }
-
         /// <summary>
         /// Adds an array of AlchymicEffect to effects, the Item's AlchymicEffects List, Doesn't allow duplicate AlchymicEffects
         /// </summary>
@@ -72,7 +68,6 @@ namespace AlchymyShoppe
                     this.effects.Add(effect);
             }
         }
-
         /// <summary>
         /// Adds a List of AlchymicEffect to effects, the Item's AlchymicEffects List, Doesn't allow duplicate AlchymicEffects
         /// </summary>
@@ -85,7 +80,6 @@ namespace AlchymyShoppe
                     this.effects.Add(effect);
             }
         }
-
         /// <summary>
         /// Removes an AlchymicEffect from effects, the Item's AlchymicEffects List
         /// </summary>
@@ -94,7 +88,6 @@ namespace AlchymyShoppe
         {
             return effects.Remove(effect);
         }
-
         /// <summary>
         /// Removes an array of AlchymicEffects from effects, the Item's AlchymicEffects List
         /// </summary>
@@ -106,7 +99,6 @@ namespace AlchymyShoppe
                 this.effects.Remove(effect);
             }
         }
-
         /// <summary>
         /// Removes a List of AlchymicEffects from effects, the Item's AlchymicEffects List
         /// </summary>
@@ -118,7 +110,5 @@ namespace AlchymyShoppe
                 this.effects.Remove(effect);
             }
         }
-
-
     }
 }
