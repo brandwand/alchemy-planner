@@ -12,7 +12,7 @@ namespace AlchymyShoppe
         private int gold { get; set; }
         public Player(String name, int gold)
         {
-            this.name = name;
+            this.name = name;            
             this.gold = gold;
         }
     }
