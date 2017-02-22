@@ -8,37 +8,46 @@ namespace AlchymyShoppe
 {
     class Inventory
     {
-        private List<> Items;
+        private List<Item> Items;
         private int Gold;
         //Multiple construtors for possible difficulty selection. For now use the 2 parameter constructor.
         public Inventory(int gold)
         {
             Gold = gold;
         }
-        public Inventory(int gold, List<> ItemsForStartingInventory)
+        public Inventory(int gold, List<Item> ItemsForStartingInventory)
         {
             this.Gold = gold;
             this.Items = ItemsForStartingInventory;
         }
-        public Inventory(List<> ItemsForStartingInventory)
+        public Inventory(List<Item> ItemsForStartingInventory)
         {
             this.Items = ItemsForStartingInventory;
         }
         //used for saving the inventory from outside the class.      
         public bool StoreInventory()
         {
-            Chest.SaveInventory();
+            if (Chest.SaveInventory(this))
+            {
+                return true;
+            }
+            return false;
         }
         public bool LoadInventory()
         {
-            this = Chest.LoadInventory();
+            //if something goes wrong in the load process it will return null
+            if(Chest.LoadInventory(this) != null)
+            {
+                return true;
+            }
+            return false;
         }
         //for displaying to the window not sure how to do
         public void ShowInventory()
         {
 
         }
-        public List<> getItems()
+        public List<Item> getItems()
         {
             return this.Items;
         }

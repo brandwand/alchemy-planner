@@ -9,7 +9,7 @@ namespace AlchymyShoppe
    /// <summary>
    /// Abstract class that holds the data relevant to an Item
    /// </summary>
-    abstract class  Item
+    abstract class Item
     {
         public String name { get; set; }
         public int price { get; set; }
