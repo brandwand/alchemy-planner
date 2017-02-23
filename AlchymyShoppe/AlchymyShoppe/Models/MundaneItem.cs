@@ -9,7 +9,7 @@ namespace AlchymyShoppe
     class MundaneItem : Item
     {
 
-        MundaneItem(string name, int price, Rarity rarity) : base(name, price, rarity)
+        public MundaneItem(string name, int price, Rarity rarity) : base(name, price, rarity)
         {
 
         }
