@@ -11,7 +11,7 @@ namespace AlchymyShoppe
         public List<AlchymicEffect> effects { get; set; }
 
 
-        public AlchymicItem(string name, int price, Rarity rarity, params AlchymicEffect[] effects) : base(name, price, rarity)
+        public AlchymicItem(string name, String imagePath, int price, Rarity rarity, params AlchymicEffect[] effects) : base(name, imagePath, price, rarity)
         {
             this.effects.Clear();
             foreach (AlchymicEffect effect in effects)

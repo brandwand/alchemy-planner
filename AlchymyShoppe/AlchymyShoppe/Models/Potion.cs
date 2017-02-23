@@ -19,7 +19,7 @@ namespace AlchymyShoppe
         /// <param name="price">Base Price of the Potion</param>
         /// <param name="rarity">Rarity of the Item</param>
         /// <param name="effects">Effects from the Ingredients that make the Potion</param>
-        public Potion(String name, int price, Rarity rarity, params AlchymicEffect[] effects) : base(name, price, rarity, effects)
+        public Potion(String name, String imagePath, int price, Rarity rarity, params AlchymicEffect[] effects) : base(name, imagePath, price, rarity, effects)
         {
             this.name = GenerateName();
             this.price = price;
@@ -93,7 +93,7 @@ namespace AlchymyShoppe
                     else
                     {
                         effectsString += ", ";
-                    }
+                 /   }
                 }
 
                 if (effect == AlchymicEffect.RestoreHealth) { effectsString += "Healing"; }

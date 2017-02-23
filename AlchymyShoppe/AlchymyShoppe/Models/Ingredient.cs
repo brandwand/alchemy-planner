@@ -8,6 +8,6 @@ namespace AlchymyShoppe
 {
     class Ingredient : AlchymicItem
     {
-        public Ingredient(String name, int price, Rarity rarity, AlchymicEffect[] effects) : base(name, price, rarity, effects){}
+        public Ingredient(String name, String imagePath, int price, Rarity rarity, params AlchymicEffect[] effects) : base(name, imagePath, price, rarity, effects){}
     }
 }
