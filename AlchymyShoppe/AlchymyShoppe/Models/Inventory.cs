@@ -24,24 +24,6 @@ namespace AlchymyShoppe
         {
             this.Items = ItemsForStartingInventory;
         }
-        //used for saving the inventory from outside the class.      
-        public bool StoreInventory()
-        {
-            if (Chest.SaveInventory(this))
-            {
-                return true;
-            }
-            return false;
-        }
-        public bool LoadInventory()
-        {
-            //if something goes wrong in the load process it will return null
-            if(Chest.LoadInventory(this) != null)
-            {
-                return true;
-            }
-            return false;
-        }
         //for displaying to the window not sure how to do
         public void ShowInventory()
         {

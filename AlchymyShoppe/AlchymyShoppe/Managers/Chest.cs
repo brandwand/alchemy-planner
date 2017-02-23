@@ -8,11 +8,14 @@ namespace AlchymyShoppe
 {
     class Chest
     {
-        public static Inventory LoadInventory(Inventory inventory)
+        //Files for whatever we may need
+        private string playerFile;
+        public bool loadGame()
         {
-            return null;
+
         }
-        public static bool SaveInventory(Inventory inventory)
+        public bool saveGame(Player player)
+        private bool serialize(String data)
         {
             return false;
         }
