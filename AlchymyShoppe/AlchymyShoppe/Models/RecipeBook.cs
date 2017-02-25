@@ -15,74 +15,61 @@ namespace AlchymyShoppe
 
         public RecipeBook()
         {
-           // this.ingredients = Chest.getDefaultIngredients();
+            // this.ingredients = Chest.Load(hardcoded text file link);
             this.recipes = new Dictionary<AlchymicEffect, Dictionary<Ingredient, Boolean>>();
         }
 
-        public RecipeBook(List<Ingredient> allIngredients, List<Dictionary<Ingredient, Boolean>> knownIngredients)
+        public RecipeBook(List<Ingredient> allIngredients)
         {
             this.ingredients = allIngredients;
-            this.recipes = buildRecipeBook(allIngredients);
-            setKnownIngredients(knownIngredients);
+            this.recipes = buildEmptyRecipeBook(allIngredients);
+        }
+        public RecipeBook(List<Ingredient> allIngredients, Dictionary<AlchymicEffect, Dictionary<Ingredient, Boolean>> knownRecipes)
+        {
+            this.ingredients = allIngredients;
+            this.recipes = knownRecipes;
         }
 
-        private void setKnownIngredients(List<Dictionary<Ingredient, bool>> knownIngredientsList)
+        public Dictionary<AlchymicEffect, Dictionary<Ingredient, Boolean>> buildEmptyRecipeBook(List<Ingredient> allIngredients)
         {
-            foreach(Dictionary<Ingredient, Boolean> recipeKnowledge in knownIngredientsList)
-            {
-       //         recipeKnowledge
-            }
-        }
-
-        public Dictionary<AlchymicEffect, Dictionary<Ingredient, Boolean>> buildRecipeBook(List<Ingredient> allIngredients)
-        {
-            List<Recipe> recipes = new List<Recipe>();
+            Dictionary<AlchymicEffect, Dictionary<Ingredient, Boolean>> recipes = new Dictionary<AlchymicEffect, Dictionary<Ingredient, Boolean>>();
             List<AlchymicEffect> originalEffects = new List<AlchymicEffect>();
             List<Ingredient> withThisEffect = new List<Ingredient>();
+            Dictionary<Ingredient, Boolean> knownIngredients = new Dictionary<Ingredient, Boolean>();
 
-            var allEffectLists = allIngredients.Select((i) =>
+
+            var allAlchymicEffectLists = allIngredients.Select((i) =>
             {
                 return i.effects;
             });
 
-            foreach(List<AlchymicEffect> ael in allEffectLists)
+            foreach (List<AlchymicEffect> alchymicEffectList in allAlchymicEffectLists)
             {
-                foreach(AlchymicEffect ae in ael)
+                foreach (AlchymicEffect alchymicEffect in alchymicEffectList)
                 {
-                    if (!originalEffects.Contains(ae))
+                    if (!originalEffects.Contains(alchymicEffect))
                     {
-                        originalEffects.Add(ae);
+                        originalEffects.Add(alchymicEffect);
                     }
                 }
             }
-            foreach(AlchymicEffect ae in originalEffects)
+            foreach (AlchymicEffect alchymicEffect in originalEffects)
             {
-                var ingredientWithEffect = from ingredient in allIngredients where ingredient.effects.Contains(ae) select ingredient;
+                withThisEffect.Clear();
+                knownIngredients.Clear();
+                var ingredientWithEffect = from ingredient in allIngredients where ingredient.effects.Contains(alchymicEffect) select ingredient;
                 withThisEffect.AddRange(ingredientWithEffect);
 
-                recipes.Add(new Recipe(ae, withThisEffect));
+                foreach (Ingredient ingredient in withThisEffect)
+                {
+                    knownIngredients.Add(ingredient, false);
+                }
+
+                recipes.Add(alchymicEffect, knownIngredients);
             }
 
             return recipes;
         }
-
-        public void addRecipe(Recipe recipe)
-        {
-            recipes.Add(recipe);
-        }
-
-        public List<Boolean[]> buildEmptyDatabase()
-        {
-            List<Boolean[]> recipeKnowledge = new List<Boolean[]>();
-            foreach(Recipe recipe in recipes)
-            {
-                Boolean[] know = new Boolean[recipe.getIngredients().Count];
-                for(int i = 0; i < know.Length; i++){
-                    know[i] = false;
-                }
-                recipeKnowledge.Add(know);
-            }
-            return recipeKnowledge;
-        }
+        
     }
 }
