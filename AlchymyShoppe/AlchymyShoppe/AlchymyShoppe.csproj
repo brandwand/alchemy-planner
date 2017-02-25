@@ -55,13 +55,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Managers\AlchemyTable.cs" />
     <Compile Include="Controls\AlchymyTableScreen.xaml.cs">
       <DependentUpon>AlchymyTableScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\PotionIngredientBox.xaml.cs">
       <DependentUpon>PotionIngredientBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Managers\AlchemyTable.cs" />
     <Compile Include="Managers\Chest.cs" />
     <Compile Include="Models\AlchymicItem.cs" />
     <Compile Include="Models\Ingredient.cs" />
