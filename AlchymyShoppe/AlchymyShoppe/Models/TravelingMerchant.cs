@@ -9,6 +9,7 @@ namespace AlchymyShoppe.Models
     //I'M USING A LOT OF FILLER CODE FOR NOW JUST TO GET THE BASIC CONCEPT DOWN
     class TravelingMerchant
     {
+        private List<Order> orders;
         public string name = "Larry The Merchant";
         private int gold { get; set; }
         private Inventory inventory;
@@ -18,7 +19,17 @@ namespace AlchymyShoppe.Models
         {
 
         }
-        
+
+        public Inventory getInventory()
+        {
+            return inventory;
+        }
+
+        public void setInventory(Inventory inventory)
+        {
+            this.inventory = inventory;
+        }
+
         //We will need to change all strings to ingredients.
         //This is a temporary method that adds to the ingredients list so that I can test
         //all methods dealing with the inventory.
