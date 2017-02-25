@@ -67,6 +67,8 @@
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\Inventory.cs" />
     <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\Recipe.cs" />
+    <Compile Include="Models\RecipeBook.cs" />
     <Page Include="Controls\AlchymyTableScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
