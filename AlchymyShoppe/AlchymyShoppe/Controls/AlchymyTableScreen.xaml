@@ -8,14 +8,20 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="800">
     <Grid>
-        <Viewbox Width="90" Height="90" Margin="333,140,377,371" Stretch="Uniform">
+        <Image x:Name="image" Source="D:\School\PRO100 - Intro Software Projects Second Try\GitHub\alchemy-planner\AlchymyShoppe\AlchymyShoppe\Images\Backgrounds\magicCircle.png"/>
+        <Viewbox Width="90" Height="90" Margin="333,170,377,340" Stretch="Uniform">
             <controls:PotionIngredientBox x:Name="ingB1" Width="90" Height="90"/>
         </Viewbox>
-        <Viewbox Width="90" Height="90" Margin="333,235,377,275" Stretch="Uniform">
+        <Viewbox Width="90" Height="90" Margin="333,265,377,245" Stretch="Uniform">
             <controls:PotionIngredientBox x:Name="ingB2" Width="90" Height="90"/>
         </Viewbox>
-        <Viewbox Width="90" Height="90" Margin="333,330,377,180" Stretch="Uniform">
+        <Viewbox Width="90" Height="90" Margin="333,360,377,150" Stretch="Uniform">
             <controls:PotionIngredientBox x:Name="ingB3" Width="90" Height="90"/>
         </Viewbox>
+        <Button x:Name="btnGold" Content="9999" HorizontalAlignment="Left" Margin="10,0,0,10" Width="90" Height="50" VerticalAlignment="Bottom" Foreground="Orange" BorderBrush="#FFE57B00" Background="Black" FontFamily="Harrington" FontSize="24" FontWeight="Bold"/>
+        <Button x:Name="button" Content="Next" Margin="0,0,10,10" HorizontalAlignment="Right" Width="90" Height="50" VerticalAlignment="Bottom" FontFamily="Harrington" FontSize="32" Background="Black" Foreground="#FF32DEFF" BorderBrush="#FF32DEFF"/>
+        <Button x:Name="button1" Content="Recipes..." HorizontalAlignment="Left" Height="72" Margin="333,46,0,0" VerticalAlignment="Top" Width="90" FontFamily="Harrington" FontSize="18" Background="Black" BorderBrush="#FF32DEFF" Foreground="#FF32DEFF"/>
+        <Button x:Name="button1_Copy" Content="Clear" HorizontalAlignment="Left" Height="72" Margin="333,497,0,0" VerticalAlignment="Top" Width="90" FontFamily="Harrington" FontSize="18" Background="Black" BorderBrush="#FF32DEFF" Foreground="#FF32DEFF"/>
+
     </Grid>
 </UserControl>

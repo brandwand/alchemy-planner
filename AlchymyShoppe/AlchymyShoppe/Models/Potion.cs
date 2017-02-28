@@ -93,7 +93,7 @@ namespace AlchymyShoppe
                     else
                     {
                         effectsString += ", ";
-                 /   }
+                    }
                 }
 
                 if (effect == AlchymicEffect.RestoreHealth) { effectsString += "Healing"; }

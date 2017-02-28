@@ -51,38 +51,53 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Managers\AlchemyTable.cs" />
     <Compile Include="Controls\AlchymyTableScreen.xaml.cs">
       <DependentUpon>AlchymyTableScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\PotionIngredientBox.xaml.cs">
       <DependentUpon>PotionIngredientBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AlchemyTable.cs" />
     <Compile Include="Managers\Chest.cs" />
-    <Compile Include="Models\AlchymicEffect.cs" />
     <Compile Include="Models\AlchymicItem.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\Inventory.cs" />
     <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\RecipeBook.cs" />
+    <Page Include="Controls\AlchymyTableScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PotionIngredientBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Models\AlchymicEffect.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Models\MundaneItem.cs" />
-    <Compile Include="Models\Order.cs" />
-    <Compile Include="Models\Player.cs" />
-    <Compile Include="Models\Potion.cs" />
     <Compile Include="Models\Rarity.cs" />
-    <Compile Include="Recipe.cs" />
-    <Compile Include="RecipeBook.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\Potion.cs" />
     <Compile Include="Models\TravelingMerchant.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -100,7 +115,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -108,30 +122,13 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="App.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\AlchymyTableScreen.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\PotionIngredientBox.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="MainWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Folder Include="Images\Backgrounds\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Sprites\alchemy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Backgrounds\alchemy.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
