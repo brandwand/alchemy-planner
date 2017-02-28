@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlchymyShoppe.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AlchymyShoppe
 {
-    class AlchemyTable : INotifyPropertyChanged
+    class AlchymyTable : INotifyPropertyChanged
     {
 
         #region PropertyChanged
@@ -68,7 +69,7 @@ namespace AlchymyShoppe
             }
         }
 
-        public AlchemyTable(Player player, Ingredient ingredient1, Ingredient ingredient2, Ingredient ingredient3, Potion potion)
+        public AlchymyTable(Player player, Ingredient ingredient1, Ingredient ingredient2, Ingredient ingredient3, Potion potion)
         {
             this.player = player;
             this.ingredient1 = ingredient1;
