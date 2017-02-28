@@ -14,10 +14,10 @@ namespace AlchymyShoppe.Models
         private int gold { get; set; }
         private Inventory inventory;
         private List<string> ingredients;
-
+         
         public TravelingMerchant()
         {
-
+                     
         }
 
         public Inventory getInventory()
