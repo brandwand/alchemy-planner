@@ -55,10 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Managers\AlchemyTable.cs" />
-    <Compile Include="Controls\AlchymyTableScreen.xaml.cs">
+    <Compile Include="AlchymyTableScreen.xaml.cs">
       <DependentUpon>AlchymyTableScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Managers\AlchemyTable.cs" />
     <Compile Include="Controls\PotionIngredientBox.xaml.cs">
       <DependentUpon>PotionIngredientBox.xaml</DependentUpon>
     </Compile>
@@ -69,7 +69,10 @@
     <Compile Include="Models\Inventory.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\RecipeBook.cs" />
-    <Page Include="Controls\AlchymyTableScreen.xaml">
+    <Compile Include="TravelingMerchantScreen.xaml.cs">
+      <DependentUpon>TravelingMerchantScreen.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AlchymyTableScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -92,6 +95,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="TravelingMerchantScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Player.cs" />
