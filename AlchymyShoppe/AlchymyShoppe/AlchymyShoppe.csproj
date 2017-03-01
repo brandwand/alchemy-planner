@@ -56,8 +56,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AlchymyTableScreen.xaml.cs">
-    <Compile Include="AlchemyTable.cs" />
-    <Compile Include="Controls\AlchymyTableScreen.xaml.cs">
       <DependentUpon>AlchymyTableScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Managers\AlchemyTable.cs" />
@@ -71,11 +69,8 @@
     <Compile Include="Models\Inventory.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\RecipeBook.cs" />
-    <Compile Include="Recipe.cs" />
     <Compile Include="TravelingMerchantScreen.xaml.cs">
-    <Compile Include="RecipeBook.cs" />
       <DependentUpon>TravelingMerchantScreen.xaml</DependentUpon>
-    <Page Include="Controls\AlchymyTableScreen.xaml">
     </Compile>
     <Page Include="AlchymyTableScreen.xaml">
       <SubType>Designer</SubType>
