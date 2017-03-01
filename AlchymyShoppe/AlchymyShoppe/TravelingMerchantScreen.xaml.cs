@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace AlchymyShoppe
 {
     /// <summary>
-    /// Interaction logic for AlchymyTableScreen.xaml
+    /// Interaction logic for TravelingMerchantScreen.xaml
     /// </summary>
-    public partial class AlchymyTableScreen : UserControl
+    public partial class TravelingMerchantScreen : Window
     {
-        public AlchymyTableScreen()
+        public TravelingMerchantScreen()
         {
             InitializeComponent();
         }

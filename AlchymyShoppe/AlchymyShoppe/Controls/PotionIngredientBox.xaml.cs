@@ -30,6 +30,7 @@ namespace AlchymyShoppe.Controls
             set
             {
                 craftingIngedient = value;
+                LoadIngredientImage();
             }
         }
 
@@ -40,7 +41,7 @@ namespace AlchymyShoppe.Controls
 
         public void LoadIngredientImage()
         {
-            Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), CraftingIngredient.imagePath)));
+            image.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), CraftingIngredient.imagePath));
         }
     }
 }

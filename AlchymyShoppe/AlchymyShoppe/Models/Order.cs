@@ -11,7 +11,7 @@ namespace AlchymyShoppe.Models
         //Sets a new order Item.
         private Item orderItem;
 
-        public Order(string name, int price, Rarity rarity, Item orderItem) : base(name, price, rarity)
+        public Order(string name, string orderPath, int price, Rarity rarity, Item orderItem) : base(name, orderPath, price, rarity)
         {
             this.orderItem = orderItem;
         }
