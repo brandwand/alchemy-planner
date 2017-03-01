@@ -8,15 +8,16 @@ namespace AlchymyShoppe.Models
 {
     class AlchymyShoppe
     {
-        private List<Potion> itemsForSell; 
+        private Inventory itemsForSell;
         public AlchymyShoppe()
         {
-
+        
         }
 
-        public void addToSell(List<Potion> potions)
+        public void addToSell(Player player, Item item)
         {
-    
+            player.getInventory().removeItemsFromInventory(item);
+            itemsForSell.addItemsFromInventory(item);
         }
     }
 }
