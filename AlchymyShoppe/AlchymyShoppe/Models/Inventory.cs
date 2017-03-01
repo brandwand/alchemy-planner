@@ -55,5 +55,15 @@ namespace AlchymyShoppe
         {
             return this.Gold;
         }
+
+        public void removeItemsFromInventory(Item item)
+        {
+                getItems().Remove(item);
+        }
+
+        public void addItemsFromInventory(Item item)
+        {
+            getItems().Remove(item);
+        }
     }
 }
