@@ -84,5 +84,12 @@ namespace AlchymyShoppe
             }
         }
         
+        public void serializeRecipeBook()
+        {
+            foreach(KeyValuePair<AlchymicEffect, Dictionary<Ingredient, bool>> effect in this.recipes)
+            {
+
+            }
+        }
     }
 }

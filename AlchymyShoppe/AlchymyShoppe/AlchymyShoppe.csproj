@@ -58,10 +58,10 @@
     <Compile Include="AlchymyTableScreen.xaml.cs">
       <DependentUpon>AlchymyTableScreen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Managers\AlchemyTable.cs" />
     <Compile Include="Controls\PotionIngredientBox.xaml.cs">
       <DependentUpon>PotionIngredientBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Managers\AlchymyTable.cs" />
     <Compile Include="Managers\Chest.cs" />
     <Compile Include="Models\AlchymicItem.cs" />
     <Compile Include="Models\Customer.cs" />
