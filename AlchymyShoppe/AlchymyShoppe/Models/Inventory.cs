@@ -9,15 +9,9 @@ namespace AlchymyShoppe
     class Inventory
     {
         private List<Item> Items;
-        private int Gold;
-        //Multiple construtors for possible difficulty selection. For now use the 2 parameter constructor.
-        public Inventory(int gold)
-        {
-            Gold = gold;
-        }
+        //Gold is no longer part of the inventory
         public Inventory(int gold, List<Item> ItemsForStartingInventory)
         {
-            this.Gold = gold;
             this.Items = ItemsForStartingInventory;
         }
         public Inventory(List<Item> ItemsForStartingInventory)
@@ -33,16 +27,10 @@ namespace AlchymyShoppe
         {
             return this.Items;
         }
-        public int getGold()
-        {
-            return this.Gold;
-        }
-
         public void removeItemsFromInventory(Item item)
         {
                 getItems().Remove(item);
         }
-
         public void addItemsFromInventory(Item item)
         {
             getItems().Remove(item);
