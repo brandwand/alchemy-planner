@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlchymyShoppe.Models
 {
-    class Player
+   class Player
     {
 
         private List<Order> orders;
@@ -21,7 +21,7 @@ namespace AlchymyShoppe.Models
             this.inventory = inventory;
         }
         private String name { get; set; }
-        private int gold { get; set; }
+        public int gold { get; set; }
         public Player(String name, int gold)
         {
             this.name = name;            

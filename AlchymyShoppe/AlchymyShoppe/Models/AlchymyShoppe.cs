@@ -19,5 +19,11 @@ namespace AlchymyShoppe.Models
             player.getInventory().removeItemsFromInventory(item);
             itemsForSell.addItemsFromInventory(item);
         }
+
+        public void sold(Player player, Item item)
+        {
+            int gold = player.gold;
+            gold += item.price;
+        }
     }
 }
