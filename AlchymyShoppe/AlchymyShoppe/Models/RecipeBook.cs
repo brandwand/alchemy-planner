@@ -9,32 +9,30 @@ namespace AlchymyShoppe
 {
     class RecipeBook
     {
-        public List<Ingredient> ingredients;
         Dictionary<AlchymicEffect, Dictionary<Ingredient, Boolean>> recipes;
 
 
         public RecipeBook()
         {
-            // this.ingredients = Chest.Load(hardcoded text file link);
             this.recipes = new Dictionary<AlchymicEffect, Dictionary<Ingredient, Boolean>>();
         }
 
         public RecipeBook(List<Ingredient> allIngredients)
         {
-            this.ingredients = allIngredients;
             this.recipes = buildEmptyRecipeBook(allIngredients);
         }
         public RecipeBook(List<Ingredient> allIngredients, Dictionary<AlchymicEffect, Dictionary<Ingredient, Boolean>> knownRecipes)
         {
-            this.ingredients = allIngredients;
-            this.recipes = knownRecipes;
+            this.recipes = buildEmptyRecipeBook(allIngredients);
+            copyRelevantRecipes(knownRecipes);
         }
+
+        
 
         public Dictionary<AlchymicEffect, Dictionary<Ingredient, Boolean>> buildEmptyRecipeBook(List<Ingredient> allIngredients)
         {
             Dictionary<AlchymicEffect, Dictionary<Ingredient, Boolean>> recipes = new Dictionary<AlchymicEffect, Dictionary<Ingredient, Boolean>>();
             List<AlchymicEffect> originalEffects = new List<AlchymicEffect>();
-            List<Ingredient> withThisEffect = new List<Ingredient>();
             Dictionary<Ingredient, Boolean> knownIngredients = new Dictionary<Ingredient, Boolean>();
 
 
@@ -55,12 +53,10 @@ namespace AlchymyShoppe
             }
             foreach (AlchymicEffect alchymicEffect in originalEffects)
             {
-                withThisEffect.Clear();
                 knownIngredients.Clear();
-                var ingredientWithEffect = from ingredient in allIngredients where ingredient.effects.Contains(alchymicEffect) select ingredient;
-                withThisEffect.AddRange(ingredientWithEffect);
+                var ingredientsWithEffect = from ingredient in allIngredients where ingredient.effects.Contains(alchymicEffect) select ingredient;
 
-                foreach (Ingredient ingredient in withThisEffect)
+                foreach (Ingredient ingredient in ingredientsWithEffect)
                 {
                     knownIngredients.Add(ingredient, false);
                 }
@@ -70,6 +66,30 @@ namespace AlchymyShoppe
 
             return recipes;
         }
+
+        private void copyRelevantRecipes(Dictionary<AlchymicEffect, Dictionary<Ingredient, bool>> knownRecipes)
+        {
+            foreach(KeyValuePair<AlchymicEffect, Dictionary<Ingredient, bool>> effect in this.recipes)
+            {
+                if (knownRecipes.ContainsKey(effect.Key))
+                {
+                    foreach(KeyValuePair<Ingredient, bool> ingredient in effect.Value)
+                    {
+                        if (knownRecipes[effect.Key].ContainsKey(ingredient.Key))
+                        {
+                            this.recipes[effect.Key][ingredient.Key] = knownRecipes[effect.Key][ingredient.Key];
+                        }
+                    }
+                }
+            }
+        }
         
+        public void serializeRecipeBook()
+        {
+            foreach(KeyValuePair<AlchymicEffect, Dictionary<Ingredient, bool>> effect in this.recipes)
+            {
+
+            }
+        }
     }
 }
