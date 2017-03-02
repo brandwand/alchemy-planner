@@ -55,8 +55,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AlchymyShoppeScreen.xaml.cs">
+      <DependentUpon>AlchymyShoppeScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AlchymyTableScreen.xaml.cs">
       <DependentUpon>AlchymyTableScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HubScreen.xaml.cs">
+      <DependentUpon>HubScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Managers\AlchemyTable.cs" />
     <Compile Include="Controls\PotionIngredientBox.xaml.cs">
@@ -72,11 +78,19 @@
     <Compile Include="TravelingMerchantScreen.xaml.cs">
       <DependentUpon>TravelingMerchantScreen.xaml</DependentUpon>
     </Compile>
+    <Page Include="AlchymyShoppeScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AlchymyTableScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\PotionIngredientBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HubScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -136,6 +150,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Sprites\alchemy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="alchemyTable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="alchemyTable1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
