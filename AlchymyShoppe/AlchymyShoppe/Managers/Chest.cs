@@ -26,7 +26,7 @@ namespace AlchymyShoppe
             {
                 savePlayer(folderLocation, currentPlayer);
                 saveInventory(folderLocation, currentPlayer.getInventory());
-                saveRecipeBook(folderLocation, currentPlayer.getRecipeBook());
+                saveRecipeBook(folderLocation, currentPlayer.getPlayerBook());
             }
             else
             {
