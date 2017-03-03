@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AlchymyShoppe.Models;
+
 
 namespace AlchymyShoppe.Controls
 {
@@ -21,7 +23,7 @@ namespace AlchymyShoppe.Controls
     public partial class PotionIngredientBox : UserControl
     {
         private Ingredient craftingIngedient = new Ingredient("None", System.IO.Directory.GetCurrentDirectory() + "Images/Sprites/alchemy.png", 0, Rarity.None, AlchymicEffect.None);
-        Ingredient CraftingIngredient
+        public Ingredient CraftingIngredient
         {
             get
             {
@@ -39,9 +41,14 @@ namespace AlchymyShoppe.Controls
             InitializeComponent();
         }
 
+        public void LoadIngredient(Ingredient ingredient)
+        {
+            craftingIngedient = ingredient;
+        }
+
         public void LoadIngredientImage()
         {
-            image.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), CraftingIngredient.imagePath));
+            imgIngredient.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), CraftingIngredient.imagePath));
         }
     }
 }

@@ -11,6 +11,7 @@ namespace AlchymyShoppe
         public AlchymicEffect effects { get; set; }
 
 
+
         public AlchymicItem(string name, String imagePath, int price, Rarity rarity, AlchymicEffect effects) : base(name, imagePath, price, rarity)
         {
             this.effects = effects;
@@ -37,6 +38,7 @@ namespace AlchymyShoppe
         {
             foreach (AlchymicEffect effect in effects)
             {
+                
                 if ((this.effects & effect) != effect)
                 {
                     this.effects = this.effects ^ effect;
@@ -75,7 +77,7 @@ namespace AlchymyShoppe
         public void RemoveEffects(params AlchymicEffect[] effects)
         {
             foreach (AlchymicEffect effect in effects)
-            {
+            { 
                 this.effects = this.effects & (~effect);
             }
         }

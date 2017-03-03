@@ -55,13 +55,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AlchymyShoppeScreen.xaml.cs"
     <Compile Include="Controls\AlchymyShoppeScreen.xaml.cs">
       <DependentUpon>AlchymyShoppeScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\AlchymyTableScreen.xaml.cs">
       <DependentUpon>AlchymyTableScreen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\PotionIngredientBox.xaml.cs">
+    <Compile Include="Controls\HubScreen.xaml.cs">
+      <DependentUpon>HubScreen.xaml</DependentUpon>
+    </Compile>    <Compile Include="Controls\PotionIngredientBox.xaml.cs">
       <DependentUpon>PotionIngredientBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Managers\AlchymyTable.cs" />
@@ -85,11 +88,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\PotionIngredientBox.xaml">
+    <Page Include="Controls\HubScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="HubScreen.xaml">
+    <Page Include="Controls\PotionIngredientBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

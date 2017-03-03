@@ -10,14 +10,15 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AlchymyShoppe
+namespace AlchymyShoppe.Controls
 {
     /// <summary>
     /// Interaction logic for HubScreen.xaml
     /// </summary>
-    public partial class HubScreen : Window
+    public partial class HubScreen : UserControl
     {
         public HubScreen()
         {
