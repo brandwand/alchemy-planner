@@ -4,15 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AlchymyShoppe"
-        xmlns:controls="clr-namespace:AlchymyShoppe"
+        xmlns:controls="clr-namespace:AlchymyShoppe.Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800">
     <Grid>
-        <Image x:Name="imgBackground" Source="D:\School\PRO100 - Intro Software Projects Second Try\GitHub\alchemy-planner\AlchymyShoppe\AlchymyShoppe\Images\Backgrounds\alchemyTable.png" Stretch="Fill"/>
-        <Button x:Name="btnLoadGame" Content="Load" HorizontalAlignment="Left" Margin="613,80,0,0" VerticalAlignment="Top" Width="120" Height="60" Click="btnLoadGame_Click"/>
-        <Button x:Name="btnNewGame" Content="New" HorizontalAlignment="Left" Margin="612,150,0,0" VerticalAlignment="Top" Width="120" Height="60"/>
-        <Button x:Name="btnCredits" Content="Credits" HorizontalAlignment="Left" Margin="612,220,0,0" VerticalAlignment="Top" Width="120" Height="60"/>
-        <TextBox x:Name="tbTitle" HorizontalAlignment="Left" Height="73" Margin="118,54,0,0" TextWrapping="Wrap" Text="Alchymy Shoppe" VerticalAlignment="Top" Width="421" FontSize="48" FontFamily="Harrington"/>
+        <Image x:Name="imgBackground" Source="D:\School\PRO100 - Intro Software Projects Second Try\GitHub\alchemy-planner\AlchymyShoppe\AlchymyShoppe\Images\Backgrounds\hubScreenBackground.jpg" Margin="0,0,0,0" Stretch="Fill"/>
+        <Button x:Name="btnGold" Content="9999" HorizontalAlignment="Left" Margin="10,0,0,10" Width="90" Height="50" VerticalAlignment="Bottom" Foreground="Orange" BorderBrush="#FFE57B00" Background="Black" FontFamily="Harrington" FontSize="24" FontWeight="Bold"/>
+        <Button x:Name="btnTravelingMerchant" Content="Traveling Merchant" HorizontalAlignment="Left" Margin="250,70,0,0" VerticalAlignment="Top" Width="300" Height="75"/>
+        <Button x:Name="btnAlchymyShoppe" Content="Alchymy Shoppe" HorizontalAlignment="Left" Margin="250,170,0,0" VerticalAlignment="Top" Width="300" Height="75"/>
+        <Button x:Name="btnAlchymyTable" Content="Alchymy Table" HorizontalAlignment="Left" Margin="250,270,0,0" VerticalAlignment="Top" Width="300" Height="75" Click="btnAlchymyTable_Click"/>
 
+        <controls:StartScreen x:Name="StartScreen"/>
+        <controls:AlchymyTableScreen x:Name="AlchymyTableScreen" Visibility="Collapsed"/>
     </Grid>
 </Window>

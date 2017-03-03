@@ -13,23 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AlchymyShoppe
+namespace AlchymyShoppe.Controls
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for TravelingMerchantScreen.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class TravelingMerchantScreen : UserControl
     {
-        public MainWindow()
+        public TravelingMerchantScreen()
         {
             InitializeComponent();
-            
-
-        }
-
-        private void btnAlchymyTable_Click(object sender, RoutedEventArgs e)
-        {
-            AlchymyTableScreen.Visibility = Visibility.Visible;
         }
     }
 }

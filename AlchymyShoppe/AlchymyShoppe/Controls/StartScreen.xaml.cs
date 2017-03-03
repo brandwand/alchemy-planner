@@ -10,18 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AlchymyShoppe
+namespace AlchymyShoppe.Controls
 {
     /// <summary>
-    /// Interaction logic for TravelingMerchantScreen.xaml
+    /// Interaction logic for StartScreen.xaml
     /// </summary>
-    public partial class TravelingMerchantScreen : Window
+    public partial class StartScreen : UserControl
     {
-        public TravelingMerchantScreen()
+        public StartScreen()
         {
             InitializeComponent();
+        }
+
+        private void btnLoadGame_Click(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Collapsed;
         }
     }
 }

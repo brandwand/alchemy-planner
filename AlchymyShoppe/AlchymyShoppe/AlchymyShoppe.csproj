@@ -55,7 +55,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AlchymyShoppeScreen.xaml.cs"
     <Compile Include="Controls\AlchymyShoppeScreen.xaml.cs">
       <DependentUpon>AlchymyShoppeScreen.xaml</DependentUpon>
     </Compile>
@@ -64,8 +63,15 @@
     </Compile>
     <Compile Include="Controls\HubScreen.xaml.cs">
       <DependentUpon>HubScreen.xaml</DependentUpon>
-    </Compile>    <Compile Include="Controls\PotionIngredientBox.xaml.cs">
+    </Compile>
+    <Compile Include="Controls\PotionIngredientBox.xaml.cs">
       <DependentUpon>PotionIngredientBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\StartScreen.xaml.cs">
+      <DependentUpon>StartScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TravelingMerchantScreen.xaml.cs">
+      <DependentUpon>TravelingMerchantScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Managers\AlchymyTable.cs" />
     <Compile Include="Managers\Chest.cs" />
@@ -77,9 +83,6 @@
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\RecipeBook.cs" />
     <Compile Include="Models\WorldController.cs" />
-    <Compile Include="TravelingMerchantScreen.xaml.cs">
-      <DependentUpon>TravelingMerchantScreen.xaml</DependentUpon>
-    </Compile>
     <Page Include="Controls\AlchymyShoppeScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -96,6 +99,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Controls\StartScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TravelingMerchantScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -111,10 +122,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="TravelingMerchantScreen.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Player.cs" />

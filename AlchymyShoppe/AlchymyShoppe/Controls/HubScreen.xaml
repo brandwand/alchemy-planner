@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="800">
     <Grid>
-        <Image x:Name="imgBackground" Source="D:\School\PRO100 - Intro Software Projects Second Try\GitHub\alchemy-planner\AlchymyShoppe\AlchymyShoppe\Images\Backgrounds\alchemyTable.png" Margin="0,0,0,0" Stretch="Fill"/>
+        <Image x:Name="imgBackground" Source="D:\School\PRO100 - Intro Software Projects Second Try\GitHub\alchemy-planner\AlchymyShoppe\AlchymyShoppe\Images\Backgrounds\hubScreenBackground.jpg" Margin="0,0,0,0" Stretch="Fill"/>
         <Button x:Name="btnGold" Content="9999" HorizontalAlignment="Left" Margin="10,0,0,10" Width="90" Height="50" VerticalAlignment="Bottom" Foreground="Orange" BorderBrush="#FFE57B00" Background="Black" FontFamily="Harrington" FontSize="24" FontWeight="Bold"/>
         <Button x:Name="btnTravelingMerchant" Content="Traveling Merchant" HorizontalAlignment="Left" Margin="250,70,0,0" VerticalAlignment="Top" Width="300" Height="75"/>
         <Button x:Name="btnAlchymyShoppe" Content="Alchymy Shoppe" HorizontalAlignment="Left" Margin="250,170,0,0" VerticalAlignment="Top" Width="300" Height="75"/>

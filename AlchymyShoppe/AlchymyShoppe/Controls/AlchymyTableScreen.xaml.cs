@@ -24,5 +24,10 @@ namespace AlchymyShoppe.Controls
         {
             InitializeComponent();
         }
+
+        private void btnNext_Click(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Collapsed;
+        }
     }
 }

@@ -9,7 +9,7 @@
     <Grid>
         <Image x:Name="imgBackground" Source="alchemyTable.png" Stretch="Fill"/>
         <Button x:Name="btnGold" Content="9999" HorizontalAlignment="Left" Margin="10,0,0,10" Width="90" Height="50" VerticalAlignment="Bottom" Foreground="Orange" BorderBrush="#FFE57B00" Background="Black" FontFamily="Harrington" FontSize="24" FontWeight="Bold"/>
-        <Button x:Name="btnNext" Content="Next" Margin="0,0,10,10" HorizontalAlignment="Right" Width="90" Height="50" VerticalAlignment="Bottom" FontFamily="Harrington" FontSize="32" Background="Black" Foreground="#FF32DEFF" BorderBrush="#FF32DEFF"/>
+        <Button x:Name="btnHallway" Content="Hallway" Margin="0,0,10,10" HorizontalAlignment="Right" Width="90" Height="50" VerticalAlignment="Bottom" FontFamily="Harrington" Background="Black" Foreground="#FF32DEFF" BorderBrush="#FF32DEFF" FontSize="24"/>
         <Button x:Name="btnSell" Content="Sell" Margin="0,0,170,10" HorizontalAlignment="Right" Width="90" Height="50" VerticalAlignment="Bottom" FontFamily="Harrington" FontSize="32" Background="Black" Foreground="#FF32DEFF" BorderBrush="#FF32DEFF"/>
         <Button x:Name="btnCancel" Content="Cancel" Margin="0,0,270,10" HorizontalAlignment="Right" Width="90" Height="50" VerticalAlignment="Bottom" FontFamily="Harrington" FontSize="32" Background="Black" Foreground="#FF32DEFF" BorderBrush="#FF32DEFF"/>
 
