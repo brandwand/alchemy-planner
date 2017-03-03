@@ -62,8 +62,10 @@
     <Compile Include="Controls\PotionIngredientBox.xaml.cs">
       <DependentUpon>PotionIngredientBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Managers\AlchymyTable.cs" />
     <Compile Include="Managers\Chest.cs" />
     <Compile Include="Models\AlchymicItem.cs" />
+    <Compile Include="Models\AlchymyShoppe.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\Inventory.cs" />

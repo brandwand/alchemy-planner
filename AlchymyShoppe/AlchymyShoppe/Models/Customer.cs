@@ -9,7 +9,8 @@ namespace AlchymyShoppe.Models
     class Customer
     {
         private List<Order> orders;
-        private int gold;
+        public int gold { get; set; }
+        
 
         public Customer(List<Order> orders, int gold)
         {
