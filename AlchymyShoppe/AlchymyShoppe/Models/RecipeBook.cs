@@ -32,29 +32,14 @@ namespace AlchymyShoppe
         public Dictionary<AlchymicEffect, Dictionary<Ingredient, Boolean>> buildEmptyRecipeBook(List<Ingredient> allIngredients)
         {
             Dictionary<AlchymicEffect, Dictionary<Ingredient, Boolean>> recipes = new Dictionary<AlchymicEffect, Dictionary<Ingredient, Boolean>>();
-            List<AlchymicEffect> originalEffects = new List<AlchymicEffect>();
+            List<AlchymicEffect> allAlchymicEffectLists = new List<AlchymicEffect>();
             Dictionary<Ingredient, Boolean> knownIngredients = new Dictionary<Ingredient, Boolean>();
+            
 
-
-            var allAlchymicEffectLists = allIngredients.Select((i) =>
-            {
-                return i.effects;
-            });
-
-            foreach (List<AlchymicEffect> alchymicEffectList in allAlchymicEffectLists)
-            {
-                foreach (AlchymicEffect alchymicEffect in alchymicEffectList)
-                {
-                    if (!originalEffects.Contains(alchymicEffect))
-                    {
-                        originalEffects.Add(alchymicEffect);
-                    }
-                }
-            }
-            foreach (AlchymicEffect alchymicEffect in originalEffects)
+            foreach (AlchymicEffect alchymicEffect in Enum.GetValues(typeof(AlchymicEffect)))
             {
                 knownIngredients.Clear();
-                var ingredientsWithEffect = from ingredient in allIngredients where ingredient.effects.Contains(alchymicEffect) select ingredient;
+                List<Ingredient> ingredientsWithEffect = (List<Ingredient>)from ingredient in allIngredients where ((ingredient.effects & alchymicEffect) == alchymicEffect) select ingredient;
 
                 foreach (Ingredient ingredient in ingredientsWithEffect)
                 {

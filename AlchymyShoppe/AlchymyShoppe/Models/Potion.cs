@@ -19,15 +19,23 @@ namespace AlchymyShoppe
         /// <param name="price">Base Price of the Potion</param>
         /// <param name="rarity">Rarity of the Item</param>
         /// <param name="effects">Effects from the Ingredients that make the Potion</param>
-        public Potion(String name, String imagePath, int price, Rarity rarity, params AlchymicEffect[] effects) : base(name, imagePath, price, rarity, effects)
+        public Potion(String name, String imagePath, int price, Rarity rarity, AlchymicEffect effects) : base(name, imagePath, price, rarity, effects)
         {
-            this.name = GenerateName();
+            if(name == null || name == "")
+            {
+                this.name = GenerateName();
+            }
+            else
+            {
+                this.name = name;
+            }
+            
+            this.imagePath = imagePath;
             this.price = price;
             this.rarity = rarity;
-            this.effects.Clear();
-            this.effects = new List<AlchymicEffect>(effects);
+            this.effects = effects;
         }
-
+        /*
         /// <summary>
         /// Makes a Potion
         /// </summary>
@@ -35,13 +43,15 @@ namespace AlchymyShoppe
         /// <param name="price">Base Price of the Potion</param>
         /// <param name="rarity">Rarity of the Item</param>
         /// <param name="effects">Effects from the Ingredients that make the Potion</param>
-        public Potion(String name, int price, Rarity rarity, List<AlchymicEffect> effects) : base(name, price, rarity, effects)
+        public Potion(String name, String imagePath, int price, Rarity rarity, AlchymicEffect effects) : base(name, imagePath, price, rarity, effects)
         {
-            this.name = name;
+            this.name = GenerateName();
+            this.imagePath = imagePath;
             this.price = price;
             this.rarity = rarity;
             this.effects = effects;
         }
+        */
         #endregion
 
         #region Functions
@@ -70,48 +80,58 @@ namespace AlchymyShoppe
             else if (rarity == Rarity.Common) { rarityString = "Common"; }
             else if (rarity == Rarity.Uncommon) { rarityString = "Uncommon"; }
             else if (rarity == Rarity.Rare) { rarityString = "Rare"; }
-            else if (rarity == Rarity.Epic) { rarityString = "Epic"; }
             else if (rarity == Rarity.Legendary) { rarityString = "Legendary"; }
             else if (rarity == Rarity.Godlike) { rarityString = "Godlike"; }
 
             return rarityString;
         }
 
-        private string ConvertEffectsToString()
+        private String ConvertEffectsToString()
         {
-            String effectsString = "";
-            int effectCount = 0;
+            Array allEffects = Enum.GetValues(typeof(AlchymicEffect));
 
-            foreach (AlchymicEffect effect in effects)
+            String effectsString = "";
+            int addedCount = 0,
+                goalCount = this.countEffects();
+
+
+            foreach (AlchymicEffect effect in allEffects)
             {
-                if (effectCount != 0)
+                if ((this.effects & effect) == effect)
                 {
-                    if (effectCount == effects.Count - 1)
+                    if (goalCount == 1)
                     {
-                        effectsString += " and ";
+                        return effect.ToString();
                     }
                     else
                     {
-                        effectsString += ", ";
+                        if(addedCount == 0)
+                        {
+                            effectsString = effect.ToString();
+                        }
+                        else if (addedCount == goalCount - 1)
+                        {
+                            if(goalCount >= 3)
+                            {
+                                effectsString += ", and " + effect.ToString();
+                            }
+                            else
+                            {
+                                effectsString += " and " + effect.ToString();
+                            }
+                        }
+                        else
+                        {
+                            effectsString += ", " + effect.ToString();
+                        }
+                        addedCount++;
                     }
                 }
-
-                if (effect == AlchymicEffect.RestoreHealth) { effectsString += "Healing"; }
-                else if (effect == AlchymicEffect.RestoreMana) { effectsString += "Mana Restoration"; }
-                else if (effect == AlchymicEffect.Regenerate) { effectsString += "Regeneration"; }
-                else if (effect == AlchymicEffect.Speed) { effectsString += "Speed"; }
-                else if (effect == AlchymicEffect.Strength) { effectsString += "Strength"; }
-                else if (effect == AlchymicEffect.Charisma) { effectsString += "Charsima"; }
-                else if (effect == AlchymicEffect.Damage) { effectsString += "Damage"; }
-                else if (effect == AlchymicEffect.Paralysis) { effectsString += "Paralysis"; }
-                else if (effect == AlchymicEffect.Insivibility) { effectsString += "Invisibility"; }
-                else if (effect == AlchymicEffect.Nightvision) { effectsString += "Nightvision"; }
-                else if (effect == AlchymicEffect.None) { effectsString += "Mundanity"; }
-
             }
 
             return effectsString;
         }
+
 
         #endregion
     }

@@ -82,14 +82,19 @@ namespace AlchymyShoppe
 
         public void craftPotion()
         {
-
+            List<Ingredient> ingredients = new List<Ingredient>();
+            ingredients.Add(Ingredient1);
+            ingredients.Add(Ingredient2);
+            ingredients.Add(Ingredient3);
+            List<AlchymicEffect> ingredientsEffects = ingredientEffectConverter(ingredients);
+            craftedPotion.effects = Brew(ingredientsEffects);
         }
         /// <summary>
         /// Takes in an array of AlchymicEffects and crafts them into a Potion
         /// </summary>
         /// <param name="effects"></param>
         /// <returns></returns>\
-        public List<AlchymicEffect> Brew(params AlchymicEffect[] effects)
+        public AlchymicEffect Brew(params AlchymicEffect[] effects)
         {
             //Convert effects into a List
             List<AlchymicEffect> effectsList = new List<AlchymicEffect>();
@@ -100,29 +105,28 @@ namespace AlchymyShoppe
             return Brew(effectsList);
         }
 
-        public List<AlchymicEffect> Brew(List<AlchymicEffect> effects)
+        public AlchymicEffect Brew(List<AlchymicEffect> effects)
         {
             //   List of effects that appear in the list more than once 
             // we're going to keep these
-            List<AlchymicEffect> appearMoreThanOnce = new List<AlchymicEffect>();
+           AlchymicEffect appearedMoreThanOnce = new AlchymicEffect();
 
             // List that will save whether that ingredient has appeared yet
-            List<AlchymicEffect> appearedOnce = new List<AlchymicEffect>();
+            AlchymicEffect appearedOnce = new AlchymicEffect();
+                           
 
             foreach (AlchymicEffect effect in effects)
             {
-                if (appearedOnce.Contains(effect))
+                if((appearedOnce & effect) > 0)
                 {
-                    if (!appearMoreThanOnce.Contains(effect))
-                        appearMoreThanOnce.Add(effect);
-                }
-                else
-                {
-                    appearedOnce.Add(effect);
+                    appearedMoreThanOnce = appearedOnce & effect;
+                } 
+                else{
+                    appearedOnce = appearedOnce ^ effect;
                 }
             }
 
-            return appearMoreThanOnce;
+            return appearedMoreThanOnce;
         }
 
 
@@ -131,11 +135,7 @@ namespace AlchymyShoppe
             List<AlchymicEffect> effectsList = new List<AlchymicEffect>();
             foreach (Ingredient ingredient in ingredients)
             {
-                foreach (AlchymicEffect effect in ingredient.effects)
-                {
-                    effectsList.Add(effect);
-
-                }
+                effectsList.Add(ingredient.effects);
             }
             return effectsList;
         }

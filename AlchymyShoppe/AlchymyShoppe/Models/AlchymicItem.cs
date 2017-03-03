@@ -8,30 +8,25 @@ namespace AlchymyShoppe
 {
     abstract class AlchymicItem : Item
     {
-        public List<AlchymicEffect> effects { get; set; }
+        public AlchymicEffect effects { get; set; }
 
 
-        public AlchymicItem(string name, String imagePath, int price, Rarity rarity, params AlchymicEffect[] effects) : base(name, imagePath, price, rarity)
-        {
-            this.effects.Clear();
-            foreach (AlchymicEffect effect in effects)
-            {
-                this.effects.Add(effect);
-            }
-        }
-
-        public AlchymicItem(List<AlchymicEffect> effects, string name, int price, Rarity rarity) : base(name, price, rarity)
+        public AlchymicItem(string name, String imagePath, int price, Rarity rarity, AlchymicEffect effects) : base(name, imagePath, price, rarity)
         {
             this.effects = effects;
         }
+        
         /// <summary>
         /// Adds an AlchymicEffect to effects, the Item's AlchymicEffects List
         /// </summary>
         /// <param name="effect">AlchymicEffect to be add</param>
         public void AddEffect(AlchymicEffect effect)
         {
-            if (!this.effects.Contains(effect))
-                this.effects.Add(effect);
+            if ((this.effects & effect) != effect)
+            {
+                this.effects = this.effects ^ effect;
+            }
+                
         }
 
         /// <summary>
@@ -42,8 +37,10 @@ namespace AlchymyShoppe
         {
             foreach (AlchymicEffect effect in effects)
             {
-                if (!this.effects.Contains(effect))
-                    this.effects.Add(effect);
+                if ((this.effects & effect) != effect)
+                {
+                    this.effects = this.effects ^ effect;
+                }
             }
         }
 
@@ -55,8 +52,10 @@ namespace AlchymyShoppe
         {
             foreach (AlchymicEffect effect in effects)
             {
-                if (!this.effects.Contains(effect))
-                    this.effects.Add(effect);
+                if ((this.effects & effect) != effect)
+                {
+                    this.effects = this.effects ^ effect;
+                }
             }
         }
 
@@ -64,9 +63,9 @@ namespace AlchymyShoppe
         /// Removes an AlchymicEffect from effects, the Item's AlchymicEffects List
         /// </summary>
         /// <param name="effect">AlchymicEffect to be removed</param>
-        public bool RemoveEffect(AlchymicEffect effect)
+        public void RemoveEffect(AlchymicEffect effect)
         {
-            return effects.Remove(effect);
+            this.effects = this.effects & (~effect);
         }
 
         /// <summary>
@@ -77,7 +76,7 @@ namespace AlchymyShoppe
         {
             foreach (AlchymicEffect effect in effects)
             {
-                this.effects.Remove(effect);
+                this.effects = this.effects & (~effect);
             }
         }
 
@@ -89,8 +88,21 @@ namespace AlchymyShoppe
         {
             foreach (AlchymicEffect effect in effects)
             {
-                this.effects.Remove(effect);
+                this.effects = this.effects & (~effect);
             }
+        }
+
+        public int countEffects()
+        {
+            long effectValue = (long)this.effects;
+            int count = 0;
+
+            while (effectValue > 0)
+            {
+                effectValue &= (effectValue - 1);
+                count++;
+            }
+            return count;
         }
     }
 }
