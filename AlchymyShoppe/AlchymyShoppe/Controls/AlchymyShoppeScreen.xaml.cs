@@ -10,14 +10,15 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AlchymyShoppe
+namespace AlchymyShoppe.Controls
 {
     /// <summary>
     /// Interaction logic for AlchymyShoppeScreen.xaml
     /// </summary>
-    public partial class AlchymyShoppeScreen : Window
+    public partial class AlchymyShoppeScreen : UserControl
     {
         public AlchymyShoppeScreen()
         {

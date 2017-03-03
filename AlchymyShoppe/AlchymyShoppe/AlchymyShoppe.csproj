@@ -55,13 +55,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AlchymyShoppeScreen.xaml.cs">
+    <Compile Include="Controls\AlchymyShoppeScreen.xaml.cs">
       <DependentUpon>AlchymyShoppeScreen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AlchymyTableScreen.xaml.cs">
+    <Compile Include="Controls\AlchymyTableScreen.xaml.cs">
       <DependentUpon>AlchymyTableScreen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="HubScreen.xaml.cs">
+    <Compile Include="Controls\HubScreen.xaml.cs">
       <DependentUpon>HubScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\PotionIngredientBox.xaml.cs">
@@ -70,6 +70,7 @@
     <Compile Include="Managers\AlchymyTable.cs" />
     <Compile Include="Managers\Chest.cs" />
     <Compile Include="Models\AlchymicItem.cs" />
+    <Compile Include="Models\AlchymyShoppe.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\Inventory.cs" />
@@ -78,19 +79,19 @@
     <Compile Include="TravelingMerchantScreen.xaml.cs">
       <DependentUpon>TravelingMerchantScreen.xaml</DependentUpon>
     </Compile>
-    <Page Include="AlchymyShoppeScreen.xaml">
+    <Page Include="Controls\AlchymyShoppeScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AlchymyTableScreen.xaml">
+    <Page Include="Controls\AlchymyTableScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\HubScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\PotionIngredientBox.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="HubScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

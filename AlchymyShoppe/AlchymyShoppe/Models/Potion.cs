@@ -35,7 +35,7 @@ namespace AlchymyShoppe
         /// <param name="price">Base Price of the Potion</param>
         /// <param name="rarity">Rarity of the Item</param>
         /// <param name="effects">Effects from the Ingredients that make the Potion</param>
-        public Potion(String name, int price, Rarity rarity, List<AlchymicEffect> effects) : base(name, price, rarity, effects)
+        public Potion(String name, String imagePath, int price, Rarity rarity, List<AlchymicEffect> effects) : base(name, imagePath, price, rarity, effects)
         {
             this.name = name;
             this.price = price;
@@ -70,7 +70,6 @@ namespace AlchymyShoppe
             else if (rarity == Rarity.Common) { rarityString = "Common"; }
             else if (rarity == Rarity.Uncommon) { rarityString = "Uncommon"; }
             else if (rarity == Rarity.Rare) { rarityString = "Rare"; }
-            else if (rarity == Rarity.Epic) { rarityString = "Epic"; }
             else if (rarity == Rarity.Legendary) { rarityString = "Legendary"; }
             else if (rarity == Rarity.Godlike) { rarityString = "Godlike"; }
 

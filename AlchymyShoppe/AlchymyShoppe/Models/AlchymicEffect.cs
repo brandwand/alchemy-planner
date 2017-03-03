@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlchymyShoppe
 {
-    enum AlchymicEffect
+    public enum AlchymicEffect
     {
         RestoreHealth, RestoreMana, Regenerate, Damage, Speed,
         Strength, Insivibility, Charisma, Paralysis, Nightvision,

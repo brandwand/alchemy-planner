@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace AlchymyShoppe
 {
-    abstract class AlchymicItem : Item
+    public abstract class AlchymicItem : Item
     {
-        public List<AlchymicEffect> effects { get; set; }
+        public List<AlchymicEffect> effects = new List<AlchymicEffect>();
 
-
-        public AlchymicItem(string name, String imagePath, int price, Rarity rarity, params AlchymicEffect[] effects) : base(name, imagePath, price, rarity)
+        public AlchymicItem(string name, string imagePath, int price, Rarity rarity, params AlchymicEffect[] effects) : base(name, imagePath, price, rarity)
         {
             this.effects.Clear();
             foreach (AlchymicEffect effect in effects)
@@ -20,7 +19,7 @@ namespace AlchymyShoppe
             }
         }
 
-        public AlchymicItem(List<AlchymicEffect> effects, string name, int price, Rarity rarity) : base(name, price, rarity)
+        public AlchymicItem(string name, string imagePath, int price, Rarity rarity, List<AlchymicEffect> effects) : base(name, imagePath, price, rarity)
         {
             this.effects = effects;
         }

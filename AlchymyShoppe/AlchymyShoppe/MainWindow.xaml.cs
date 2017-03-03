@@ -26,5 +26,9 @@ namespace AlchymyShoppe
             
 
         }
+
+        private void btnLoadGame_Click(object sender, RoutedEventArgs e)
+        {
+        }
     }
 }
