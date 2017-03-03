@@ -43,7 +43,11 @@ namespace AlchymyShoppe
         /// <param name="price">Base Price of the Potion</param>
         /// <param name="rarity">Rarity of the Item</param>
         /// <param name="effects">Effects from the Ingredients that make the Potion</param>
+<<<<<<< HEAD
         public Potion(String name, String imagePath, int price, Rarity rarity, AlchymicEffect effects) : base(name, imagePath, price, rarity, effects)
+=======
+        public Potion(String name, String imagePath, int price, Rarity rarity, List<AlchymicEffect> effects) : base(name, imagePath, price, rarity, effects)
+>>>>>>> fbff74ece2bd82081840c651f0c35ff40a23f241
         {
             this.name = GenerateName();
             this.imagePath = imagePath;

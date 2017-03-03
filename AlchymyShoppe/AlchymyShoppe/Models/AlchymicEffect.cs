@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace AlchymyShoppe
 {
     [Flags()]
-    enum AlchymicEffect : long
+    public enum AlchymicEffect : long
     {
         
         RestoreHealth =     0000000000000001,

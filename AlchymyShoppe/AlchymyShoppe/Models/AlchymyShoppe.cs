@@ -20,9 +20,15 @@ namespace AlchymyShoppe.Models
             itemsForSell.addItemsFromInventory(item);
         }
 
-        public void sold(Player player, Item item)
+        public void addPlayerGold(Player player, Item item)
         {
             int gold = player.gold;
+            gold += item.price;
+        }
+
+        public void takeAwayCustomerGold(Customer customer, Item item)
+        {
+            int gold = customer.gold;
             gold += item.price;
         }
     }

@@ -13,22 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AlchymyShoppe
+namespace AlchymyShoppe.Controls
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AlchymyShoppeScreen.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AlchymyShoppeScreen : UserControl
     {
-        public MainWindow()
+        public AlchymyShoppeScreen()
         {
             InitializeComponent();
-            
-
-        }
-
-        private void btnLoadGame_Click(object sender, RoutedEventArgs e)
-        {
         }
     }
 }

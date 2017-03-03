@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlchymyShoppe
 {
-    abstract class AlchymicItem : Item
+    public abstract class AlchymicItem : Item
     {
         public AlchymicEffect effects { get; set; }
 
