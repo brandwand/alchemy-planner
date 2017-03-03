@@ -8,14 +8,13 @@ namespace AlchymyShoppe.Models
 {
    class Player
     {
-
+        private RecipeBook book;
         private List<Order> orders;
         private Inventory inventory;
         public Inventory getInventory()
         {
             return inventory;
         }
-
         public void setInventory(Inventory inventory)
         {
             this.inventory = inventory;
@@ -26,6 +25,14 @@ namespace AlchymyShoppe.Models
         {
             this.name = name;            
             this.gold = gold;
+        }
+        public RecipeBook getPlayerBook()
+        {
+            return book;
+        }
+        public void setPlayerBook(RecipeBook book)
+        {
+            this.book = book;
         }
     }
 }

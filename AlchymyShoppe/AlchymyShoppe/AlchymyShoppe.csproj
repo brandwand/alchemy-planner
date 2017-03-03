@@ -63,8 +63,7 @@
     </Compile>
     <Compile Include="Controls\HubScreen.xaml.cs">
       <DependentUpon>HubScreen.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\PotionIngredientBox.xaml.cs">
+    </Compile>    <Compile Include="Controls\PotionIngredientBox.xaml.cs">
       <DependentUpon>PotionIngredientBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Managers\AlchymyTable.cs" />

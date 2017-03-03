@@ -30,30 +30,19 @@ namespace AlchymyShoppe.Models
             this.inventory = inventory;
         }
 
-        //We will need to change all strings to ingredients.
-        //This is a temporary method that adds to the ingredients list so that I can test
-        //all methods dealing with the inventory.
-        public void addToList()
-        {
-            for(int i = 0; i < 50; i++)
-            {
-                ingredients.Add("hello " + i);
-            }
-        }
-
 
         //This method randomizes 5 - 15 ingredients.
         //It picks 5 - 15 random ingredients for the traveling merchants inventory.
-        public List<string> makeInventory()
+        public List<Ingredient> makeInventory()
         {
             Random rand = new Random();
             int randomAmount = rand.Next(5, 15);
             for(int i = 0; i < randomAmount; i++)
             {
-                int randomSelection = rand.Next(ingredients.Count);
-                ingredients.ElementAt(randomSelection);
+                int randomSelection = rand.Next(WorldController.allIngredients.Count);
+                WorldController.allIngredients.ElementAt(randomSelection);
             }
-            return ingredients;
+            return WorldController.allIngredients;
         }
     
         //This method will display the result of the makeInventory method.
