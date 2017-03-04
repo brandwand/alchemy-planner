@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace AlchymyShoppe.Controls
 {
     /// <summary>
-    /// Interaction logic for HubScreen.xaml
+    /// Interaction logic for InventoryDisplay.xaml
     /// </summary>
-    public partial class HubScreen : UserControl
+    public partial class InventoryDisplay : UserControl
     {
-        public HubScreen()
+        public InventoryDisplay()
         {
             InitializeComponent();
         }

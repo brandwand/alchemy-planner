@@ -20,9 +20,12 @@ namespace AlchymyShoppe.Controls
     /// </summary>
     public partial class AlchymyShoppeScreen : UserControl
     {
+        public const string AlchymyTableScreenBackgroundPath = "Images/Backgrounds/alchymyTableScreenBackground.jpg";
+
         public AlchymyShoppeScreen()
         {
             InitializeComponent();
+            imgBackground.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), System.IO.Directory.GetCurrentDirectory() + AlchymyTableScreenBackgroundPath));
         }
     }
 }
