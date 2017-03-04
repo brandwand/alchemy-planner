@@ -8,7 +8,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="800">
     <Grid>
-        <Image x:Name="imgBackground" Source="D:\School\PRO100 - Intro Software Projects Second Try\GitHub\alchemy-planner\AlchymyShoppe\AlchymyShoppe\Images\Backgrounds\alchymyTableScreenBackground.jpg" Margin="0,0,0,0" Stretch="Fill"/>
+        <Image x:Name="imgBackground" Margin="0,0,0,0" Stretch="Fill"/>
         <Viewbox Width="90" Height="90" Margin="333,170,370.6,0" Stretch="Uniform" VerticalAlignment="Top">
             <controls:PotionIngredientBox x:Name="ingB1" Width="90" Height="90"/>
         </Viewbox>
@@ -20,7 +20,7 @@
         </Viewbox>
         <Button x:Name="btnGold" Content="9999" HorizontalAlignment="Left" Margin="10,0,0,10" Width="90" Height="50" VerticalAlignment="Bottom" Foreground="Orange" BorderBrush="#FFE57B00" Background="Black" FontFamily="Harrington" FontSize="24" FontWeight="Bold"/>
         <Button x:Name="btnHallway" Content="Hallway" Margin="0,0,10,10" HorizontalAlignment="Right" Width="90" Height="50" VerticalAlignment="Bottom" FontFamily="Harrington" Background="Black" Foreground="#FF32DEFF" BorderBrush="#FF32DEFF" Click="btnNext_Click" FontSize="24"/>
-        <Button x:Name="btnRecipes" Content="Recipes..." HorizontalAlignment="Left" Height="72" Margin="333,46,0,0" VerticalAlignment="Top" Width="90" FontFamily="Harrington" FontSize="18" Background="Black" BorderBrush="#FF32DEFF" Foreground="#FF32DEFF"/>
+        <Button x:Name="btnRecipes" Content="Recipes..." HorizontalAlignment="Left" Height="72" Margin="336,43,0,0" VerticalAlignment="Top" Width="90" FontFamily="Harrington" FontSize="18" Background="Black" BorderBrush="#FF32DEFF" Foreground="#FF32DEFF"/>
         <Button x:Name="btnClear" Content="Clear" Height="72" Margin="333,497,377,0" VerticalAlignment="Top" FontFamily="Harrington" FontSize="18" Background="Black" BorderBrush="#FF32DEFF" Foreground="#FF32DEFF"/>
     </Grid>
 </UserControl>

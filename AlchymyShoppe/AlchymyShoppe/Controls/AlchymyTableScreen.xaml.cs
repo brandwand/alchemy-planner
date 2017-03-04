@@ -23,6 +23,7 @@ namespace AlchymyShoppe.Controls
         public AlchymyTableScreen()
         {
             InitializeComponent();
+            imgBackground.Source = ImageUtil.BitmapToImageSource(ImageResoures.alchymyTableScreenBackground);
         }
 
         private void btnNext_Click(object sender, RoutedEventArgs e)

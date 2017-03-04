@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace AlchymyShoppe.Models
 {
     //I'M USING A LOT OF FILLER CODE FOR NOW JUST TO GET THE BASIC CONCEPT DOWN
-    class TravelingMerchant
+    public class TravelingMerchant
     {
         private List<Order> orders;
         public string name = "Larry The Merchant";

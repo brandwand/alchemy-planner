@@ -10,9 +10,13 @@ namespace AlchymyShoppe
     {
         private List<Item> Items;
         //Gold is no longer part of the inventory
-        public Inventory(int gold, List<Item> ItemsForStartingInventory)
+        public Inventory()
         {
-            this.Items = ItemsForStartingInventory;
+            this.Items = generateRandomeInventory();
+        }
+        private List<Item> generateRandomeInventory()
+        {
+            throw new NotImplementedException();
         }
         public Inventory(List<Item> ItemsForStartingInventory)
         {

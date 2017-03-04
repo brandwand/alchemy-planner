@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Linq;
 
 namespace AlchymyShoppe
 {
-    class RecipeBook
+    public class RecipeBook
     {
         Dictionary<AlchymicEffect, Dictionary<Ingredient, Boolean>> recipes;
 

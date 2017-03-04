@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace AlchymyShoppe
 {
-    class Chest
+    public class Chest
     {
         //Hard coded names used for all files in the save folders
         private static string currentDirectory = Environment.CurrentDirectory;
@@ -28,7 +29,6 @@ namespace AlchymyShoppe
                 return new Player("Player1",250);
             }
         }
-
         private Player loadPlayer(string folderLocation)
         {
             string file = System.IO.Path.Combine(folderLocation, playerFile);
@@ -38,26 +38,77 @@ namespace AlchymyShoppe
             string gold = "";
             deserializePlayer(rawData, out playerName, out gold);
             Player p = new Player(playerName, Int32.Parse(gold));
-            p.setInventory(loadInventory());
-            p.setPlayerBook(loadBook());
+            p.setInventory(loadInventory(sr));
+            p.setPlayerBook(loadBook(sr));
             return p;
         }
-
-        private Inventory loadInventory()
+        private Inventory loadInventory(StreamReader sr)
+        {
+            string pattern = "(.*?),(.*?),(.*?),(.*?),(.*)\n";
+            List<string> temp = new List<string>();
+            while (!sr.EndOfStream)
+            {
+                string line = sr.ReadLine();
+                temp.Add(line);
+            }
+            Regex r = new Regex(pattern);
+            Match m;
+            List<Ingredient> loadedIngredients = new List<Ingredient>();
+            foreach (string line in temp)
+            {
+                m = r.Match(line);
+                loadedIngredients.Add(
+                new Ingredient(m.Groups[0].ToString(),
+                    m.Groups[1].ToString(),
+                    Int32.Parse(m.Groups[2].ToString()),
+                    getRarity(m.Groups[3].ToString()),
+                    (AlchymicEffect)Convert.ToInt64(m.Groups[4].Value)));
+            }
+            return new Inventory(loadedIngredients.Cast<Item>().ToList());
+        }
+        private Rarity getRarity(string rarity)
+        {
+            Rarity temp;
+            switch (rarity)
+            {
+                case "None":
+                    temp = Rarity.None;
+                    break;
+                case "Rubbish":
+                    temp = Rarity.Rubbish;
+                    break;
+                case "Inferior":
+                    temp = Rarity.Inferior;
+                    break;
+                case "Common":
+                    temp = Rarity.Common;
+                    break;
+                case "Uncommon":
+                    temp = Rarity.Uncommon;
+                    break;
+                case "Rare":
+                    temp = Rarity.Rare;
+                    break;
+                case "Legendary":
+                    temp = Rarity.Legendary;
+                    break;
+                case "Godlike":
+                    temp = Rarity.Godlike;
+                    break;
+                default:
+                    temp = Rarity.None;
+                    break;
+            }
+            return temp;
+        }
+        private RecipeBook loadBook(StreamReader sr)
         {
             throw new NotImplementedException();
         }
-
-        private RecipeBook loadBook()
-        {
-            throw new NotImplementedException();
-        }
-
         private void deserializePlayer(string rawData, out string playerName, out string gold)
         {
             throw new NotImplementedException();
         }
-
         public void saveGame(string folderLocation, Player currentPlayer)
         {
             if (Directory.Exists(folderLocation))
@@ -81,7 +132,7 @@ namespace AlchymyShoppe
         }
         private void savePlayer(string folderLocation, Player currentPlayer)
         {
-            string[] playerContents = serializePlayer(currentPlayer);
+            List<string> playerContents = serializePlayer(currentPlayer);
             string file = folderLocation + "/" + inventoryFile;
             StreamWriter writer = new StreamWriter(file);
             foreach (string line in playerContents)
@@ -91,7 +142,7 @@ namespace AlchymyShoppe
         }
         private void saveRecipeBook(string folderLocation, RecipeBook currentBook)
         {
-            string[] bookContents = serializeRecipeBook(currentBook);
+            List<string> bookContents = serializeRecipeBook(currentBook);
             string file = folderLocation + "/" + recipeBookFile;
             StreamWriter writer = new StreamWriter(file);
             foreach (string line in bookContents)
@@ -101,23 +152,30 @@ namespace AlchymyShoppe
         }
         private void saveInventory(string folderLocation, Inventory currentInventory)
         {
-            string[] inventoryContents = serializeInventory(currentInventory);
+            List<string> inventoryContents = serializeInventory(currentInventory);
             string file = folderLocation + "/" + inventoryFile;
             StreamWriter writer = new StreamWriter(file);
             foreach(string line in inventoryContents){
                 writer.WriteLine(line);
             }
         }
-        private string[] serializePlayer(Player currentPlayer)
+        private List<string> serializePlayer(Player currentPlayer)
+        {
+            string name = currentPlayer.getName();
+            string gold = currentPlayer.getGold().ToString();
+            List<string> temp = new List<string>();
+            temp.Add(name);
+            temp.Add(gold);
+            return temp;
+        }
+        private List<string> serializeRecipeBook(RecipeBook currentBook)
         {
             throw new NotImplementedException();
         }
-        private string[] serializeRecipeBook(RecipeBook currentBook)
+        private List<string> serializeInventory(Inventory currentInventory)
         {
-            throw new NotImplementedException();
-        }
-        private string[] serializeInventory(Inventory currentInventory)
-        {
+            List<string> temp = new List<string>();
+
             throw new NotImplementedException();
         }
     }

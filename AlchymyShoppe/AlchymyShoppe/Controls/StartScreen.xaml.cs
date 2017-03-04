@@ -20,12 +20,10 @@ namespace AlchymyShoppe.Controls
     /// </summary>
     public partial class StartScreen : UserControl
     {
-        public const string StartScreenBackgroundPath = "Images/Backgrounds/startScreenBackground.jpg";
-
         public StartScreen()
         {
             InitializeComponent();
-            //imgBackground.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), System.IO.Directory.GetCurrentDirectory() + StartScreenBackgroundPath));
+            imgBackground.Source = ImageUtil.BitmapToImageSource(ImageResoures.startScreenBackground);
         }
 
         private void btnLoadGame_Click(object sender, RoutedEventArgs e)

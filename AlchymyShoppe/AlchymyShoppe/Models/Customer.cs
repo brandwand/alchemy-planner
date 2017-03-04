@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlchymyShoppe.Models
 {
-    class Customer
+    public class Customer
     {
         private List<Order> orders;
         public int gold { get; set; }

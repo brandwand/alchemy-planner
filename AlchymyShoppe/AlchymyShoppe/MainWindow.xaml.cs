@@ -20,12 +20,10 @@ namespace AlchymyShoppe
     /// </summary>
     public partial class MainWindow : Window
     {
-        public const string HubScreenBackgroundPath = "Images/Backgrounds/hubScreenBackground.jpg";
-
         public MainWindow()
         {
             InitializeComponent();
-            //imgBackground.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), System.IO.Directory.GetCurrentDirectory() + HubScreenBackgroundPath));
+            imgBackground.Source = AlchymyShoppe.Controls.ImageUtil.BitmapToImageSource(ImageResoures.hubScreenBackground);
         }
 
         private void btnAlchymyTable_Click(object sender, RoutedEventArgs e)
