@@ -177,9 +177,6 @@
     <Resource Include="Images\Backgrounds\alchymyTableScreenBackground.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Backgrounds\hubScreenBackground.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Backgrounds\magicCircle.png" />
   </ItemGroup>
   <ItemGroup>

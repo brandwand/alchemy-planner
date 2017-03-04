@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlchymyShoppe
 {
-    class MundaneItem : Item
+    public class MundaneItem : Item
     {
 
         public MundaneItem(string name, string imagePath, int price, Rarity rarity) : base(name, imagePath, price, rarity)

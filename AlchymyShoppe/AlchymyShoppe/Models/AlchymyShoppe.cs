@@ -22,7 +22,7 @@ namespace AlchymyShoppe.Models
 
         public void addPlayerGold(Player player, Item item)
         {
-            int gold = player.gold;
+            int gold = player.getGold();
             gold += item.price;
         }
 

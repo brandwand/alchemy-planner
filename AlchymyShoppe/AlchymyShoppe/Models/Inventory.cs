@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlchymyShoppe
 {
-    class Inventory
+    public class Inventory
     {
         private List<Item> Items;
         //Gold is no longer part of the inventory

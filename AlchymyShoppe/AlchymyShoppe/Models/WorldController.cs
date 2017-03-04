@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlchymyShoppe.Models
 {
-    class WorldController
+    public class WorldController
     {
 
         private static Player player;

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AlchymyShoppe
 {
-    class Chest
+    public class Chest
     {
         //Hard coded names used for all files in the save folders
         private static string currentDirectory = Environment.CurrentDirectory;

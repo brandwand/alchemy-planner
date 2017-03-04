@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlchymyShoppe.Models
 {
-    class Order : MundaneItem
+    public class Order : MundaneItem
     {
         //Sets a new order Item.
         private Item orderItem;

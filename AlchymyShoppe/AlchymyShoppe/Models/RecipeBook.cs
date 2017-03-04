@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlchymyShoppe
 {
-    class RecipeBook
+    public class RecipeBook
     {
         Dictionary<AlchymicEffect, Dictionary<Ingredient, Boolean>> recipes;
 
