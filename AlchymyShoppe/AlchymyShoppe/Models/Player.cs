@@ -10,7 +10,7 @@ namespace AlchymyShoppe.Models
     {
         private RecipeBook book;
         private List<Order> orders;
-        private Inventory inventory;
+        private Inventory inventory = new Inventory(10, new List<Item>());
         public Inventory getInventory()
         {
             return inventory;
@@ -33,6 +33,11 @@ namespace AlchymyShoppe.Models
         public void setPlayerBook(RecipeBook book)
         {
             this.book = book;
+        }
+
+        public void addItemToInventory(Item item)
+        {
+            inventory.addItemToInventory(item);
         }
     }
 }

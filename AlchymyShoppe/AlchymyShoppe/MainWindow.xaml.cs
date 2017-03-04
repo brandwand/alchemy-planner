@@ -25,7 +25,7 @@ namespace AlchymyShoppe
         public MainWindow()
         {
             InitializeComponent();
-            imgBackground.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), System.IO.Directory.GetCurrentDirectory() + HubScreenBackgroundPath));
+            //imgBackground.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), System.IO.Directory.GetCurrentDirectory() + HubScreenBackgroundPath));
         }
 
         private void btnAlchymyTable_Click(object sender, RoutedEventArgs e)

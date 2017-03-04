@@ -25,7 +25,7 @@ namespace AlchymyShoppe.Controls
         public StartScreen()
         {
             InitializeComponent();
-            imgBackground.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), System.IO.Directory.GetCurrentDirectory() + StartScreenBackgroundPath));
+            //imgBackground.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), System.IO.Directory.GetCurrentDirectory() + StartScreenBackgroundPath));
         }
 
         private void btnLoadGame_Click(object sender, RoutedEventArgs e)

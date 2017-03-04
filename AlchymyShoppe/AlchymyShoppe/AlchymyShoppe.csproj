@@ -154,9 +154,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\Backgrounds\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\Sprites\alchemy.png" />
   </ItemGroup>
@@ -165,6 +163,14 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="alchemyTable1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Backgrounds\alchemy.png" />
+    <Resource Include="Images\Backgrounds\alchemyTable.png" />
+    <Resource Include="Images\Backgrounds\alchymyTableScreenBackground.jpg" />
+    <Resource Include="Images\Backgrounds\hubScreenBackground.jpg" />
+    <Resource Include="Images\Backgrounds\magicCircle.png" />
+    <Resource Include="Images\Backgrounds\startScreenBackground.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

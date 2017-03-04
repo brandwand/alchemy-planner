@@ -20,8 +20,9 @@ namespace AlchymyShoppe.Controls
     /// </summary>
     public partial class InventoryDisplay : UserControl
     {
+        public Inventory InventorySource { get; set; }
         public InventoryDisplay()
-        {
+           {
             InitializeComponent();
         }
     }
