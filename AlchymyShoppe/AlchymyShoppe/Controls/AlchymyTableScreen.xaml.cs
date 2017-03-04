@@ -29,5 +29,10 @@ namespace AlchymyShoppe.Controls
         {
             this.Visibility = Visibility.Collapsed;
         }
+
+        public void Update()
+        {
+            //playerInventoryDisplay. WorldController.Player.Inventory.items
+        }
     }
 }

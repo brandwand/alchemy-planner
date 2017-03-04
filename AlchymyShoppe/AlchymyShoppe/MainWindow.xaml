@@ -16,5 +16,6 @@
 
         <controls:StartScreen x:Name="StartScreen"/>
         <controls:AlchymyTableScreen x:Name="AlchymyTableScreen" Visibility="Collapsed"/>
+        <!--<controls:InventoryDisplay/>-->
     </Grid>
 </Window>
