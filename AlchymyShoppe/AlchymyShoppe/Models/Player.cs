@@ -11,6 +11,15 @@ namespace AlchymyShoppe.Models
         private RecipeBook book;
         private List<Order> orders;
         private Inventory inventory;
+        private String name;
+        private int gold;
+        public Player(String name, int gold)
+        {
+            this.name = name;
+            this.gold = gold;
+            inventory = new Inventory();
+            book = new RecipeBook();
+        }
         public Inventory getInventory()
         {
             return inventory;
@@ -19,11 +28,12 @@ namespace AlchymyShoppe.Models
         {
             this.inventory = inventory;
         }
-        private String name { get; set; }
-        public int gold { get; set; }
-        public Player(String name, int gold)
+        public int getGold()
         {
-            this.name = name;            
+            return this.gold;
+        }
+        public void setGold(int gold)
+        {
             this.gold = gold;
         }
         public RecipeBook getPlayerBook()
@@ -33,6 +43,22 @@ namespace AlchymyShoppe.Models
         public void setPlayerBook(RecipeBook book)
         {
             this.book = book;
+        }
+        public String getName()
+        {
+            return this.name;
+        }
+        public void setName(String name)
+        {
+            this.name = name;
+        }
+        public List<Order> getOrders()
+        {
+            return this.orders;
+        }
+        public void setOrders(List<Order> orders)
+        {
+            this.orders = orders;
         }
     }
 }
