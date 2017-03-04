@@ -6,26 +6,27 @@ using System.Threading.Tasks;
 
 namespace AlchymyShoppe.Models
 {
-    public class WorldController
+    public static class WorldController
     {
-
-        private static Player player;
-        private double numOfHoursPast;
-        private double numOfHoursLeft;
+        public static Player player;
+        private static double numOfHoursPast;
+        public static double numOfHoursLeft;
         public static List<Ingredient> allIngredients;
         
+        static WorldController()
+        {
+            player = new Player("Frank", new Random().Next(10, 999));
+        }
+
         public static void timeChange(double amountOfTime)
         {
-            WorldController wc = new WorldController();
-            wc.numOfHoursLeft -= amountOfTime;
-            wc.numOfHoursPast += amountOfTime;
+            numOfHoursLeft -= amountOfTime;
+            numOfHoursPast += amountOfTime;
         }
 
-        public void loadSaveFile()
+        public static void loadSaveFile()
         {
 
         }
-
-
     }
 }

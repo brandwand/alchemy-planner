@@ -20,10 +20,19 @@ namespace AlchymyShoppe.Controls
     /// </summary>
     public partial class InventoryDisplay : UserControl
     {
-        public Inventory InventorySource { get; set; }
+        public Inventory InventorySource { get; set; } = new Inventory();
+
         public InventoryDisplay()
-           {
+        {
             InitializeComponent();
+            InventorySource = Models.WorldController.player.getInventory();
+            tbInventoryName.Text = InventorySource.Name;
+
+            InventorySource.addItemToInventory(new Ingredient("Ex: Dragon Heart", "Path", 5000, Rarity.Godlike, AlchymicEffect.RegenerateHealth | AlchymicEffect.Nightvision));
+            InventorySource.addItemToInventory(new Ingredient("Ex: Tunfra Cotton", "Path", 10, Rarity.Common, AlchymicEffect.RestoreHealth | AlchymicEffect.RestoreMana));
+            InventorySource.addItemToInventory(new Ingredient("Ex: Vampire Teeth", "Path", 750, Rarity.Rare, AlchymicEffect.DamageHealth | AlchymicEffect.Nightvision));
+
+            lbInventory.ItemsSource = InventorySource.getItems();
         }
     }
 }

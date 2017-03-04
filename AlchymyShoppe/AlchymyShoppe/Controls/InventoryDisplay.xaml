@@ -7,19 +7,19 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <TextBox x:Name="tbInventoryName" Text="Inventory Name" Height="30" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <ListBox Name="lbInventory" HorizontalContentAlignment="Stretch" Margin="0,30,0,0" >
+        <TextBox x:Name="tbInventoryName" Text="Inventory Name" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Harrington" FontSize="22" Background="Black" BorderBrush="#FF32DEFF" Foreground="#FF32DEFF" Padding="10,0,0,0"/>
+        <ListBox Name="lbInventory" HorizontalContentAlignment="Stretch" Margin="0,30,0,0" FontSize="14" Background="Black" Foreground="#FF32DEFF" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,2">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="2*" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="{Binding name}" Grid.Column="0" FontFamily="Harrington" />
-                        <TextBlock Text="{Binding price}" Grid.Column="1" FontFamily="Harrington" />
-                        <TextBlock Text="{Binding rarity}" Grid.Column="2" FontFamily="Harrington" />
+                        <TextBlock Text="{Binding name}" Grid.Column="0" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
+                        <TextBlock Text="{Binding price}" Grid.Column="1" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
+                        <TextBlock Text="{Binding rarity}" Grid.Column="2" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
