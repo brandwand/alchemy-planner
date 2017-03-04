@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -75,6 +76,7 @@
     </Compile>
     <Compile Include="Managers\AlchymyTable.cs" />
     <Compile Include="Managers\Chest.cs" />
+    <Compile Include="Controls\ImageUtil.cs" />
     <Compile Include="Models\AlchymicItem.cs" />
     <Compile Include="Models\AlchymyShoppe.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -83,6 +85,11 @@
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\RecipeBook.cs" />
     <Compile Include="Models\WorldController.cs" />
+    <Compile Include="ImageResoures.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImageResoures.resx</DependentUpon>
+    </Compile>
     <Page Include="Controls\AlchymyShoppeScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -145,6 +152,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ImageResoures.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ImageResoures.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -182,7 +193,9 @@
   <ItemGroup>
     <Resource Include="Images\Backgrounds\startScreenBackground.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Images\Backgrounds\hubScreenBackground.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -20,12 +20,10 @@ namespace AlchymyShoppe.Controls
     /// </summary>
     public partial class TravelingMerchantScreen : UserControl
     {
-        public const string TravelingMerchantScreenBackgroundPath = "Images/Backgrounds/travelingMerchantScreenBackground.jpg";
-
         public TravelingMerchantScreen()
         {
             InitializeComponent();
-            imgBackground.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), System.IO.Directory.GetCurrentDirectory() + TravelingMerchantScreenBackgroundPath));
+//            imgBackground.Source = ImageUtil.BitmapToImageSource(ImageResoures.travelingMerchantScreenBackground);
         }
     }
 }
