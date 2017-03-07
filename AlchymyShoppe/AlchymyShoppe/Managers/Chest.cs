@@ -161,12 +161,26 @@ namespace AlchymyShoppe
         }
         private List<string> serializePlayer(Player currentPlayer)
         {
-            string name = currentPlayer.getName();
-            string gold = currentPlayer.getGold().ToString();
-            List<string> temp = new List<string>();
-            temp.Add(name);
-            temp.Add(gold);
-            return temp;
+            
+            List<Ingredient> ingredients = new List<Ingredient>();
+            Regex regex = new Regex("(.*?), (.*?), (.*?), (.*?), (.*)\\n");
+
+            string[] lines = File.ReadAllLines("C:\\Users\\Laxdyn\\AlchemyLab\\alchemy-planner\\AlchymyShoppe\\AlchymyShoppe\\ingredients.txt");
+            foreach (string line in lines)
+            {
+                Match match = regex.Match(line);
+                if (match.Success)
+                {
+                    string name = match.Groups[1].Value,
+                        imagePath = match.Groups[2].Value;
+                    int price = int.Parse(match.Groups[3].Value);
+                    Rarity rarity = getRarity(match.Groups[4].Value);
+                    AlchymicEffect effects = (AlchymicEffect)long.Parse(match.Groups[5].Value);
+                    Ingredient ingredient = new Ingredient(name, imagePath, price, rarity, effects);
+                }
+            }
+
+            return ingredients;
         }
         private List<string> serializeRecipeBook(RecipeBook currentBook)
         {
