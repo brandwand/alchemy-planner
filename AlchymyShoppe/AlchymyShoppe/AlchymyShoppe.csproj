@@ -65,6 +65,9 @@
     <Compile Include="Controls\InventoryDisplay.xaml.cs">
       <DependentUpon>InventoryDisplay.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\InventoryItem.xaml.cs">
+      <DependentUpon>InventoryItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\PotionIngredientBox.xaml.cs">
       <DependentUpon>PotionIngredientBox.xaml</DependentUpon>
     </Compile>
@@ -99,6 +102,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\InventoryDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\InventoryItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

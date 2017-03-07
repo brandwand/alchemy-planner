@@ -20,6 +20,10 @@ namespace AlchymyShoppe.Controls
     /// </summary>
     public partial class InventoryDisplay : UserControl
     {
+        private void OnMouseLeftButtonDown(object sender, RoutedEventArgs e)
+        {
+        }
+
         public Inventory InventorySource { get; set; } = new Inventory();
 
         public InventoryDisplay()

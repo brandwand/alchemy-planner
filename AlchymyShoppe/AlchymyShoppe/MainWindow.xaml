@@ -10,12 +10,44 @@
     <Grid>
         <Image x:Name="imgBackground" Margin="0,0,0,0" Stretch="Fill"/>
         <Button x:Name="btnGold" Content="{Binding Gold}" HorizontalAlignment="Left" Margin="10,0,0,10" Width="90" Height="50" VerticalAlignment="Bottom" Foreground="Orange" BorderBrush="#FFE57B00" Background="Black" FontFamily="Harrington" FontSize="24" FontWeight="Bold"/>
-        <Button x:Name="btnTravelingMerchant" Content="Traveling Merchant" HorizontalAlignment="Left" Margin="250,70,0,0" VerticalAlignment="Top" Width="300" Height="75"/>
-        <Button x:Name="btnAlchymyShoppe" Content="Alchymy Shoppe" HorizontalAlignment="Left" Margin="250,170,0,0" VerticalAlignment="Top" Width="300" Height="75"/>
-        <Button x:Name="btnAlchymyTable" Content="Alchymy Table" HorizontalAlignment="Left" Margin="250,270,0,0" VerticalAlignment="Top" Width="300" Height="75" Click="btnAlchymyTable_Click"/>
+        <Button x:Name="btnTravelingMerchant" Content="Traveling Merchant" HorizontalAlignment="Left" Margin="250,70,0,0" VerticalAlignment="Top" Width="300" Height="75" FontFamily="Harrington" FontSize="20"  Background="AntiqueWhite"/>
+        <Button x:Name="btnAlchymyShoppe" Content="Alchymy Shoppe" HorizontalAlignment="Left" Margin="250,170,0,0" VerticalAlignment="Top" Width="300" Height="75" FontFamily="Harrington" FontSize="20"  Background="AntiqueWhite"/>
+        <Button x:Name="btnAlchymyTable" Content="Alchymy Table" HorizontalAlignment="Left" Margin="250,270,0,0" VerticalAlignment="Top" Width="300" Height="75" Click="btnAlchymyTable_Click" FontFamily="Harrington" FontSize="20"  Background="AntiqueWhite"/>
 
         <controls:StartScreen x:Name="StartScreen"/>
         <controls:AlchymyTableScreen x:Name="AlchymyTableScreen" Visibility="Collapsed"/>
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="100" Margin="38,332,0,0" VerticalAlignment="Top" Width="100" AllowDrop="True" PreviewMouseLeftButtonDown="listBox_PreviewMouseLeftButtonDown">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding name}" Grid.Column="0" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
+                        <TextBlock Text="{Binding price}" Grid.Column="1" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
+                        <TextBlock Text="{Binding rarity}" Grid.Column="2" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
+                    </Grid>
+               </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox x:Name="listBox_Copy" HorizontalAlignment="Left" Height="100" Margin="157,336,0,0" VerticalAlignment="Top" Width="100" AllowDrop="True" Drop="listBox_Drop">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding name}" Grid.Column="0" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
+                        <TextBlock Text="{Binding price}" Grid.Column="1" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
+                        <TextBlock Text="{Binding rarity}" Grid.Column="2" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <!--<controls:InventoryDisplay/>-->
     </Grid>
 </Window>
