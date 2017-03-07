@@ -18,7 +18,7 @@ namespace AlchymyShoppe.Models
             this.name = name;
             this.gold = gold;
             inventory = new Inventory();
-            book = new RecipeBook();
+//            book = new RecipeBook();
         }
         public Inventory getInventory()
         {

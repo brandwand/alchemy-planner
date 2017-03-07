@@ -39,12 +39,13 @@ namespace AlchymyShoppe
             deserializePlayer(rawData, out playerName, out gold);
             Player p = new Player(playerName, Int32.Parse(gold));
             p.setInventory(loadInventory(sr));
-            p.setPlayerBook(loadBook(sr));
+            //not able to implement yet
+//            p.setPlayerBook(loadBook(sr));
             return p;
         }
         private Inventory loadInventory(StreamReader sr)
         {
-            string pattern = "(.*?),(.*?),(.*?),(.*?),(.*)\n";
+            string pattern = "(.*?),(.*?),(.*?),(.*?),(.*?),(.*)\n";
             List<string> temp = new List<string>();
             while (!sr.EndOfStream)
             {
@@ -54,17 +55,36 @@ namespace AlchymyShoppe
             Regex r = new Regex(pattern);
             Match m;
             List<Ingredient> loadedIngredients = new List<Ingredient>();
+            List<Potion> loadedPotions = new List<Potion>();
+            List<MundaneItem> loadedRegularItems = new List<MundaneItem>();
             foreach (string line in temp)
             {
                 m = r.Match(line);
-                loadedIngredients.Add(
-                new Ingredient(m.Groups[0].ToString(),
-                    m.Groups[1].ToString(),
-                    Int32.Parse(m.Groups[2].ToString()),
-                    getRarity(m.Groups[3].ToString()),
-                    (AlchymicEffect)Convert.ToInt64(m.Groups[4].Value)));
+                //Group[0] is resderved for the entire match;
+                string determinItem = m.Groups[1].ToString();
+                if (determinItem.Equals("0"))
+                {
+                    loadedIngredients.Add(
+                    new Ingredient(m.Groups[2].ToString(),
+                    m.Groups[3].ToString(),
+                    Int32.Parse(m.Groups[4].ToString()),
+                    getRarity(m.Groups[5].ToString()),
+                    (AlchymicEffect)Convert.ToInt64(m.Groups[6].Value)));
+                }
+                else if (determinItem.Equals("1"))
+                {
+                    loadedPotions.Add(new Potion(m.Groups[2].ToString(),
+                    m.Groups[3].ToString(),
+                    Int32.Parse(m.Groups[4].ToString()),
+                    getRarity(m.Groups[5].ToString()),
+                    (AlchymicEffect)Convert.ToInt64(m.Groups[6].Value)));
+                }
+                else
+                {
+                    //Not doing mundaneItems yet
+                }
             }
-            return new Inventory(loadedIngredients.Cast<Item>().ToList());
+            return new Inventory(loadedIngredients, loadedPotions, loadedRegularItems);
         }
         private Rarity getRarity(string rarity)
         {
@@ -107,7 +127,12 @@ namespace AlchymyShoppe
         }
         private void deserializePlayer(string rawData, out string playerName, out string gold)
         {
-            throw new NotImplementedException();
+            String pattern = "(.*?),(.*?)";
+            Regex r = new Regex(pattern);
+            Match m;
+            m = r.Match(rawData);
+            playerName = m.Groups[1].ToString();
+            gold = m.Groups[2].ToString();
         }
         public void saveGame(string folderLocation, Player currentPlayer)
         {
@@ -115,7 +140,7 @@ namespace AlchymyShoppe
             {
                 savePlayer(folderLocation, currentPlayer);
                 saveInventory(folderLocation, currentPlayer.getInventory());
-                saveRecipeBook(folderLocation, currentPlayer.getPlayerBook());
+//                saveRecipeBook(folderLocation, currentPlayer.getPlayerBook());
             }
             else
             {
@@ -123,10 +148,10 @@ namespace AlchymyShoppe
                 System.IO.Directory.CreateDirectory(path);
                 string inventoryPath = System.IO.Path.Combine(path, inventoryFile);
                 string playerPath = System.IO.Path.Combine(path, playerFile);
-                string recipeBookPath = System.IO.Path.Combine(path, recipeBookFile);
+//                string recipeBookPath = System.IO.Path.Combine(path, recipeBookFile);
                 System.IO.FileStream fs = System.IO.File.Create(inventoryPath);
                 fs = System.IO.File.Create(playerPath);
-                fs = System.IO.File.Create(recipeBookPath);
+//                fs = System.IO.File.Create(recipeBookPath);
                 saveGame(folderLocation, currentPlayer);
             }
         }
@@ -175,7 +200,11 @@ namespace AlchymyShoppe
         private List<string> serializeInventory(Inventory currentInventory)
         {
             List<string> temp = new List<string>();
+            List<Item> playersInventory = currentInventory.getItems();
+            for(int i = 0; i < playersInventory.Count; i++)
+            {
 
+            }
             throw new NotImplementedException();
         }
     }

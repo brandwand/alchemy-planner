@@ -9,6 +9,9 @@ namespace AlchymyShoppe
     public class Inventory
     {
         private List<Item> Items;
+        private List<Ingredient> Ingredients;
+        private List<Potion> Potions;
+        private List<MundaneItem> RegularItems;
         //Gold is no longer part of the inventory
         public Inventory()
         {
@@ -18,9 +21,14 @@ namespace AlchymyShoppe
         {
             throw new NotImplementedException();
         }
-        public Inventory(List<Item> ItemsForStartingInventory)
+        public Inventory(List<Ingredient> ItemsForStartingInventory, List<Potion> PotionsForStartingInventory, List<MundaneItem> regurlarItemsForStartingInventory)
         {
-            this.Items = ItemsForStartingInventory;
+            this.Ingredients = ItemsForStartingInventory;
+            this.Potions = PotionsForStartingInventory;
+            this.RegularItems = regurlarItemsForStartingInventory;
+            this.Items.Concat(Ingredients);
+            this.Items.Concat(Potions);
+            this.Items.Concat(RegularItems);
         }
         //for displaying to the window not sure how to do
         public void ShowInventory()
