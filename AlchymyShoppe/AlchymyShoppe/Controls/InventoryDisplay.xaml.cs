@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
 namespace AlchymyShoppe.Controls
 {
     /// <summary>
@@ -20,7 +19,7 @@ namespace AlchymyShoppe.Controls
     /// </summary>
     public partial class InventoryDisplay : UserControl
     {
-        public Inventory InventorySource { get; set; } = new Inventory();
+        public Models.Inventory InventorySource { get; set; } = new Models.Inventory();
 
         public InventoryDisplay()
         {
@@ -28,9 +27,9 @@ namespace AlchymyShoppe.Controls
             InventorySource = Models.WorldController.player.getInventory();
             tbInventoryName.Text = InventorySource.Name;
 
-            InventorySource.addItemToInventory(new Ingredient("Ex: Dragon Heart", "Path", 5000, Rarity.Godlike, AlchymicEffect.RegenerateHealth | AlchymicEffect.Nightvision));
-            InventorySource.addItemToInventory(new Ingredient("Ex: Tunfra Cotton", "Path", 10, Rarity.Common, AlchymicEffect.RestoreHealth | AlchymicEffect.RestoreMana));
-            InventorySource.addItemToInventory(new Ingredient("Ex: Vampire Teeth", "Path", 750, Rarity.Rare, AlchymicEffect.DamageHealth | AlchymicEffect.Nightvision));
+            InventorySource.addItemToInventory(new Models.Ingredient("Ex: Dragon Heart", "Path", 5000, Models.Rarity.Godlike, Models.AlchymicEffect.RegenerateHealth | Models.AlchymicEffect.Nightvision));
+            InventorySource.addItemToInventory(new Models.Ingredient("Ex: Tunfra Cotton", "Path", 10, Models.Rarity.Common, Models.AlchymicEffect.RestoreHealth | Models.AlchymicEffect.RestoreMana));
+            InventorySource.addItemToInventory(new Models.Ingredient("Ex: Vampire Teeth", "Path", 750, Models.Rarity.Rare, Models.AlchymicEffect.DamageHealth | Models.AlchymicEffect.Nightvision));
 
             lbInventory.ItemsSource = InventorySource.getItems();
         }
