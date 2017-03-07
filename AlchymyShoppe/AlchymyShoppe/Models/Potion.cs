@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlchymyShoppe
+namespace AlchymyShoppe.Models
 {
     /// <summary>
     /// Item to be used as an end result of a combination of Ingredients

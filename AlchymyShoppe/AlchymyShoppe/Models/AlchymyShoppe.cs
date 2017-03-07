@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlchymyShoppe.Models
 {
-    class AlchymyShoppe
+    public class AlchymyShoppe
     {
         private Inventory itemsForSell;
         public AlchymyShoppe()

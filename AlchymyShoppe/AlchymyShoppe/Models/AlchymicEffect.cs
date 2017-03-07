@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlchymyShoppe
+namespace AlchymyShoppe.Models
 {
     [Flags()]
     public enum AlchymicEffect : long

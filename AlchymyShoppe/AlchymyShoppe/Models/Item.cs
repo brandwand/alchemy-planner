@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlchymyShoppe
+namespace AlchymyShoppe.Models
 {
    /// <summary>
    /// Abstract class that holds the data relevant to an Item
