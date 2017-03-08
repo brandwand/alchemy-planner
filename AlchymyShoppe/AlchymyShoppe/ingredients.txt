@@ -1,0 +1,56 @@
+Koro Tentacle,fish.png,3500,Godlike,0011000010010000
+Odin's Raven,bird.png,3200,Godlike,0100001001000100
+Beard of Zeus,humanoid.png,3000,Godlike,001100001001000
+Krebsinator Fur,beast.png,2800,Legendary,0000001100001001
+Sorceror's Brain,humanoid.png,2700,Legendary,0100000011000010
+Transtemporal Residue,powder.png,2500,Legendary,0001000000110000
+Arachnus Maximus Silk,insect.png,2400,Legendary,0010010000001100
+Merlin's Robe,cloth.png,2300,Legendary,0000100100000011
+Basilisk Eye,reptile.png,2200,Legendary,0001100010010000
+Pheonix Feather,feather.png,2050,Legendary,0001001001010000
+Dragon Heart,reptile.png,2000,Legendary,0000000100101001
+Witch's Head,humanoid.png,1700,Rare,0000001000100011
+Werebear Fur,beast.png,1500,Rare,0000100100010001
+Chemycal Ecks,liquid.png,1400,Rare,0000100000100000
+Halla Antlers,beast.png,1300,Rare,0110000001001000
+Squid Ink,fish.png,1200,Rare,0001010000110000
+Otherworldly Wrappings,cloth.png,1100,Rare,0000001010001000
+Pixie Dust,powder.png,1050,Rare,0010100100000100
+Ooze,liquid.png,1000,Rare,0001001000010100
+Wyrm Scale,reptile.png,1000,Rare,0000010010001001
+Golem Core,archane.png,950,Uncommon,0000100001010001
+Werewolf Claw,beast.png,900,Uncommon,0001000001101000
+Glowing Mushroom,plant.png,850,Uncommon,0001100001010000
+Astral Aether,liquid.png,850,Uncommon,0000000000000000
+Frozen Fireball,archane.png,800,Uncommon,0010010100000001
+Indivan Spices,powder.png,800,Uncommon,0010101000000100
+Giant's Bone,beast.png,700,Uncommon,0001001001000100
+Flaming Tail,beast.png,700,Uncommon,0011000000000000
+Vampire Dust,powder.png,700,Uncommon,0000101001010000
+Silverwing Trout,fish.png,650,Common,0010100000011000
+Spider Venom,liquid.png,600,Common,0000011100001000
+Troll Tooth,beast.png,600,Common,0000010010000110
+White Bat Wing,beast.png,550,Common,0101000100000100
+Holker Steak,beast.png,550,Common,0000001100001001
+Ghoul Eye,beast.png,500,Common,0000011000011000
+Thick Cloth,cloth.png,500,Common,0001000010100100
+Powdered Niceness,powder.png,500,0010100001001000
+Northern Wastes Dirt,powder.png,500,Common,0001010001001000
+Bear Paw,beast.png,450,Common,0000010100001100
+Eagle Egg,eagleegg.png,400,Common,0001000100000011
+Fossilized Wood,plant.png,400,Common,0000011000010100
+Glowing Worm,insect.png,400,Common,0010000100001010
+Succulent Fruit,plant.png,400,Common,0001110000000001
+Ghoul Flesh,humanoid.png,350,Inferior,0000000000000000
+Skanter Husk,insect.png,350,Inferior,0000000011110000
+Sadtica Sugar,powder.png,300,Inferior,0000000100000111
+Wolf Fang,beast.png,300,Inferior,0000011110000000
+Skanter Egg,insect.png,250,Inferior,0011110000000000
+Tattered Rags,cloth.png,250,Inferior,0000011110000000
+Twisted Root,plant.png,200,Inferior,0000000000011110
+Rainbow Bass,fish.png,200,Inferior,0001111000000000
+Tree Sap,plant.png,150,Rubbish,1011110000000000
+Toadstool,plant.png,150,Rubbish,0000000111100000
+Sea Salt,powder.png,100,Rubbish,0010000011100000
+Butterfly Wing,insect.png,100,Rubbish,0010000111000000
+Karp Scale,fish.png,50,Rubbish,0011000110000000

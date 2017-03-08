@@ -174,40 +174,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Sprites\ingredientPlaceholder.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="TextFiles\ingredients.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Sprites\alchemy.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="alchemyTable.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="alchemyTable1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Backgrounds\alchemy.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Backgrounds\alchemyTable.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Backgrounds\alchymyTableScreenBackground.jpg" />
-  </ItemGroup>
-  <ItemGroup>
+    <Resource Include="Images\Backgrounds\hubScreenBackground.jpg" />
     <Resource Include="Images\Backgrounds\magicCircle.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Backgrounds\startScreenBackground.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\Backgrounds\hubScreenBackground.jpg" />
-  </ItemGroup>
-  <ItemGroup>
+    <Resource Include="Images\Sprites\alchemy.png" />
+    <Resource Include="Images\Sprites\ingredientPlaceholder.png" />
+    <Resource Include="ingredients.txt" />
     <Resource Include="Resources\emptyBoxFiller.jpg" />
+    <Resource Include="TextFiles\ingredients.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

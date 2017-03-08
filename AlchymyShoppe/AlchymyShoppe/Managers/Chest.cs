@@ -26,7 +26,7 @@ namespace AlchymyShoppe
             else
             {
                 //Default if something goes wrong reading information.
-                return new Player("Player1",250);
+                return new Player("Player1", 250);
             }
         }
         private Player loadPlayer(string folderLocation)
@@ -155,7 +155,8 @@ namespace AlchymyShoppe
             List<string> inventoryContents = serializeInventory(currentInventory);
             string file = folderLocation + "/" + inventoryFile;
             StreamWriter writer = new StreamWriter(file);
-            foreach(string line in inventoryContents){
+            foreach (string line in inventoryContents)
+            {
                 writer.WriteLine(line);
             }
         }
