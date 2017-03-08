@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlchymyShoppe.Models
 {
-    class AlchymyShoppe
+    public class AlchymyShoppe
     {
         private Inventory itemsForSell;
         public AlchymyShoppe()
@@ -16,8 +16,8 @@ namespace AlchymyShoppe.Models
 
         public void addToSell(Player player, Item item)
         {
-            player.getInventory().removeItemsFromInventory(item);
-            itemsForSell.addItemsFromInventory(item);
+            player.getInventory().removeItemFromInventory(item);
+            itemsForSell.addItemToInventory(item);
         }
 
         public void addPlayerGold(Player player, Item item)

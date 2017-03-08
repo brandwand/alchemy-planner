@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace AlchymyShoppe.Models
 {
-    //I'M USING A LOT OF FILLER CODE FOR NOW JUST TO GET THE BASIC CONCEPT DOWN
     public class TravelingMerchant
     {
         private List<Order> orders;
         public string name = "Larry The Merchant";
         private int gold { get; set; }
         private Inventory inventory;
-        private List<string> ingredients;
          
         public TravelingMerchant()
         {
@@ -44,12 +42,5 @@ namespace AlchymyShoppe.Models
             }
             return WorldController.allIngredients;
         }
-    
-        //This method will display the result of the makeInventory method.
-        //It will display this on the screen.
-        public Inventory displayInventory()
-        {
-            return inventory;
-        }  
     }
 }

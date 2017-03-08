@@ -1,24 +1,53 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AlchymyShoppe.Models
 {
-   public class Player
+   public class Player : INotifyPropertyChanged
     {
+
+        #region PropertyChanged
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
+        #endregion
+
         private RecipeBook book;
         private List<Order> orders;
-        private Inventory inventory;
-        private String name;
+        private Inventory inventory = new Inventory();
+        private string name;
         private int gold;
-        public Player(String name, int gold)
+
+        public int Gold
+        {
+            get { return gold; }
+            set
+            {
+                gold = value;
+                OnPropertyChanged("Ingredient1");
+            }
+        }
+
+
+        public Player(string name, int gold)
         {
             this.name = name;
             this.gold = gold;
-            inventory = new Inventory();
-//            book = new RecipeBook();
+            inventory = new Inventory("Inventory");
+            book = new RecipeBook();
         }
         public Inventory getInventory()
         {
@@ -59,6 +88,11 @@ namespace AlchymyShoppe.Models
         public void setOrders(List<Order> orders)
         {
             this.orders = orders;
+        }
+
+        public void addItemToInventory(Item item)
+        {
+            inventory.addItemToInventory(item);
         }
     }
 }

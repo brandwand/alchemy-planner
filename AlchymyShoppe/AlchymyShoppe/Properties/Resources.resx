@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,181 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ingredients" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\textfiles\ingredients.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="String" xml:space="preserve">
+    <value>Koro Tentacle,fish.png,3500,Godlike,0011000010010000</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>Odin's Raven,bird.png,3200,Godlike,0100001001000100</value>
+  </data>
+  <data name="String10" xml:space="preserve">
+    <value>Dragon Heart,reptile.png,2000,Legendary,0000000100101001</value>
+  </data>
+  <data name="String11" xml:space="preserve">
+    <value>Witch's Head,humanoid.png,1700,Rare,0000001000100011</value>
+  </data>
+  <data name="String12" xml:space="preserve">
+    <value>Werebear Fur,beast.png,1500,Rare,0000100100010001</value>
+  </data>
+  <data name="String13" xml:space="preserve">
+    <value>Chemycal Ecks,liquid.png,1400,Rare,0000100000100000</value>
+  </data>
+  <data name="String14" xml:space="preserve">
+    <value>Halla Antlers,beast.png,1300,Rare,0110000001001000</value>
+  </data>
+  <data name="String15" xml:space="preserve">
+    <value>Squid Ink,fish.png,1200,Rare,0001010000110000</value>
+  </data>
+  <data name="String16" xml:space="preserve">
+    <value>Otherworldly Wrappings,cloth.png,1100,Rare,0000001010001000</value>
+  </data>
+  <data name="String17" xml:space="preserve">
+    <value>Pixie Dust,powder.png,1050,Rare,0010100100000100</value>
+  </data>
+  <data name="String18" xml:space="preserve">
+    <value>Ooze,liquid.png,1000,Rare,0001001000010100</value>
+  </data>
+  <data name="String19" xml:space="preserve">
+    <value>Wyrm Scale,reptile.png,1000,Rare,0000010010001001</value>
+  </data>
+  <data name="String2" xml:space="preserve">
+    <value>Beard of Zeus,humanoid.png,3000,Godlike,001100001001000</value>
+  </data>
+  <data name="String20" xml:space="preserve">
+    <value>Golem Core,archane.png,950,Uncommon,0000100001010001</value>
+  </data>
+  <data name="String21" xml:space="preserve">
+    <value>Werewolf Claw,beast.png,900,Uncommon,0001000001101000</value>
+  </data>
+  <data name="String22" xml:space="preserve">
+    <value>Glowing Mushroom,plant.png,850,Uncommon,0001100001010000</value>
+  </data>
+  <data name="String23" xml:space="preserve">
+    <value>Astral Aether,liquid.png,850,Uncommon,0000000000000000</value>
+  </data>
+  <data name="String24" xml:space="preserve">
+    <value>Frozen Fireball,archane.png,800,Uncommon,0010010100000001</value>
+  </data>
+  <data name="String25" xml:space="preserve">
+    <value>Indivan Spices,powder.png,800,Uncommon,0010101000000100</value>
+  </data>
+  <data name="String26" xml:space="preserve">
+    <value>Giant's Bone,beast.png,700,Uncommon,0001001001000100</value>
+  </data>
+  <data name="String27" xml:space="preserve">
+    <value>Flaming Tail,beast.png,700,Uncommon,0011000000000000</value>
+  </data>
+  <data name="String28" xml:space="preserve">
+    <value>Vampire Dust,powder.png,700,Uncommon,0000101001010000</value>
+  </data>
+  <data name="String29" xml:space="preserve">
+    <value>Silverwing Trout,fish.png,650,Common,0010100000011000</value>
+  </data>
+  <data name="String3" xml:space="preserve">
+    <value>Krebsinator Fur,beast.png,2800,Legendary,0000001100001001</value>
+  </data>
+  <data name="String30" xml:space="preserve">
+    <value>Spider Venom,liquid.png,600,Common,0000011100001000</value>
+  </data>
+  <data name="String31" xml:space="preserve">
+    <value>Troll Tooth,beast.png,600,Common,0000010010000110</value>
+  </data>
+  <data name="String32" xml:space="preserve">
+    <value>White Bat Wing,beast.png,550,Common,0101000100000100</value>
+  </data>
+  <data name="String33" xml:space="preserve">
+    <value>Holker Steak,beast.png,550,Common,0000001100001001</value>
+  </data>
+  <data name="String34" xml:space="preserve">
+    <value>Ghoul Eye,beast.png,500,Common,0000011000011000</value>
+  </data>
+  <data name="String35" xml:space="preserve">
+    <value>Thick Cloth,cloth.png,500,Common,0001000010100100</value>
+  </data>
+  <data name="String36" xml:space="preserve">
+    <value>Powdered Niceness,powder.png,500,0010100001001000</value>
+  </data>
+  <data name="String37" xml:space="preserve">
+    <value>Northern Wastes Dirt,powder.png,500,Common,0001010001001000</value>
+  </data>
+  <data name="String38" xml:space="preserve">
+    <value>Bear Paw,beast.png,450,Common,0000010100001100</value>
+  </data>
+  <data name="String39" xml:space="preserve">
+    <value>Eagle Egg,eagleegg.png,400,Common,0001000100000011</value>
+  </data>
+  <data name="String4" xml:space="preserve">
+    <value>Sorceror's Brain,humanoid.png,2700,Legendary,0100000011000010</value>
+  </data>
+  <data name="String40" xml:space="preserve">
+    <value>Fossilized Wood,plant.png,400,Common,0000011000010100</value>
+  </data>
+  <data name="String41" xml:space="preserve">
+    <value>Glowing Worm,insect.png,400,Common,0010000100001010</value>
+  </data>
+  <data name="String42" xml:space="preserve">
+    <value>Succulent Fruit,plant.png,400,Common,0001110000000001</value>
+  </data>
+  <data name="String43" xml:space="preserve">
+    <value>Ghoul Flesh,humanoid.png,350,Inferior,0000000000000000</value>
+  </data>
+  <data name="String44" xml:space="preserve">
+    <value>Skanter Husk,insect.png,350,Inferior,0000000011110000</value>
+  </data>
+  <data name="String45" xml:space="preserve">
+    <value>Sadtica Sugar,powder.png,300,Inferior,0000000100000111</value>
+  </data>
+  <data name="String46" xml:space="preserve">
+    <value>Wolf Fang,beast.png,300,Inferior,0000011110000000</value>
+  </data>
+  <data name="String47" xml:space="preserve">
+    <value>Skanter Egg,insect.png,250,Inferior,0011110000000000</value>
+  </data>
+  <data name="String48" xml:space="preserve">
+    <value>Tattered Rags,cloth.png,250,Inferior,0000011110000000</value>
+  </data>
+  <data name="String49" xml:space="preserve">
+    <value>Twisted Root,plant.png,200,Inferior,0000000000011110</value>
+  </data>
+  <data name="String5" xml:space="preserve">
+    <value>Transtemporal Residue,powder.png,2500,Legendary,0001000000110000</value>
+  </data>
+  <data name="String50" xml:space="preserve">
+    <value>Rainbow Bass,fish.png,200,Inferior,0001111000000000</value>
+  </data>
+  <data name="String51" xml:space="preserve">
+    <value>Tree Sap,plant.png,150,Rubbish,1011110000000000</value>
+  </data>
+  <data name="String52" xml:space="preserve">
+    <value>Toadstool,plant.png,150,Rubbish,0000000111100000</value>
+  </data>
+  <data name="String53" xml:space="preserve">
+    <value>Sea Salt,powder.png,100,Rubbish,0010000011100000</value>
+  </data>
+  <data name="String54" xml:space="preserve">
+    <value>Butterfly Wing,insect.png,100,Rubbish,0010000111000000</value>
+  </data>
+  <data name="String55" xml:space="preserve">
+    <value>Karp Scale,fish.png,50,Rubbish,0011000110000000</value>
+  </data>
+  <data name="String6" xml:space="preserve">
+    <value>Arachnus Maximus Silk,insect.png,2400,Legendary,0010010000001100</value>
+  </data>
+  <data name="String7" xml:space="preserve">
+    <value>Merlin's Robe,cloth.png,2300,Legendary,0000100100000011</value>
+  </data>
+  <data name="String8" xml:space="preserve">
+    <value>Basilisk Eye,reptile.png,2200,Legendary,0001100010010000</value>
+  </data>
+  <data name="String9" xml:space="preserve">
+    <value>Pheonix Feather,feather.png,2050,Legendary,0001001001010000</value>
+  </data>
 </root>

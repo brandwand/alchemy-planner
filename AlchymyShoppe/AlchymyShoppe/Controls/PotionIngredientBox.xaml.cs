@@ -39,6 +39,7 @@ namespace AlchymyShoppe.Controls
         public PotionIngredientBox()
         {
             InitializeComponent();
+            LoadPlaceholderImage();
         }
 
         public void LoadIngredient(Ingredient ingredient)
@@ -49,6 +50,11 @@ namespace AlchymyShoppe.Controls
         public void LoadIngredientImage()
         {
             imgIngredient.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), CraftingIngredient.imagePath));
+        }
+
+        public void LoadPlaceholderImage()
+        {
+            imgIngredient.Source = ImageUtil.BitmapToImageSource(ImageResoures.emptyBoxFiller);
         }
     }
 }

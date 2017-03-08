@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlchymyShoppe
+namespace AlchymyShoppe.Models
 {
     public class Inventory
     {
-        private List<Item> Items;
+
+        public string Name { get; set; } = "Default";
+
+        private List<Item> Items = new List<Item>();
         private List<Ingredient> Ingredients;
         private List<Potion> Potions;
         private List<MundaneItem> RegularItems;
@@ -17,9 +20,9 @@ namespace AlchymyShoppe
         {
             this.Items = generateRandomeInventory();
         }
-        private List<Item> generateRandomeInventory()
+        public Inventory(List<Item> ItemsForStartingInventory)
         {
-            throw new NotImplementedException();
+            this.Items = ItemsForStartingInventory;
         }
         public Inventory(List<Ingredient> ItemsForStartingInventory, List<Potion> PotionsForStartingInventory, List<MundaneItem> regurlarItemsForStartingInventory)
         {
@@ -30,6 +33,27 @@ namespace AlchymyShoppe
             this.Items.Concat(Potions);
             this.Items.Concat(RegularItems);
         }
+        public Inventory(string name)
+        {
+            Name = name;
+            this.Items = generateRandomeInventory();
+        }
+        public Inventory(string name, List<Item> ItemsForStartingInventory)
+        {
+            Name = name;
+            this.Items = ItemsForStartingInventory;
+        }
+        private List<Item> generateRandomeInventory()
+        {
+            Random rand = new Random();
+            List<Ingredient> newPlayerIngredients;
+            for(int i = 0; i < 15; i++)
+            {
+                int temp = rand.Next(WorldController.allIngredients.Count);
+
+            }
+            return newPlayerIngredients;
+        }
         //for displaying to the window not sure how to do
         public void ShowInventory()
         {
@@ -39,13 +63,13 @@ namespace AlchymyShoppe
         {
             return this.Items;
         }
-        public void removeItemsFromInventory(Item item)
+        public void removeItemFromInventory(Item item)
         {
-                getItems().Remove(item);
+                Items.Remove(item);
         }
-        public void addItemsFromInventory(Item item)
+        public void addItemToInventory(Item item)
         {
-            getItems().Remove(item);
+            Items.Add(item);
         }
     }
 }
