@@ -8,7 +8,7 @@ namespace AlchymyShoppe.Models
 {
     public class AlchymyShoppe
     {
-        private Inventory itemsForSell;
+        private Inventory itemsForSell = new Inventory();
         public AlchymyShoppe()
         {
         
@@ -22,14 +22,13 @@ namespace AlchymyShoppe.Models
 
         public void addPlayerGold(Player player, Item item)
         {
-            int gold = player.getGold();
-            gold += item.price;
+            player.setGold(player.getGold() + item.price);
         }
 
         public void takeAwayCustomerGold(Customer customer, Item item)
         {
-            int gold = customer.gold;
-            gold += item.price;
+           
+            customer.gold = customer.gold - item.price;
         }
     }
 }
