@@ -22,8 +22,8 @@ namespace AlchymyShoppe
     public partial class MainWindow : Window
     {
         public ListBox dragSource = null;
-        public Inventory inv1 { get; set; } = new Inventory();
-        public Inventory inv2 { get; set; } = new Inventory();
+        public Models.Inventory inv1 { get; set; } = new Models.Inventory();
+        public Models.Inventory inv2 { get; set; } = new Models.Inventory();
 
         public MainWindow()
         {
@@ -31,9 +31,9 @@ namespace AlchymyShoppe
             btnGold.DataContext = Models.WorldController.player;
             imgBackground.Source = AlchymyShoppe.Controls.ImageUtil.BitmapToImageSource(ImageResoures.hubScreenBackground);
 
-            inv1.addItemToInventory(new Ingredient("Ex: Dragon Heart", "Path", 5000, Rarity.Godlike, AlchymicEffect.RegenerateHealth | AlchymicEffect.Nightvision));
-            inv1.addItemToInventory(new Ingredient("Ex: Tunfra Cotton", "Path", 10, Rarity.Common, AlchymicEffect.RestoreHealth | AlchymicEffect.RestoreMana));
-            inv1.addItemToInventory(new Ingredient("Ex: Vampire Teeth", "Path", 750, Rarity.Rare, AlchymicEffect.DamageHealth | AlchymicEffect.Nightvision));
+            inv1.addItemToInventory(new Models.Ingredient("Ex: Dragon Heart", "Path", 5000, Models.Rarity.Godlike, Models.AlchymicEffect.RegenerateHealth | Models.AlchymicEffect.Nightvision));
+            inv1.addItemToInventory(new Models.Ingredient("Ex: Tunfra Cotton", "Path", 10, Models.Rarity.Common, Models.AlchymicEffect.RestoreHealth | Models.AlchymicEffect.RestoreMana));
+            inv1.addItemToInventory(new Models.Ingredient("Ex: Vampire Teeth", "Path", 750, Models.Rarity.Rare, Models.AlchymicEffect.DamageHealth | Models.AlchymicEffect.Nightvision));
             listBox.ItemsSource = inv1.getItems();
             listBox_Copy.ItemsSource = inv2.getItems();
         }
@@ -84,7 +84,7 @@ namespace AlchymyShoppe
             ListBox parent = (ListBox)sender;
             Controls.InventoryItem data = (Controls.InventoryItem)e.Data.GetData(typeof(Controls.InventoryItem));
             ((IList)dragSource.ItemsSource).Remove(data);
-            List<Item> inv = (List<Item>)parent.ItemsSource;
+            List<Models.Item> inv = (List<Models.Item>)parent.ItemsSource;
             //InventoryItem item = new Ingredient(((Ingredient)data).name, (data).imagePath, ((Item)data).price, ((Item)data).rarity);
             //inv.Add((Item)data);
             parent.ItemsSource = inv;
