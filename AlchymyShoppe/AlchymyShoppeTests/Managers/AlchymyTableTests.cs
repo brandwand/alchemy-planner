@@ -52,7 +52,7 @@ namespace AlchymyShoppe.Tests
             ingredients.Add(ingredient2);
             ingredients.Add(ingredient3);
 
-            Potion potion = new AlchymyShoppe.Potion("", "potion.png", (ingredient1.price + ingredient2.price + ingredient3.price), Rarity.Godlike, ingredients, effects);
+            Potion potion = new Potion("", "potion.png", (ingredient1.price + ingredient2.price + ingredient3.price), Rarity.Godlike, ingredients, effects);
 
             AlchymyTable table = new AlchymyTable(player, ingredient1, ingredient2, ingredient3, potion);
 
@@ -78,7 +78,7 @@ namespace AlchymyShoppe.Tests
             ingredients.Add(ingredient2);
             ingredients.Add(ingredient3);
 
-            Potion potion = new AlchymyShoppe.Potion("", "potion.png", ((ingredient1.price + ingredient2.price + ingredient3.price) * (int)Rarity.Rubbish), Rarity.Rubbish, ingredients, effects);
+            Potion potion = new Potion("", "potion.png", ((ingredient1.price + ingredient2.price + ingredient3.price) * (int)Rarity.Rubbish), Rarity.Rubbish, ingredients, effects);
 
             AlchymyTable table = new AlchymyTable(player, ingredient1, ingredient2, ingredient3, potion);
 
@@ -90,16 +90,16 @@ namespace AlchymyShoppe.Tests
             Assert.AreEqual((4400*7), table.Potion.price);
         }
 
-        [TestMethod()]
-        public void ingredientLoadTest()
-        {
-            Chest chest = new Chest();
-            Ingredient koro = new Ingredient("Koro Tentacle", "fish.png", 3500, Rarity.Godlike, (AlchymicEffect)12432);
-            List<Ingredient> allIngredients = chest.loadIngredientList();
-            IEnumerable<Ingredient> ingredientsWithName = from ingredient in allIngredients where ((ingredient.name.Equals("Koro Tentacle"))) select ingredient;
+        //[TestMethod()]
+        //public void ingredientLoadTest()
+        //{
+        //    Chest chest = new Chest();
+        //    Ingredient koro = new Ingredient("Koro Tentacle", "fish.png", 3500, Rarity.Godlike, (AlchymicEffect)12432);
+        //   // List<Ingredient> allIngredients = chest.loadIngredientList();
+        //    IEnumerable<Ingredient> ingredientsWithName = from ingredient in allIngredients where ((ingredient.name.Equals("Koro Tentacle"))) select ingredient;
             
-                Assert.AreEqual(true, ingredientsWithName.Count() >= 1);
-        }
+        //        Assert.AreEqual(true, ingredientsWithName.Count() >= 1);
+        //}
     }
     
 }

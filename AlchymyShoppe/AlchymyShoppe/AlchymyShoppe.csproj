@@ -208,6 +208,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\emptyBoxFiller.jpg" />
+    <Resource Include="Images\Backgrounds\alchymyTableScreenBackground.jpg" />
+    <Resource Include="Images\Backgrounds\hubScreenBackground.jpg" />
+    <Resource Include="Images\Backgrounds\magicCircle.png" />
+    <Resource Include="Images\Backgrounds\startScreenBackground.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

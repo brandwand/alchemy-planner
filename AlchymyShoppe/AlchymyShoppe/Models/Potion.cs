@@ -11,6 +11,8 @@ namespace AlchymyShoppe.Models
     /// </summary>
     public class Potion : AlchymicItem
     {
+        public List<Ingredient> components;
+
         #region Constructors
         /// <summary>
         /// Makes a Potion
@@ -18,8 +20,10 @@ namespace AlchymyShoppe.Models
         /// <param name="name">Name of the Potion</param>
         /// <param name="price">Base Price of the Potion</param>
         /// <param name="rarity">Rarity of the Item</param>
+        /// <param name="components">Ingredients used to make the Potion</param>
         /// <param name="effects">Effects from the Ingredients that make the Potion</param>
-        public Potion(String name, String imagePath, int price, Rarity rarity, AlchymicEffect effects) : base(name, imagePath, price, rarity, effects)
+        
+        public Potion(String name, String imagePath, int price, Rarity rarity, List<Ingredient> components, AlchymicEffect effects) : base(name, imagePath, price, rarity, effects)
         {
             if(name == null || name == "")
             {
@@ -29,7 +33,7 @@ namespace AlchymyShoppe.Models
             {
                 this.name = name;
             }
-            
+            this.components = components;
             this.imagePath = imagePath;
             this.price = price;
             this.rarity = rarity;
@@ -62,30 +66,39 @@ namespace AlchymyShoppe.Models
         /// Generates a proper Potion name ex. "Legendary Potion of Healing, Invisibilty and Paralysis"
         /// </summary>
         /// <returns></returns>
-        private String GenerateName()
+        public String GenerateName()
         {
             String name = "";
 
-            name += ConvertRarityToString();
+            name += rarity.ToString();
             name += " Potion of ";
             name += ConvertEffectsToString();
 
             return name;
         }
 
-        private String ConvertRarityToString()
+        public int GeneratePrice()
         {
-            String rarityString = "";
+            int newPrice = 0;
+            foreach(Ingredient ing in components)
+            {
+                newPrice += ing.price;
+            }
+            newPrice = newPrice * (int)GenerateRarity();
+            return newPrice;
+        }
 
-            if (rarity == Rarity.Rubbish) { rarityString = "Rubbish"; }
-            else if (rarity == Rarity.Inferior) { rarityString = "Inferior"; }
-            else if (rarity == Rarity.Common) { rarityString = "Common"; }
-            else if (rarity == Rarity.Uncommon) { rarityString = "Uncommon"; }
-            else if (rarity == Rarity.Rare) { rarityString = "Rare"; }
-            else if (rarity == Rarity.Legendary) { rarityString = "Legendary"; }
-            else if (rarity == Rarity.Godlike) { rarityString = "Godlike"; }
-
-            return rarityString;
+        public Rarity GenerateRarity()
+        {
+            Rarity highestRarity = Rarity.Rubbish;
+            foreach(Ingredient ingredient in this.components)
+            {
+                if(ingredient.rarity > highestRarity)
+                {
+                    highestRarity = ingredient.rarity;
+                }
+            }
+            return highestRarity;
         }
 
         private String ConvertEffectsToString()

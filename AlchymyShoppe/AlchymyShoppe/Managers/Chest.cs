@@ -26,7 +26,7 @@ namespace AlchymyShoppe
             else
             {
                 //Default if something goes wrong reading information.
-                return new Player("Player1",250);
+                return new Player("Player1", 250);
             }
         }
         private Player loadPlayer(string folderLocation)
@@ -155,32 +155,19 @@ namespace AlchymyShoppe
             List<string> inventoryContents = serializeInventory(currentInventory);
             string file = folderLocation + "/" + inventoryFile;
             StreamWriter writer = new StreamWriter(file);
-            foreach(string line in inventoryContents){
+            foreach (string line in inventoryContents)
+            {
                 writer.WriteLine(line);
             }
         }
         private List<string> serializePlayer(Player currentPlayer)
         {
-            
-            List<Ingredient> ingredients = new List<Ingredient>();
-            Regex regex = new Regex("(.*?), (.*?), (.*?), (.*?), (.*)\\n");
-
-            string[] lines = File.ReadAllLines("C:\\Users\\Laxdyn\\AlchemyLab\\alchemy-planner\\AlchymyShoppe\\AlchymyShoppe\\ingredients.txt");
-            foreach (string line in lines)
-            {
-                Match match = regex.Match(line);
-                if (match.Success)
-                {
-                    string name = match.Groups[1].Value,
-                        imagePath = match.Groups[2].Value;
-                    int price = int.Parse(match.Groups[3].Value);
-                    Rarity rarity = getRarity(match.Groups[4].Value);
-                    AlchymicEffect effects = (AlchymicEffect)long.Parse(match.Groups[5].Value);
-                    Ingredient ingredient = new Ingredient(name, imagePath, price, rarity, effects);
-                }
-            }
-
-            return ingredients;
+            string name = currentPlayer.getName();
+            string gold = currentPlayer.getGold().ToString();
+            List<string> temp = new List<string>();
+            temp.Add(name);
+            temp.Add(gold);
+            return temp;
         }
         private List<string> serializeRecipeBook(RecipeBook currentBook)
         {

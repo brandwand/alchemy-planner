@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AlchymyShoppe
 {
-    class AlchymyTable : INotifyPropertyChanged
+    public class AlchymyTable : INotifyPropertyChanged
     {
 
         #region PropertyChanged
@@ -30,6 +30,7 @@ namespace AlchymyShoppe
         private Ingredient ingredient1;
         private Ingredient ingredient2;
         private Ingredient ingredient3;
+        private List<Ingredient> ingredients;
         private Potion craftedPotion;
 
         public Ingredient Ingredient1
@@ -76,69 +77,55 @@ namespace AlchymyShoppe
             this.ingredient2 = ingredient2;
             this.ingredient3 = ingredient3;
             this.craftedPotion = potion;
+
+            this.ingredients = new List<Ingredient>();
+            this.ingredients.Add(ingredient1);
+            this.ingredients.Add(ingredient2);
+            this.ingredients.Add(ingredient3);
         }
 
 
 
         public void craftPotion()
         {
-            List<Ingredient> ingredients = new List<Ingredient>();
-            ingredients.Add(Ingredient1);
-            ingredients.Add(Ingredient2);
-            ingredients.Add(Ingredient3);
-            List<AlchymicEffect> ingredientsEffects = ingredientEffectConverter(ingredients);
-            craftedPotion.effects = Brew(ingredientsEffects);
-        }
-        /// <summary>
-        /// Takes in an array of AlchymicEffects and crafts them into a Potion
-        /// </summary>
-        /// <param name="effects"></param>
-        /// <returns></returns>\
-        public AlchymicEffect Brew(params AlchymicEffect[] effects)
-        {
-            //Convert effects into a List
-            List<AlchymicEffect> effectsList = new List<AlchymicEffect>();
-            foreach (AlchymicEffect effect in effects)
-            {
-                effectsList.Add(effect);
-            }
-            return Brew(effectsList);
+            
+            craftedPotion.effects = Brew();
+            craftedPotion.rarity = craftedPotion.GenerateRarity();
+            craftedPotion.price = craftedPotion.GeneratePrice();
+            craftedPotion.name = craftedPotion.GenerateName();
         }
 
-        public AlchymicEffect Brew(List<AlchymicEffect> effects)
+        public AlchymicEffect Brew()
         {
-            //   List of effects that appear in the list more than once 
+            List<AlchymicEffect> effects = new List<AlchymicEffect>();
+            effects.Add(ingredient1.effects);
+            effects.Add(ingredient2.effects);
+            effects.Add(ingredient3.effects);
+
+            
+            craftedPotion.components = ingredients;
+
+            // List of effects that appear in the list more than once 
             // we're going to keep these
-           AlchymicEffect appearedMoreThanOnce = new AlchymicEffect();
+            AlchymicEffect appearedMoreThanOnce = new AlchymicEffect();
 
             // List that will save whether that ingredient has appeared yet
-            AlchymicEffect appearedOnce = new AlchymicEffect();
+            AlchymicEffect appearedOnce = 0;
                            
 
             foreach (AlchymicEffect effect in effects)
             {
                 if((appearedOnce & effect) > 0)
                 {
-                    appearedMoreThanOnce = appearedOnce & effect;
+                    appearedMoreThanOnce = appearedMoreThanOnce|(appearedOnce & effect);
                 } 
-                else{
-                    appearedOnce = appearedOnce ^ effect;
-                }
+                appearedOnce = appearedOnce | effect;
+                
             }
 
             return appearedMoreThanOnce;
         }
-
-
-        public List<AlchymicEffect> ingredientEffectConverter(List<Ingredient> ingredients)
-        {
-            List<AlchymicEffect> effectsList = new List<AlchymicEffect>();
-            foreach (Ingredient ingredient in ingredients)
-            {
-                effectsList.Add(ingredient.effects);
-            }
-            return effectsList;
-        }
+        
 
     }
 }
