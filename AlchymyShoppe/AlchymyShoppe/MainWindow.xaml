@@ -25,11 +25,14 @@
                             <ColumnDefinition Width="2*" />
                             <ColumnDefinition Width="2*" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="{Binding name}" Grid.Column="0" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
+                        <!--<controls:InventoryItem ItemName="{Binding name}" ItemPrice="{Binding price}" ItemRarity="{Binding rarity}"></controls:InventoryItem>-->
+                        <!--<TextBlock Text="{Binding name}" Grid.Column="0" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
                         <TextBlock Text="{Binding price}" Grid.Column="1" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
-                        <TextBlock Text="{Binding rarity}" Grid.Column="2" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
+                        <TextBlock Text="{Binding rarity}" Grid.Column="2" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />-->
+                        <TextBlock Text="{Binding }" Grid.Column="0" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
+
                     </Grid>
-               </DataTemplate>
+                </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
         <ListBox x:Name="listBox_Copy" HorizontalAlignment="Left" Height="100" Margin="157,336,0,0" VerticalAlignment="Top" Width="100" AllowDrop="True" Drop="listBox_Drop">
@@ -48,6 +51,5 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <!--<controls:InventoryDisplay/>-->
     </Grid>
 </Window>

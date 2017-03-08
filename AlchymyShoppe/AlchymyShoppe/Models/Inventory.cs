@@ -40,6 +40,10 @@ namespace AlchymyShoppe.Models
         {
 
         }
+        public void setitems(List<Item> items)
+        {
+            this.Items = items;
+        }
         public List<Item> getItems()
         {
             return this.Items;

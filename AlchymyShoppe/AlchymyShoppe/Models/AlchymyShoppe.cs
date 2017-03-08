@@ -8,7 +8,7 @@ namespace AlchymyShoppe.Models
 {
     public class AlchymyShoppe
     {
-        private Inventory itemsForSell;
+        private Inventory itemsForSell = new Inventory();
         public AlchymyShoppe()
         {
         

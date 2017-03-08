@@ -13,17 +13,50 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AlchymyShoppe;
+using System.ComponentModel;
 
 namespace AlchymyShoppe
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
+        #region PropertyChangedEvent
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
+        #endregion
+
+        private List<string> s1 = new List<string>();
+        private List<string> s2 = new List<string>();
+
         public ListBox dragSource = null;
-        public Inventory inv1 { get; set; } = new Inventory();
-        public Inventory inv2 { get; set; } = new Inventory();
+        public Models.Inventory inv1 { get; set; } = new Models.Inventory();
+        public Models.Inventory inv2 { get; set; } = new Models.Inventory();
+
+        public List<string> S1 { get{ return s1; }
+            set
+            {
+                s1 = value;
+                OnPropertyChanged("S1");
+            } }
+        public List<string> S2 { get { return s2; }
+            set
+            {
+                s2 = value;
+                OnPropertyChanged("S2");
+            } }
 
         public MainWindow()
         {
@@ -31,11 +64,19 @@ namespace AlchymyShoppe
             btnGold.DataContext = Models.WorldController.player;
             imgBackground.Source = AlchymyShoppe.Controls.ImageUtil.BitmapToImageSource(ImageResoures.hubScreenBackground);
 
-            inv1.addItemToInventory(new Ingredient("Ex: Dragon Heart", "Path", 5000, Rarity.Godlike, AlchymicEffect.RegenerateHealth | AlchymicEffect.Nightvision));
-            inv1.addItemToInventory(new Ingredient("Ex: Tunfra Cotton", "Path", 10, Rarity.Common, AlchymicEffect.RestoreHealth | AlchymicEffect.RestoreMana));
-            inv1.addItemToInventory(new Ingredient("Ex: Vampire Teeth", "Path", 750, Rarity.Rare, AlchymicEffect.DamageHealth | AlchymicEffect.Nightvision));
-            listBox.ItemsSource = inv1.getItems();
-            listBox_Copy.ItemsSource = inv2.getItems();
+            //inv1.addItemToInventory(new Models.Ingredient("Ex: Dragon Heart", "Path", 5000, Models.Rarity.Godlike, Models.AlchymicEffect.RegenerateHealth | Models.AlchymicEffect.Nightvision));
+            //inv1.addItemToInventory(new Models.Ingredient("Ex: Tunfra Cotton", "Path", 10, Models.Rarity.Common, Models.AlchymicEffect.RestoreHealth | Models.AlchymicEffect.RestoreMana));
+            //inv1.addItemToInventory(new Models.Ingredient("Ex: Vampire Teeth", "Path", 750, Models.Rarity.Rare, Models.AlchymicEffect.DamageHealth | Models.AlchymicEffect.Nightvision));
+            //listBox.ItemsSource = inv1.getItems();
+            //listBox_Copy.ItemsSource = inv2.getItems();
+
+            s1.Add("Hi 1");
+            s1.Add("Hi 2");
+            s1.Add("Hi 3");
+            s1.Add("Hi 4");
+            s1.Add("Hi 5");
+            listBox.ItemsSource = S1;
+            listBox_Copy.ItemsSource = S2;
         }
 
         private void btnAlchymyTable_Click(object sender, RoutedEventArgs e)
@@ -81,13 +122,25 @@ namespace AlchymyShoppe
 
         private void listBox_Drop(object sender, DragEventArgs e)
         {
+            //ListBox parent = (ListBox)sender;
+            //object data = (Controls.InventoryItem)e.Data.GetData(typeof(Controls.InventoryItem));
+            //Controls.InventoryItem item = (Controls.InventoryItem)data;
+            //string nam = item.ItemName;
+            //Models.Ingredient ing = new Models.Ingredient(((Controls.InventoryItem)data).ItemName, null, ((Controls.InventoryItem)data).ItemPrice, ((Controls.InventoryItem)data).ItemRarity, Models.AlchymicEffect.None);
+            //((IList)dragSource.ItemsSource).Remove(ing);
+            //List<Models.Item> inv = (List< Models.Item>)parent.ItemsSource;
+            //inv.Add(ing);
+            //parent.ItemsSource = inv;
+            //inv1.setitems(inv);
+
             ListBox parent = (ListBox)sender;
-            Controls.InventoryItem data = (Controls.InventoryItem)e.Data.GetData(typeof(Controls.InventoryItem));
+            object data = e.Data.GetData(typeof(string));
             ((IList)dragSource.ItemsSource).Remove(data);
-            List<Item> inv = (List<Item>)parent.ItemsSource;
-            //InventoryItem item = new Ingredient(((Ingredient)data).name, (data).imagePath, ((Item)data).price, ((Item)data).rarity);
-            //inv.Add((Item)data);
-            parent.ItemsSource = inv;
+            //List<string> s3 = (List<string>)parent.ItemsSource;
+            //s3.Add((string)data);
+            //parent.ItemsSource = s3;
+            //S2.Add((string)data);
+            parent.Items.Add("asdf");            
         }
     }
 }
