@@ -12,7 +12,7 @@ namespace AlchymyShoppe.Models
         private static double numOfHoursPast;
         public static double numOfHoursLeft;
         public static List<Ingredient> allIngredients;
-        
+
         static WorldController()
         {
             allIngredients = Chest.getMasterList();

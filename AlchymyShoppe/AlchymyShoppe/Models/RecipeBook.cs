@@ -68,12 +68,24 @@ namespace AlchymyShoppe.Models
             }
         }
         
-        public void serializeRecipeBook()
+        public String serializeRecipeBook()
         {
+            String recipeBook = "";
             foreach(KeyValuePair<AlchymicEffect, Dictionary<Ingredient, bool>> effect in this.recipes)
             {
-
+                recipeBook = String.Concat(recipeBook, effect.Key.ToString());
+                foreach(KeyValuePair<Ingredient, bool> ingredient in effect.Value)
+                {
+                    recipeBook = String.Concat(recipeBook, "," + ingredient.Key.ToString() + "," + ingredient.Value.ToString());
+                }
+                recipeBook = String.Concat(recipeBook, "\n");
             }
+            return recipeBook;
+        }
+
+        public void Deserialize(String rawData)
+        {
+
         }
     }
 }
