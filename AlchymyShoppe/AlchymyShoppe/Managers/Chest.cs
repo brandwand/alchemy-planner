@@ -50,7 +50,7 @@ namespace AlchymyShoppe
             stream.Close();
             return p;
         }
-        private Rarity getRarity(string rarity)
+        private static Rarity getRarity(string rarity)
         {
             Rarity temp;
             switch (rarity)
@@ -135,29 +135,26 @@ namespace AlchymyShoppe
             Stream stream = new FileStream(file, FileMode.Create, FileAccess.Write, FileShare.None);
             formatter.Serialize(stream, currentInventory);
         }
-        public List<Ingredient> getMasterList()
+        public static List<Ingredient> getMasterList()
         {
-            string pattern = "(.*?),(.*?),(.*?),(.*?),(.*)\n";
             List<string> temp = new List<string>();
-            StreamReader sr = new StreamReader(fileResources.ingredients);
-            while (!sr.EndOfStream)
+            StringReader sr = new StringReader(Resoures.ingredients);
+            string line = "";
+            do
             {
-                string line = sr.ReadLine();
-                temp.Add(line);
+                line = sr.ReadLine();
+                if (line != null)
+                {
+                    temp.Add(line);
+                }
             }
-            Regex r = new Regex(pattern);
-            Match m;
+            while (line != null);
             List<Ingredient> masterList = new List<Ingredient>();
-            foreach (string line in temp)
+            foreach (string lines in temp)
             {
-                m = r.Match(line);
+                var parts = lines.Split(',');
                 //Group[0] is resderved for the entire match;
-                masterList.Add(
-                new Ingredient(m.Groups[1].ToString(),
-                m.Groups[2].ToString(),
-                Int32.Parse(m.Groups[3].ToString()),
-                getRarity(m.Groups[4].ToString()),
-                (AlchymicEffect)Convert.ToInt64(m.Groups[5].Value)));
+                masterList.Add(new Ingredient(parts[0], parts[1], Int32.Parse(parts[2]), getRarity(parts[3]), (AlchymicEffect)Convert.ToInt64(parts[4])));
             }
             return masterList;
         }

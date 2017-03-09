@@ -46,13 +46,17 @@ namespace AlchymyShoppe.Models
         private List<Item> generateRandomeInventory()
         {
             Random rand = new Random();
-            List<Ingredient> newPlayerIngredients;
+            List<Ingredient> newPlayerIngredients = new List<Ingredient>();
             for(int i = 0; i < 15; i++)
             {
                 int temp = rand.Next(WorldController.allIngredients.Count);
-
+                int numOfItem = rand.Next(3) + 1;
+                for (int j = 0; j < numOfItem; j++)
+                {
+                    newPlayerIngredients.Add(WorldController.allIngredients[temp]);
+                }
             }
-            return newPlayerIngredients;
+            return newPlayerIngredients.Cast<Item>().ToList();
         }
         //for displaying to the window not sure how to do
         public void ShowInventory()

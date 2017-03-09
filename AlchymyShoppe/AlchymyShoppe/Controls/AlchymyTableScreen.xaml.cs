@@ -24,8 +24,8 @@ namespace AlchymyShoppe.Controls
         {
             InitializeComponent();
             btnGold.DataContext = Models.WorldController.player;
-            imgBackground.Source = ImageUtil.BitmapToImageSource(ImageResoures.alchymyTableScreenBackground);
-            idInventory.InventorySource = Models.WorldController.player.getInventory();
+            imgBackground.Source = ImageUtil.BitmapToImageSource(Resoures.alchymyTableScreenBackground);
+//            idInventory.InventorySource = Models.WorldController.player.getInventory();
         }
 
         private void btnNext_Click(object sender, RoutedEventArgs e)

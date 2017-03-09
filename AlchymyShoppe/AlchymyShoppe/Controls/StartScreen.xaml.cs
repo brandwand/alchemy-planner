@@ -23,7 +23,7 @@ namespace AlchymyShoppe.Controls
         public StartScreen()
         {
             InitializeComponent();
-            imgBackground.Source = ImageUtil.BitmapToImageSource(ImageResoures.startScreenBackground);
+            imgBackground.Source = ImageUtil.BitmapToImageSource(Resoures.startScreenBackground);
         }
 
         private void btnLoadGame_Click(object sender, RoutedEventArgs e)

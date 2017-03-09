@@ -88,10 +88,10 @@
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\RecipeBook.cs" />
     <Compile Include="Models\WorldController.cs" />
-    <Compile Include="ImageResoures.Designer.cs">
+    <Compile Include="Resoures.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ImageResoures.resx</DependentUpon>
+      <DependentUpon>Resoures.resx</DependentUpon>
     </Compile>
     <Page Include="Controls\AlchymyShoppeScreen.xaml">
       <SubType>Designer</SubType>
@@ -159,9 +159,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageResoures.resx">
+    <EmbeddedResource Include="Resoures.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ImageResoures.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resoures.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">

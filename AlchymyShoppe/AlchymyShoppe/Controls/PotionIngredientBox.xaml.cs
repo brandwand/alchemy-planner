@@ -54,7 +54,7 @@ namespace AlchymyShoppe.Controls
 
         public void LoadPlaceholderImage()
         {
-            imgIngredient.Source = ImageUtil.BitmapToImageSource(ImageResoures.emptyBoxFiller);
+            imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.emptyBoxFiller);
         }
     }
 }
