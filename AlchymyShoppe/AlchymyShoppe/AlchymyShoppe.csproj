@@ -174,9 +174,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Sprites\ingredientPlaceholder.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="TextFiles\ingredients.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
