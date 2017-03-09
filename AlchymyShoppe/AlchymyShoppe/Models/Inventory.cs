@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,27 +12,36 @@ namespace AlchymyShoppe.Models
 
         public string Name { get; set; } = "Default";
 
-        private List<Item> Items = new List<Item>();
+        private ObservableCollection<Item> Items = new ObservableCollection<Item>();
         //Gold is no longer part of the inventory
         public Inventory()
         {
             //this.Items = generateRandomeInventory();
         }
-        public Inventory(List<Item> ItemsForStartingInventory)
+        public Inventory(ObservableCollection<Item> ItemsForStartingInventory)
         {
             this.Items = ItemsForStartingInventory;
+        }
+        public Inventory(List<Item> ItemsForStartingInventory)
+        {
+            ObservableCollection<Item> items = new ObservableCollection<Item>();
+            foreach(Item item in ItemsForStartingInventory)
+            {
+                items.Add(item);
+            }
+            this.Items = items;
         }
         public Inventory(string name)
         {
             Name = name;
             //this.Items = generateRandomeInventory();
         }
-        public Inventory(string name, List<Item> ItemsForStartingInventory)
+        public Inventory(string name, ObservableCollection<Item> ItemsForStartingInventory)
         {
             Name = name;
             this.Items = ItemsForStartingInventory;
         }
-        private List<Item> generateRandomeInventory()
+        private ObservableCollection<Item> generateRandomeInventory()
         {
             throw new NotImplementedException();
         }
@@ -40,11 +50,11 @@ namespace AlchymyShoppe.Models
         {
 
         }
-        public void setitems(List<Item> items)
+        public void setitems(ObservableCollection<Item> items)
         {
             this.Items = items;
         }
-        public List<Item> getItems()
+        public ObservableCollection<Item> getItems()
         {
             return this.Items;
         }

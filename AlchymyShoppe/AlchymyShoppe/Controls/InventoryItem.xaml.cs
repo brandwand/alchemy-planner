@@ -36,9 +36,9 @@ namespace AlchymyShoppe.Controls
 
         #endregion
 
-        private string itemName = "";
-        private int itemPrice = 0;
-        private Models.Rarity itemRarity;
+        //private string itemName = "";
+        //private int itemPrice = 0;
+        //private Models.Rarity itemRarity;
 
         //#region PropertyChangedProperties
 
@@ -50,6 +50,7 @@ namespace AlchymyShoppe.Controls
             set
             {
                 this.SetValue(ItemNameProperty, value);
+                tblName.Text = ItemName;
                 //itemName = value;
                 //OnPropertyChanged("ItemName");
             }
@@ -60,6 +61,7 @@ namespace AlchymyShoppe.Controls
             set
             {
                 this.SetValue(ItemPriceProperty, value);
+                tblPrice.Text = ItemPrice.ToString();
                 //itemPrice = value;
                 //OnPropertyChanged("ItemPrice");
             }
@@ -70,6 +72,7 @@ namespace AlchymyShoppe.Controls
             set
             {
                 this.SetValue(ItemRarityProperty, value);
+                tblRarity.Text = ItemRarity.ToString();
                 //itemRarity = value;
                 //OnPropertyChanged("ItemRarity");
             }

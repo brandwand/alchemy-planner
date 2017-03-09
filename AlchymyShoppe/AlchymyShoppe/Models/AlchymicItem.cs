@@ -10,8 +10,6 @@ namespace AlchymyShoppe.Models
     {
         public AlchymicEffect effects { get; set; }
 
-
-
         public AlchymicItem(string name, String imagePath, int price, Rarity rarity, AlchymicEffect effects) : base(name, imagePath, price, rarity)
         {
             this.effects = effects;

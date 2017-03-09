@@ -22,6 +22,7 @@
         <Button x:Name="btnHallway" Content="Hallway" Margin="0,0,10,10" HorizontalAlignment="Right" Width="90" Height="50" VerticalAlignment="Bottom" FontFamily="Harrington" Background="Black" Foreground="#FF32DEFF" BorderBrush="#FF32DEFF" Click="btnNext_Click" FontSize="24"/>
         <Button x:Name="btnRecipes" Content="Recipes..." HorizontalAlignment="Left" Height="72" Margin="336,43,0,0" VerticalAlignment="Top" Width="90" FontFamily="Harrington" FontSize="18" Background="Black" BorderBrush="#FF32DEFF" Foreground="#FF32DEFF"/>
         <Button x:Name="btnClear" Content="Clear" Height="72" Margin="333,497,377,0" VerticalAlignment="Top" FontFamily="Harrington" FontSize="18" Background="Black" BorderBrush="#FF32DEFF" Foreground="#FF32DEFF"/>
-        <controls:InventoryDisplay x:Name="idInventory" Margin="21,57,491,0" VerticalAlignment="Top" Height="431"/>
+        <TextBox x:Name="tbInventoryName" Text="Inventory Name" Height="Auto" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Harrington" FontSize="22" Background="Black" BorderBrush="#FF32DEFF" Foreground="#FF32DEFF" Padding="10,0,0,0" Margin="22,58,492,0"/>
+        
     </Grid>
 </UserControl>
