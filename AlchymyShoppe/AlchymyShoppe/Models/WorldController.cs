@@ -15,7 +15,7 @@ namespace AlchymyShoppe.Models
 
         static WorldController()
         {
-            player = new Player("Frank", new Random().Next(10, 999));
+            allIngredients = Chest.getMasterList();
         }
 
         public static void timeChange(double amountOfTime)

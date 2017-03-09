@@ -13,28 +13,31 @@ namespace AlchymyShoppe.Models
         public string Name { get; set; } = "Default";
 
         private ObservableCollection<Item> Items = new ObservableCollection<Item>();
+        private List<Ingredient> Ingredients;
+        private List<Potion> Potions;
+        private List<MundaneItem> RegularItems;
         //Gold is no longer part of the inventory
         public Inventory()
         {
-            //this.Items = generateRandomeInventory();
+            this.Items = generateRandomeInventory();
         }
         public Inventory(ObservableCollection<Item> ItemsForStartingInventory)
         {
             this.Items = ItemsForStartingInventory;
         }
-        public Inventory(List<Item> ItemsForStartingInventory)
+        public Inventory(List<Ingredient> ItemsForStartingInventory, List<Potion> PotionsForStartingInventory, List<MundaneItem> regurlarItemsForStartingInventory)
         {
-            ObservableCollection<Item> items = new ObservableCollection<Item>();
-            foreach(Item item in ItemsForStartingInventory)
-            {
-                items.Add(item);
-            }
-            this.Items = items;
+            this.Ingredients = ItemsForStartingInventory;
+            this.Potions = PotionsForStartingInventory;
+            this.RegularItems = regurlarItemsForStartingInventory;
+            this.Items.Concat(Ingredients);
+            this.Items.Concat(Potions);
+            this.Items.Concat(RegularItems);
         }
         public Inventory(string name)
         {
             Name = name;
-            //this.Items = generateRandomeInventory();
+            this.Items = generateRandomeInventory();
         }
         public Inventory(string name, ObservableCollection<Item> ItemsForStartingInventory)
         {
@@ -43,7 +46,18 @@ namespace AlchymyShoppe.Models
         }
         private ObservableCollection<Item> generateRandomeInventory()
         {
-            throw new NotImplementedException();
+            Random rand = new Random();
+            List<Ingredient> newPlayerIngredients = new List<Ingredient>();
+            for(int i = 0; i < 15; i++)
+            {
+                int temp = rand.Next(WorldController.allIngredients.Count);
+                int numOfItem = rand.Next(3) + 1;
+                for (int j = 0; j < numOfItem; j++)
+                {
+                    newPlayerIngredients.Add(WorldController.allIngredients[temp]);
+                }
+            }
+            return newPlayerIngredients.Cast<Item>().ToList();
         }
         //for displaying to the window not sure how to do
         public void ShowInventory()

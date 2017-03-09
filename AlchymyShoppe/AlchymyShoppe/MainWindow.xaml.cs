@@ -74,7 +74,7 @@ namespace AlchymyShoppe
         {
             InitializeComponent();
             btnGold.DataContext = Models.WorldController.player;
-            imgBackground.Source = AlchymyShoppe.Controls.ImageUtil.BitmapToImageSource(ImageResoures.hubScreenBackground);
+            imgBackground.Source = AlchymyShoppe.Controls.ImageUtil.BitmapToImageSource(Resoures.hubScreenBackground);
 
             inv1.addItemToInventory(new Models.Ingredient("Ex: Dragon Heart", "Path", 5000, Models.Rarity.Godlike, Models.AlchymicEffect.RegenerateHealth | Models.AlchymicEffect.Nightvision));
             inv1.addItemToInventory(new Models.Ingredient("Ex: Tunfra Cotton", "Path", 10, Models.Rarity.Common, Models.AlchymicEffect.RestoreHealth | Models.AlchymicEffect.RestoreMana));
@@ -180,6 +180,12 @@ namespace AlchymyShoppe
 
                 }
             }
+        }
+
+        private void btnTravelingMerchant_Click(object sender, RoutedEventArgs e)
+        {
+            //TravelingMerchantScreen.Update();
+            TravelingMerchantScreen.Visibility = Visibility.Visible;
         }
     }
 }

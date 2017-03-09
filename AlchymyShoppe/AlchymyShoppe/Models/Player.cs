@@ -94,6 +94,5 @@ namespace AlchymyShoppe.Models
         {
             inventory.addItemToInventory(item);
         }
-
     }
 }

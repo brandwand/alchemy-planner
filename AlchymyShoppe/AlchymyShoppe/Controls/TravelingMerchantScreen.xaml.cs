@@ -25,5 +25,11 @@ namespace AlchymyShoppe.Controls
             InitializeComponent();
 //            imgBackground.Source = ImageUtil.BitmapToImageSource(ImageResoures.travelingMerchantScreenBackground);
         }
+
+        private void btnHallway_Click(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Collapsed;
+
+        }
     }
 }

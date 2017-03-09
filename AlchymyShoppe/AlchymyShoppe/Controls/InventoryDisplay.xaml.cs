@@ -30,7 +30,7 @@ namespace AlchymyShoppe.Controls
         public InventoryDisplay()
         {
             InitializeComponent();
-            InventorySource = Models.WorldController.player.getInventory();
+//            InventorySource = Models.WorldController.player.getInventory();
             tbInventoryName.Text = InventorySource.Name;
 
             InventorySource.addItemToInventory(new Models.Ingredient("Ex: Dragon Heart", "Path", 5000, Models.Rarity.Godlike, Models.AlchymicEffect.RegenerateHealth | Models.AlchymicEffect.Nightvision));

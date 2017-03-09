@@ -22,14 +22,14 @@ namespace AlchymyShoppe {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ImageResoures {
+    internal class Resoures {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ImageResoures() {
+        internal Resoures() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace AlchymyShoppe {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AlchymyShoppe.ImageResoures", typeof(ImageResoures).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AlchymyShoppe.Resoures", typeof(Resoures).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -107,6 +107,23 @@ namespace AlchymyShoppe {
             get {
                 object obj = ResourceManager.GetObject("hubScreenBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Koro Tentacle,fish.png,3500,Godlike,0011000010010000
+        ///Odin&apos;s Raven,bird.png,3200,Godlike,0100001001000100
+        ///Beard of Zeus,humanoid.png,3000,Godlike,001100001001000
+        ///Krebsinator Fur,beast.png,2800,Legendary,0000001100001001
+        ///Sorceror&apos;s Brain,humanoid.png,2700,Legendary,0100000011000010
+        ///Transtemporal Residue,powder.png,2500,Legendary,0001000000110000
+        ///Arachnus Maximus Silk,insect.png,2400,Legendary,0010010000001100
+        ///Merlin&apos;s Robe,cloth.png,2300,Legendary,0000100100000011
+        ///Basilisk Eye,reptile.png,2200,Legenda [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ingredients {
+            get {
+                return ResourceManager.GetString("ingredients", resourceCulture);
             }
         }
         
