@@ -29,14 +29,14 @@ namespace AlchymyShoppe.Controls
         public InventoryDisplay()
         {
             InitializeComponent();
-            InventorySource = Models.WorldController.player.getInventory();
-            tbInventoryName.Text = InventorySource.Name;
+            //InventorySource = Models.WorldController.player.getInventory();
+            //tbInventoryName.Text = InventorySource.Name;
 
-            InventorySource.addItemToInventory(new Models.Ingredient("Ex: Dragon Heart", "Path", 5000, Models.Rarity.Godlike, Models.AlchymicEffect.RegenerateHealth | Models.AlchymicEffect.Nightvision));
-            InventorySource.addItemToInventory(new Models.Ingredient("Ex: Tunfra Cotton", "Path", 10, Models.Rarity.Common, Models.AlchymicEffect.RestoreHealth | Models.AlchymicEffect.RestoreMana));
-            InventorySource.addItemToInventory(new Models.Ingredient("Ex: Vampire Teeth", "Path", 750, Models.Rarity.Rare, Models.AlchymicEffect.DamageHealth | Models.AlchymicEffect.Nightvision));
+            //InventorySource.addItemToInventory(new Models.Ingredient("Ex: Dragon Heart", "Path", 5000, Models.Rarity.Godlike, Models.AlchymicEffect.RegenerateHealth | Models.AlchymicEffect.Nightvision));
+            //InventorySource.addItemToInventory(new Models.Ingredient("Ex: Tunfra Cotton", "Path", 10, Models.Rarity.Common, Models.AlchymicEffect.RestoreHealth | Models.AlchymicEffect.RestoreMana));
+            //InventorySource.addItemToInventory(new Models.Ingredient("Ex: Vampire Teeth", "Path", 750, Models.Rarity.Rare, Models.AlchymicEffect.DamageHealth | Models.AlchymicEffect.Nightvision));
 
-            lbInventory.ItemsSource = InventorySource.getItems();
+            //lbInventory.ItemsSource = InventorySource.getItems();
         }
     }
 }

@@ -83,7 +83,7 @@ namespace AlchymyShoppe.Tests
 
             AlchymyShoppe.Models.Potion potion = new Potion("PotionX", "", 200, rarity, ingredients, effect);
             alchShoppe.addPlayerGold(player, potion);
-            Assert.IsTrue(player.Gold == 256, "Failed To Add");
+            Assert.IsTrue(player.Gold == 656, "Failed To Add");
         }
 
         [TestMethod()]

@@ -90,5 +90,11 @@ namespace AlchymyShoppe
             //inv.Add((Item)data);
             parent.ItemsSource = inv;
         }
+
+        private void btnTravelingMerchant_Click(object sender, RoutedEventArgs e)
+        {
+            //TravelingMerchantScreen.Update();
+            TravelingMerchantScreen.Visibility = Visibility.Visible;
+        }
     }
 }
