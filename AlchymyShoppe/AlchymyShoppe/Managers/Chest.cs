@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -17,6 +19,7 @@ namespace AlchymyShoppe
         private string inventoryFile = "Inventory.txt";
         private string recipeBookFile = "RecipeBook.txt";
         private string saveDataLocation = System.IO.Path.Combine(currentDirectory, "SaveData");
+        IFormatter formatter = new BinaryFormatter();
         public Player loadGame(string folderLocation)
         {
             if (Directory.Exists(folderLocation))
@@ -32,41 +35,22 @@ namespace AlchymyShoppe
         private Player loadPlayer(string folderLocation)
         {
             string file = System.IO.Path.Combine(folderLocation, playerFile);
-            StreamReader sr = new StreamReader(file);
-            string rawData = sr.ReadToEnd();
-            string playerName = "";
-            string gold = "";
-            deserializePlayer(rawData, out playerName, out gold);
-            Player p = new Player(playerName, Int32.Parse(gold));
-            p.setInventory(loadInventory(sr));
-            p.setPlayerBook(loadBook(sr));
+            Stream stream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.Read);
+            Player p = (Player)formatter.Deserialize(stream);
+            stream.Close();
+            p.setInventory(loadInventory(folderLocation));
+            p.setPlayerBook(loadBook(folderLocation));
             return p;
         }
-        private Inventory loadInventory(StreamReader sr)
+        private Inventory loadInventory(String folderLocation)
         {
-            string pattern = "(.*?),(.*?),(.*?),(.*?),(.*)\n";
-            List<string> temp = new List<string>();
-            while (!sr.EndOfStream)
-            {
-                string line = sr.ReadLine();
-                temp.Add(line);
-            }
-            Regex r = new Regex(pattern);
-            Match m;
-            List<Ingredient> loadedIngredients = new List<Ingredient>();
-            foreach (string line in temp)
-            {
-                m = r.Match(line);
-                loadedIngredients.Add(
-                new Ingredient(m.Groups[0].ToString(),
-                    m.Groups[1].ToString(),
-                    Int32.Parse(m.Groups[2].ToString()),
-                    getRarity(m.Groups[3].ToString()),
-                    (AlchymicEffect)Convert.ToInt64(m.Groups[4].Value)));
-            }
-            return new Inventory(loadedIngredients.Cast<Item>().ToList());
+            string file = System.IO.Path.Combine(folderLocation, inventoryFile);
+            Stream stream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.Read);
+            Inventory p = (Inventory)formatter.Deserialize(stream);
+            stream.Close();
+            return p;
         }
-        private Rarity getRarity(string rarity)
+        private static Rarity getRarity(string rarity)
         {
             Rarity temp;
             switch (rarity)
@@ -101,13 +85,13 @@ namespace AlchymyShoppe
             }
             return temp;
         }
-        private RecipeBook loadBook(StreamReader sr)
+        private RecipeBook loadBook(String folderLocation)
         {
-            throw new NotImplementedException();
-        }
-        private void deserializePlayer(string rawData, out string playerName, out string gold)
-        {
-            throw new NotImplementedException();
+            string file = System.IO.Path.Combine(folderLocation, recipeBookFile);
+            Stream stream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.Read);
+            RecipeBook p = (RecipeBook)formatter.Deserialize(stream);
+            stream.Close();
+            return p;
         }
         public void saveGame(string folderLocation, Player currentPlayer)
         {
@@ -132,52 +116,47 @@ namespace AlchymyShoppe
         }
         private void savePlayer(string folderLocation, Player currentPlayer)
         {
-            List<string> playerContents = serializePlayer(currentPlayer);
             string file = folderLocation + "/" + inventoryFile;
             StreamWriter writer = new StreamWriter(file);
-            foreach (string line in playerContents)
-            {
-                writer.WriteLine(line);
-            }
+            Stream stream = new FileStream(file, FileMode.Create, FileAccess.Write, FileShare.None);
+            formatter.Serialize(stream, currentPlayer);
         }
         private void saveRecipeBook(string folderLocation, RecipeBook currentBook)
         {
-            List<string> bookContents = serializeRecipeBook(currentBook);
-            string file = folderLocation + "/" + recipeBookFile;
+            string file = folderLocation + "/" + inventoryFile;
             StreamWriter writer = new StreamWriter(file);
-            foreach (string line in bookContents)
-            {
-                writer.WriteLine(line);
-            }
+            Stream stream = new FileStream(file, FileMode.Create, FileAccess.Write, FileShare.None);
+            formatter.Serialize(stream, currentBook);
         }
         private void saveInventory(string folderLocation, Inventory currentInventory)
         {
-            List<string> inventoryContents = serializeInventory(currentInventory);
             string file = folderLocation + "/" + inventoryFile;
             StreamWriter writer = new StreamWriter(file);
-            foreach (string line in inventoryContents)
+            Stream stream = new FileStream(file, FileMode.Create, FileAccess.Write, FileShare.None);
+            formatter.Serialize(stream, currentInventory);
+        }
+        public static List<Ingredient> getMasterList()
+        {
+            List<string> temp = new List<string>();
+            StringReader sr = new StringReader(Resoures.ingredients);
+            string line = "";
+            do
             {
-                writer.WriteLine(line);
+                line = sr.ReadLine();
+                if (line != null)
+                {
+                    temp.Add(line);
+                }
             }
-        }
-        private List<string> serializePlayer(Player currentPlayer)
-        {
-            string name = currentPlayer.getName();
-            string gold = currentPlayer.getGold().ToString();
-            List<string> temp = new List<string>();
-            temp.Add(name);
-            temp.Add(gold);
-            return temp;
-        }
-        private List<string> serializeRecipeBook(RecipeBook currentBook)
-        {
-            throw new NotImplementedException();
-        }
-        private List<string> serializeInventory(Inventory currentInventory)
-        {
-            List<string> temp = new List<string>();
-
-            throw new NotImplementedException();
+            while (line != null);
+            List<Ingredient> masterList = new List<Ingredient>();
+            foreach (string lines in temp)
+            {
+                var parts = lines.Split(',');
+                //Group[0] is resderved for the entire match;
+                masterList.Add(new Ingredient(parts[0], parts[1], Int32.Parse(parts[2]), getRarity(parts[3]), (AlchymicEffect)Convert.ToInt64(parts[4])));
+            }
+            return masterList;
         }
     }
 }

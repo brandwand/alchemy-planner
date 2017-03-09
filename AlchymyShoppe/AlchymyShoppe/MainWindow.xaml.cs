@@ -30,7 +30,7 @@ namespace AlchymyShoppe
         {
             InitializeComponent();
             btnGold.DataContext = Models.WorldController.player;
-            imgBackground.Source = AlchymyShoppe.Controls.ImageUtil.BitmapToImageSource(ImageResoures.hubScreenBackground);
+            imgBackground.Source = AlchymyShoppe.Controls.ImageUtil.BitmapToImageSource(Resoures.hubScreenBackground);
 
             inv1.addItemToInventory(new Ingredient("Ex: Dragon Heart", "Path", 5000, Rarity.Godlike, AlchymicEffect.RegenerateHealth | AlchymicEffect.Nightvision));
             inv1.addItemToInventory(new Ingredient("Ex: Tunfra Cotton", "Path", 10, Rarity.Common, AlchymicEffect.RestoreHealth | AlchymicEffect.RestoreMana));
