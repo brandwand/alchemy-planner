@@ -23,9 +23,9 @@ namespace AlchymyShoppe.Controls
         public AlchymyTableScreen()
         {
             InitializeComponent();
-            btnGold.DataContext = Models.WorldController.player;
+            //btnGold.DataContext = Models.WorldController.player;
             imgBackground.Source = ImageUtil.BitmapToImageSource(Resoures.alchymyTableScreenBackground);
-//            idInventory.InventorySource = Models.WorldController.player.getInventory();
+            //idInventory.InventorySource = Models.WorldController.player.getInventory();
         }
 
         private void btnNext_Click(object sender, RoutedEventArgs e)
@@ -35,7 +35,32 @@ namespace AlchymyShoppe.Controls
 
         public void Update()
         {
-            //playerInventoryDisplay. WorldController.Player.Inventory.items
+            //playerInventoryDisplay.WorldController.Player.Inventory.items;
+        }
+
+        private void lbInventory_Drop(object sender, DragEventArgs e)
+        {
+
+        }
+
+        private void lbInventory_MouseEnter(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void lbInventory_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void ingB_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void ingB_Drop(object sender, DragEventArgs e)
+        {
+
         }
     }
 }

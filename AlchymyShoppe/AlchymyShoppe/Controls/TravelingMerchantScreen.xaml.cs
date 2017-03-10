@@ -23,7 +23,8 @@ namespace AlchymyShoppe.Controls
         public TravelingMerchantScreen()
         {
             InitializeComponent();
-//            imgBackground.Source = ImageUtil.BitmapToImageSource(ImageResoures.travelingMerchantScreenBackground);
+              imgBackground.Source = ImageUtil.BitmapToImageSource(Resoures.buying);
+            btnGold.DataContext = Models.WorldController.player.Gold;
         }
 
         private void btnHallway_Click(object sender, RoutedEventArgs e)
@@ -31,5 +32,6 @@ namespace AlchymyShoppe.Controls
             this.Visibility = Visibility.Collapsed;
 
         }
+
     }
 }

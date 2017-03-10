@@ -32,14 +32,26 @@ namespace AlchymyShoppe.Controls
             set
             {
                 craftingIngedient = value;
+                LoadImage();
+            }
+        }
+
+        private void LoadImage()
+        {
+            if(CraftingIngredient != null)
+            {
                 LoadIngredientImage();
+            }
+            else
+            {
+                UnloadIngredientImage();
             }
         }
 
         public PotionIngredientBox()
         {
             InitializeComponent();
-            LoadPlaceholderImage();
+            imgIngredientBackground.Source = ImageUtil.BitmapToImageSource(Resoures.emptyBoxFiller);
         }
 
         public void LoadIngredient(Ingredient ingredient)
@@ -52,9 +64,9 @@ namespace AlchymyShoppe.Controls
             imgIngredient.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), CraftingIngredient.imagePath));
         }
 
-        public void LoadPlaceholderImage()
+        public void UnloadIngredientImage()
         {
-            imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.emptyBoxFiller);
+            imgIngredient.Source = null;
         }
     }
 }

@@ -77,11 +77,11 @@ namespace AlchymyShoppe.Models
             ObservableCollection<Item> newPlayerIngredients = new ObservableCollection<Item>();
             for(int i = 0; i < 15; i++)
             {
-                int temp = rand.Next(WorldController.allIngredients.Count);
+         //       int temp = rand.Next(WorldController.allIngredients.Count);
                 int numOfItem = rand.Next(3) + 1;
                 for (int j = 0; j < numOfItem; j++)
                 {
-                    newPlayerIngredients.Add(WorldController.allIngredients[temp]);
+           //         newPlayerIngredients.Add(WorldController.allIngredients[temp]);
                 }
             }
             return newPlayerIngredients;

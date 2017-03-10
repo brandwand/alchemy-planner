@@ -68,6 +68,9 @@
     <Compile Include="Controls\InventoryItem.xaml.cs">
       <DependentUpon>InventoryItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\PotionBox.xaml.cs">
+      <DependentUpon>PotionBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\PotionIngredientBox.xaml.cs">
       <DependentUpon>PotionIngredientBox.xaml</DependentUpon>
     </Compile>
@@ -106,6 +109,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\InventoryItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PotionBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -186,7 +193,6 @@
     <Resource Include="Images\Backgrounds\hubScreenBackground.jpg" />
     <Resource Include="Images\Backgrounds\magicCircle.png" />
     <Resource Include="Images\Backgrounds\startScreenBackground.jpg" />
-    <Resource Include="Images\Sprites\alchemy.png" />
     <Resource Include="Images\Sprites\ingredientPlaceholder.png" />
     <Resource Include="ingredients.txt" />
     <Resource Include="Resources\emptyBoxFiller.jpg" />
@@ -205,6 +211,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Sprites\raven.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Sprites\potion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Sprites\alchemy.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
