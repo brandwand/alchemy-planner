@@ -1,5 +1,5 @@
-Koro Tentacle,fish.png,3500,Godlike,0011000010010000
-Odin's Raven,raven.png,3200,Godlike,0100001001000100
+Koro Tentacle,KoroTentacle.png,3500,Godlike,0011000010010000
+Odin's Raven,raven.jpg,3200,Godlike,0100001001000100
 Beard of Zeus,humanoid.png,3000,Godlike,001100001001000
 Krebsinator Fur,beast.png,2800,Legendary,0000001100001001
 Sorceror's Brain,humanoid.png,2700,Legendary,0100000011000010
@@ -34,7 +34,7 @@ White Bat Wing,beast.png,550,Common,0101000100000100
 Holker Steak,beast.png,550,Common,0000001100001001
 Ghoul Eye,beast.png,500,Common,0000011000011000
 Thick Cloth,cloth.png,500,Common,0001000010100100
-Powdered Niceness,powder.png,500,0010100001001000
+Powdered Niceness,nice.jpg,500,0010100001001000
 Northern Wastes Dirt,powder.png,500,Common,0001010001001000
 Bear Paw,beast.png,450,Common,0000010100001100
 Eagle Egg,eagleegg.png,400,Common,0001000100000011
@@ -54,3 +54,4 @@ Toadstool,plant.png,150,Rubbish,0000000111100000
 Sea Salt,powder.png,100,Rubbish,0010000011100000
 Butterfly Wing,insect.png,100,Rubbish,0010000111000000
 Karp Scale,fish.png,50,Rubbish,0011000110000000
+Powdered Profanity,bad.jpg,500,0010100001001000
