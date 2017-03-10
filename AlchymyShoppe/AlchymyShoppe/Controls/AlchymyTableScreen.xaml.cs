@@ -186,5 +186,13 @@ namespace AlchymyShoppe.Controls
             if (ingB1.CraftingIngredient != null  && ingB2.CraftingIngredient != null && ingB3.CraftingIngredient != null)
                 pbxPotion.imgPotion.Source = ImageUtil.BitmapToImageSource(Resoures.potion);
         }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            ingB1.CraftingIngredient = null;
+            ingB2.CraftingIngredient = null;
+            ingB3.CraftingIngredient = null;
+            pbxPotion.imgPotion.Source = null;
+        }
     }
 }
