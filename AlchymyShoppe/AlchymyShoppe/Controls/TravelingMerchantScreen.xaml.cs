@@ -25,11 +25,6 @@ namespace AlchymyShoppe.Controls
             InitializeComponent();
             imgBackground.Source = ImageUtil.BitmapToImageSource(Resoures.buying);
         }
-        {
-            InitializeComponent();
-              imgBackground.Source = ImageUtil.BitmapToImageSource(Resoures.buying);
-            btnGold.DataContext = Models.WorldController.player.Gold;
-        }
 
         private void btnHallway_Click(object sender, RoutedEventArgs e)
         {

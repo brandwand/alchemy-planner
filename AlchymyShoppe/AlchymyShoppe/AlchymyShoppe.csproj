@@ -224,6 +224,23 @@
   <ItemGroup>
     <None Include="Images\Sprites\emptyBoxFiller_600x800.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Sprites\fish.png" />
+    <Resource Include="Images\Sprites\humanoid.png" />
+    <Resource Include="Images\Sprites\insect.png" />
+    <Resource Include="Images\Sprites\liquid.png" />
+    <Resource Include="Images\Sprites\plant.png" />
+    <Resource Include="Images\Sprites\potion_150x200.png" />
+    <Resource Include="Images\Sprites\powder.png" />
+    <Resource Include="Images\Sprites\reptile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Sprites\archane.png" />
+    <Resource Include="Images\Sprites\beast.png" />
+    <Resource Include="Images\Sprites\cloth.png" />
+    <Resource Include="Images\Sprites\eagleegg.png" />
+    <Resource Include="Images\Sprites\feather.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

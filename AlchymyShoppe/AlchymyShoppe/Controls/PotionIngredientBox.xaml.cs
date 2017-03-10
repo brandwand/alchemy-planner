@@ -38,7 +38,7 @@ namespace AlchymyShoppe.Controls
 
         private void LoadImage()
         {
-            if(CraftingIngredient != null)
+            if(craftingIngedient != null)
             {
                 LoadIngredientImage();
             }
@@ -72,7 +72,7 @@ namespace AlchymyShoppe.Controls
                 imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.cloth);
             } else if(craftingIngedient.name.Equals("eagleegg.png"))
             {
-                imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.eggleegg);
+                imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.eagleegg);
             } else if(craftingIngedient.name.Equals("feather.png"))
             {
                 imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.feather);
@@ -96,12 +96,13 @@ namespace AlchymyShoppe.Controls
                 imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.powder);
             } else if(craftingIngedient.name.Equals("raven.png"))
             {
-                imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.reaven);
+                imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.raven);
             } else if(craftingIngedient.name.Equals("reptile.png"))
             {
                 imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.reptile);
             }
-}
+            imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.alchemy);
+        }
 
 public void UnloadIngredientImage()
         {

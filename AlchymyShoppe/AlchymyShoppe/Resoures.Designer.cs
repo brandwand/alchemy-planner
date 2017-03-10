@@ -183,25 +183,15 @@ namespace AlchymyShoppe {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap hubScreenBackground {
-            get {
+        internal static System.Drawing.Bitmap hubScreenBackground
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("hubScreenBackground", resourceCulture);
-        internal static System.Drawing.Bitmap buying {
-            get {
-                object obj = ResourceManager.GetObject("buying", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap emptyBoxFiller {
-            get {
-                object obj = ResourceManager.GetObject("emptyBoxFiller", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -219,16 +209,6 @@ namespace AlchymyShoppe {
         internal static System.Drawing.Bitmap emptyBoxFiller_800x800 {
             get {
                 object obj = ResourceManager.GetObject("emptyBoxFiller_800x800", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap hubScreenBackground {
-            get {
-                object obj = ResourceManager.GetObject("hubScreenBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
