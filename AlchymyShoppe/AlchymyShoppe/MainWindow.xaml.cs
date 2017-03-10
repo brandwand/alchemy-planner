@@ -73,7 +73,7 @@ namespace AlchymyShoppe
         public MainWindow()
         {
             InitializeComponent();
-            btnGold.DataContext = Models.WorldController.player;
+            //btnGold.DataContext = Models.WorldController.player;
             imgBackground.Source = AlchymyShoppe.Controls.ImageUtil.BitmapToImageSource(Resoures.hubScreenBackground);
         }
 

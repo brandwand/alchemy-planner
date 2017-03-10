@@ -42,7 +42,16 @@ namespace AlchymyShoppe.Controls
 
         //#region PropertyChangedProperties
 
-
+        public Models.Ingredient Ingredient
+        {
+            get { return (Models.Ingredient)this.GetValue(ItemNameProperty); }
+            set
+            {
+                this.SetValue(ItemNameProperty, value);
+                //itemName = value;
+                //OnPropertyChanged("ItemName");
+            }
+        }
 
         public string ItemName
         {
@@ -80,6 +89,9 @@ namespace AlchymyShoppe.Controls
 
         public static readonly DependencyProperty ItemNameProperty = DependencyProperty.Register(
             "ItemName", typeof(string), typeof(InventoryItem), new PropertyMetadata("Default"));
+
+        public static readonly DependencyProperty IngedientProperty = DependencyProperty.Register(
+           "Ingredient", typeof(Models.Ingredient), typeof(InventoryItem), new PropertyMetadata(default(Models.Ingredient)));
 
         public static readonly DependencyProperty ItemPriceProperty = DependencyProperty.Register(
            "ItemPrice", typeof(int), typeof(InventoryItem), new PropertyMetadata(0));

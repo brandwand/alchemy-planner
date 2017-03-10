@@ -12,8 +12,8 @@
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
-        <TextBlock x:Name="tblName" Text="{Binding name}" Grid.Column="0" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
-        <TextBlock x:Name="tblPrice" Text="{Binding price}" Grid.Column="1" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
+        <TextBlock x:Name="tblName" MinWidth="150"  Text="{Binding name}" Grid.Column="0" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
+        <TextBlock x:Name="tblPrice" MinWidth="55"  Text="{Binding price}" Grid.Column="1" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
         <TextBlock x:Name="tblRarity" Text="{Binding rarity}" Grid.Column="2" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
 
     </Grid>

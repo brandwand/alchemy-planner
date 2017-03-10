@@ -23,7 +23,7 @@ namespace AlchymyShoppe.Controls
         public TravelingMerchantScreen()
         {
             InitializeComponent();
-//            imgBackground.Source = ImageUtil.BitmapToImageSource(ImageResoures.travelingMerchantScreenBackground);
+            imgBackground.Source = ImageUtil.BitmapToImageSource(Resoures.buying);
         }
 
         private void btnHallway_Click(object sender, RoutedEventArgs e)

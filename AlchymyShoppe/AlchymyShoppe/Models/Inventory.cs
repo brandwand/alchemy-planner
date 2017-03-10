@@ -99,6 +99,10 @@ namespace AlchymyShoppe.Models
         {
             return this.Items;
         }
+        public ObservableCollection<Ingredient> getIngredients()
+        {
+            return Ingredients;
+        } 
         public void removeItemFromInventory(Item item)
         {
                 Items.Remove(item);

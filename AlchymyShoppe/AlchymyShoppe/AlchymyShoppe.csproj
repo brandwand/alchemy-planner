@@ -208,6 +208,12 @@
   <ItemGroup>
     <Resource Include="Images\Sprites\alchemy.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Sprites\emptyBoxFiller_800x800.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Sprites\emptyBoxFiller_600x800.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
