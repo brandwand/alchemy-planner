@@ -8,10 +8,10 @@ namespace AlchymyShoppe.Models
 {
     public static class WorldController
     {
-        public static Player player;
-        private static double numOfHoursPast;
-        public static double numOfHoursLeft;
-        public static List<Ingredient> allIngredients;
+        public static Player player = new Player("bill", 455);
+        private static double numOfHoursPast = 0;
+        public static double numOfHoursLeft = 0;
+        public static List<Ingredient> allIngredients = new List<Ingredient>();
 
         static WorldController()
         {

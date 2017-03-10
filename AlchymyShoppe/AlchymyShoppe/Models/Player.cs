@@ -29,7 +29,7 @@ namespace AlchymyShoppe.Models
         private List<Order> orders;
         private Inventory inventory = new Inventory();
         private string name;
-        private int gold;
+        private int gold = 10;
 
         public int Gold
         {
