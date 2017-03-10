@@ -1,5 +1,5 @@
 Koro Tentacle,fish.png,3500,Godlike,0011000010010000
-Odin's Raven,bird.png,3200,Godlike,0100001001000100
+Odin's Raven,raven.png,3200,Godlike,0100001001000100
 Beard of Zeus,humanoid.png,3000,Godlike,001100001001000
 Krebsinator Fur,beast.png,2800,Legendary,0000001100001001
 Sorceror's Brain,humanoid.png,2700,Legendary,0100000011000010

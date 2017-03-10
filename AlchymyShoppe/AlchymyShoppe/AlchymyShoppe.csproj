@@ -174,12 +174,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TextFiles\ingredients.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Sprites\alchemy.png" />
+    <Resource Include="TextFiles\ingredients.txt" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="alchemyTable.png" />
@@ -194,7 +190,6 @@
     <Resource Include="Images\Sprites\ingredientPlaceholder.png" />
     <Resource Include="ingredients.txt" />
     <Resource Include="Resources\emptyBoxFiller.jpg" />
-    <Resource Include="TextFiles\ingredients.txt" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Backgrounds\buying.jpg" />
