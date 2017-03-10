@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="Alchymy Shoppe" Height="600" Width="800">
     <Grid>
-        <Image x:Name="imgBackground" Margin="-174,-28,173.6,27.4" Stretch="Fill"/>
+        <Image x:Name="imgBackground" Margin="0" Stretch="Fill"/>
         <Button x:Name="btnGold" Content="{Binding Gold}" HorizontalAlignment="Left" Margin="10,0,0,10" Width="90" Height="50" VerticalAlignment="Bottom" Foreground="Orange" BorderBrush="#FFE57B00" Background="Black" FontFamily="Harrington" FontSize="24" FontWeight="Bold"/>
         <Button x:Name="btnTravelingMerchant" Content="Traveling Merchant" HorizontalAlignment="Left" Margin="250,70,0,0" VerticalAlignment="Top" Width="300" Height="75" FontFamily="Harrington" FontSize="20"  Background="AntiqueWhite" Click="btnTravelingMerchant_Click"/>
         <Button x:Name="btnAlchymyShoppe" Content="Alchymy Shoppe" HorizontalAlignment="Left" Margin="250,170,0,0" VerticalAlignment="Top" Width="300" Height="75" FontFamily="Harrington" FontSize="20"  Background="AntiqueWhite"/>
@@ -17,7 +17,7 @@
         <controls:StartScreen x:Name="StartScreen" Margin="0"/>
         <controls:TravelingMerchantScreen x:Name="TravelingMerchantScreen" Visibility="Collapsed"/>
         <controls:AlchymyTableScreen x:Name="AlchymyTableScreen" Visibility="Collapsed"/>
-        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="100" Margin="38,332,0,0" VerticalAlignment="Top" Width="100" AllowDrop="True" PreviewMouseLeftButtonDown="Test1_MouseDown" MouseEnter="listBox_MouseEnter" Drop="ListDropped">
+        <!--<ListBox x:Name="listBox" HorizontalAlignment="Left" Height="100" Margin="38,332,0,0" VerticalAlignment="Top" Width="100" AllowDrop="True" PreviewMouseLeftButtonDown="Test1_MouseDown" MouseEnter="listBox_MouseEnter" Drop="ListDropped">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,2">
@@ -26,12 +26,7 @@
                             <ColumnDefinition Width="2*" />
                             <ColumnDefinition Width="2*" />
                         </Grid.ColumnDefinitions>
-                        <controls:InventoryItem ItemName="{Binding name}" ItemPrice="{Binding price}" ItemRarity="{Binding rarity}"></controls:InventoryItem>
-                        <!--<TextBlock Text="{Binding name}" Grid.Column="0" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
-                        <TextBlock Text="{Binding price}" Grid.Column="1" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
-                        <TextBlock Text="{Binding rarity}" Grid.Column="2" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />-->
-                        <!--<TextBlock Text="{Binding }" Grid.Column="0" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF"/>-->
-
+                        --><!--<controls:InventoryItem ItemName="{Binding name}" ItemPrice="{Binding price}" ItemRarity="{Binding rarity}"></controls:InventoryItem>--><!--
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -45,35 +40,11 @@
                             <ColumnDefinition Width="2*" />
                             <ColumnDefinition Width="2*" />
                         </Grid.ColumnDefinitions>
-                        <controls:InventoryItem ItemName="{Binding name}" ItemPrice="{Binding price}" ItemRarity="{Binding rarity}"></controls:InventoryItem>
-                        <!--<TextBlock Text="{Binding name}" Grid.Column="0" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
-                        <TextBlock Text="{Binding price}" Grid.Column="1" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
-                        <TextBlock Text="{Binding rarity}" Grid.Column="2" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />-->
-                        <!--<TextBlock Text="{Binding }" Grid.Column="0" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF"/>-->
-
+                        --><!--<controls:InventoryItem ItemName="{Binding name}" ItemPrice="{Binding price}" ItemRarity="{Binding rarity}"></controls:InventoryItem>--><!--
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-        </ListBox>
-        <ListBox x:Name="listBox_Copy1" HorizontalAlignment="Left" Height="100" Margin="276,340,0,0" VerticalAlignment="Top" Width="100" AllowDrop="True" Drop="ListDropped" ToolTip="Hello4" PreviewMouseLeftButtonDown="Test1_MouseDown">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid Margin="0,2">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="3*" />
-                            <ColumnDefinition Width="2*" />
-                            <ColumnDefinition Width="2*" />
-                        </Grid.ColumnDefinitions>
-                        <!--<controls:InventoryItem ItemName="{Binding name}" ItemPrice="{Binding price}" ItemRarity="{Binding rarity}"></controls:InventoryItem>-->
-                        <!--<TextBlock Text="{Binding name}" Grid.Column="0" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
-                        <TextBlock Text="{Binding price}" Grid.Column="1" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />
-                        <TextBlock Text="{Binding rarity}" Grid.Column="2" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF" />-->
-                        <TextBlock Text="{Binding ''}" Grid.Column="0" FontFamily="Harrington" FontSize="14" Background="Black" Foreground="#FF32DEFF"/>
-
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        </ListBox>-->
 
     </Grid>
 </Window>

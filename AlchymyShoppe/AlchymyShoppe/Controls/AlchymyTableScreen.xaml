@@ -10,19 +10,34 @@
     <Grid>
         <Image x:Name="imgBackground" Margin="0,0,0,0" Stretch="Fill"/>
         <Viewbox Width="90" Height="90" Margin="333,170,370.6,0" Stretch="Uniform" VerticalAlignment="Top">
-            <controls:PotionIngredientBox x:Name="ingB1" Width="90" Height="90"/>
+            <controls:PotionIngredientBox x:Name="ingB1" Width="90" Height="90" PreviewMouseLeftButtonDown="ingB_PreviewMouseLeftButtonDown" Drop="ingB_Drop"/>
         </Viewbox>
         <Viewbox Width="90" Height="90" Margin="333,265,370.6,0" Stretch="Uniform" VerticalAlignment="Top">
-            <controls:PotionIngredientBox x:Name="ingB2" Width="90" Height="90"/>
+            <controls:PotionIngredientBox x:Name="ingB2" Width="90" Height="90" PreviewMouseLeftButtonDown="ingB_PreviewMouseLeftButtonDown" Drop="ingB_Drop"/>
         </Viewbox>
         <Viewbox Margin="333,360,370.6,0" Stretch="Uniform" Height="90" VerticalAlignment="Top">
-            <controls:PotionIngredientBox x:Name="ingB3" Width="90" Height="90"/>
+            <controls:PotionIngredientBox x:Name="ingB3" Width="90" Height="90" Drop="ingB_Drop" PreviewMouseLeftButtonDown="ingB_PreviewMouseLeftButtonDown"/>
         </Viewbox>
-        <Label x:Name="btnGold" Content="{Binding Gold}" HorizontalAlignment="Left" Margin="10,0,0,10" Width="90" Height="50" VerticalAlignment="Bottom" Foreground="Orange" BorderBrush="#FFE57B00" Background="Black" FontFamily="Harrington" FontSize="24" FontWeight="Bold"/>
-        <Button x:Name="btnHallway" Content="Hallway" Margin="0,0,10,10" HorizontalAlignment="Right" Width="90" Height="50" VerticalAlignment="Bottom" FontFamily="Harrington" Background="Black" Foreground="#FF32DEFF" BorderBrush="#FF32DEFF" Click="btnNext_Click" FontSize="24"/>
-        <Button x:Name="btnRecipes" Content="Recipes..." HorizontalAlignment="Left" Height="72" Margin="336,43,0,0" VerticalAlignment="Top" Width="90" FontFamily="Harrington" FontSize="18" Background="Black" BorderBrush="#FF32DEFF" Foreground="#FF32DEFF"/>
+        <!--<Label x:Name="btnGold" Content="{Binding Gold}" HorizontalAlignment="Left" Margin="10,0,0,10" Width="90" Height="50" VerticalAlignment="Bottom" Foreground="Orange" BorderBrush="#FFE57B00" Background="Black" FontFamily="Harrington" FontSize="24" FontWeight="Bold"/>-->
+        <!--<Button x:Name="btnHallway" Content="Hallway" Margin="0,0,10,10" HorizontalAlignment="Right" Width="90" Height="50" VerticalAlignment="Bottom" FontFamily="Harrington" Background="Black" Foreground="#FF32DEFF" BorderBrush="#FF32DEFF" Click="btnNext_Click" FontSize="24"/>-->
+        <!--<Button x:Name="btnRecipes" Content="Recipes..." HorizontalAlignment="Left" Height="72" Margin="336,43,0,0" VerticalAlignment="Top" Width="90" FontFamily="Harrington" FontSize="18" Background="Black" BorderBrush="#FF32DEFF" Foreground="#FF32DEFF"/>-->
         <Button x:Name="btnClear" Content="Clear" Height="72" Margin="333,497,377,0" VerticalAlignment="Top" FontFamily="Harrington" FontSize="18" Background="Black" BorderBrush="#FF32DEFF" Foreground="#FF32DEFF"/>
         <TextBox x:Name="tbInventoryName" Text="Inventory Name" Height="Auto" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Harrington" FontSize="22" Background="Black" BorderBrush="#FF32DEFF" Foreground="#FF32DEFF" Padding="10,0,0,0" Margin="22,58,492,0"/>
-        
+
+        <ListBox x:Name="lbInventory" HorizontalAlignment="Left" Height="100" Margin="38,332,0,0" VerticalAlignment="Top" Width="100" AllowDrop="True" PreviewMouseLeftButtonDown="lbInventory_PreviewMouseLeftButtonDown" MouseEnter="lbInventory_MouseEnter" Drop="lbInventory_Drop">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <!--<controls:InventoryItem ItemName="{Binding name}" ItemPrice="{Binding price}" ItemRarity="{Binding rarity}"></controls:InventoryItem>-->
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
     </Grid>
 </UserControl>

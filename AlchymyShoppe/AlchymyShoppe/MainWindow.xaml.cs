@@ -75,22 +75,6 @@ namespace AlchymyShoppe
             InitializeComponent();
             btnGold.DataContext = Models.WorldController.player;
             imgBackground.Source = AlchymyShoppe.Controls.ImageUtil.BitmapToImageSource(Resoures.hubScreenBackground);
-
-            inv1.addItemToInventory(new Models.Ingredient("Ex: Dragon Heart", "Path", 5000, Models.Rarity.Godlike, Models.AlchymicEffect.RegenerateHealth | Models.AlchymicEffect.Nightvision));
-            inv1.addItemToInventory(new Models.Ingredient("Ex: Tunfra Cotton", "Path", 10, Models.Rarity.Common, Models.AlchymicEffect.RestoreHealth | Models.AlchymicEffect.RestoreMana));
-            inv1.addItemToInventory(new Models.Ingredient("Ex: Vampire Teeth", "Path", 750, Models.Rarity.Rare, Models.AlchymicEffect.DamageHealth | Models.AlchymicEffect.Nightvision));
-            listBox.ItemsSource = inv1.getItems();
-            listBox_Copy.ItemsSource = inv2.getItems();
-
-            //s3.Add("Hi 1");
-            //s3.Add("Hi 2");
-            //s3.Add("Hi 3");
-            //s3.Add("Hi 4");
-            //s3.Add("Hi 5");
-
-            //listBox.ItemsSource = S1;
-            //listBox_Copy.ItemsSource = S2;
-            //listBox_Copy1.ItemsSource = S3;
         }
 
         private void btnAlchymyTable_Click(object sender, RoutedEventArgs e)
@@ -144,8 +128,8 @@ namespace AlchymyShoppe
             //collection.Add(ing);
             collection.Add(data);
             e.Effects = DragDropEffects.Move;
-            listBox.Items.Refresh();
-            listBox_Copy.Items.Refresh();
+            //listBox.Items.Refresh();
+            //listBox_Copy.Items.Refresh();
         }
 
         private void Test1_MouseDown(object sender, MouseButtonEventArgs e)
