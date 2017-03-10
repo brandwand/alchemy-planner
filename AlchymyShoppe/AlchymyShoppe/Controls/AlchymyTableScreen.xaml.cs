@@ -44,6 +44,8 @@ namespace AlchymyShoppe.Controls
             ingB2.CraftingIngredient = null;
             ingB3.CraftingIngredient = null;
         }
+            //idInventory.InventorySource = Models.WorldController.player.getInventory();
+        }
 
         private void btnNext_Click(object sender, RoutedEventArgs e)
         {
@@ -52,7 +54,7 @@ namespace AlchymyShoppe.Controls
 
         public void Update()
         {
-            //playerInventoryDisplay. WorldController.Player.Inventory.items
+            //playerInventoryDisplay.WorldController.Player.Inventory.items;
         }
 
         private void lbInventory_Drop(object sender, DragEventArgs e)

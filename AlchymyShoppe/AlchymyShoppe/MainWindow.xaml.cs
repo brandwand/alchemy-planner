@@ -45,7 +45,7 @@ namespace AlchymyShoppe
         private ObservableCollection<string> s3 = new ObservableCollection<string>();
 
         public ListBox dragSource = null;
-        public Models.Inventory inv1 { get; set; } = new Models.Inventory();
+        //public Models.Inventory inv1 { get; set; } = new Models.Inventory();
         public Models.Inventory inv2 { get; set; } = new Models.Inventory();
 
         public ObservableCollection<string> S1 { get{ return s1; }

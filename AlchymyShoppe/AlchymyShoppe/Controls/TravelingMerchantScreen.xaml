@@ -9,6 +9,9 @@
     <Grid>
         <Image  x:Name="imgBackground" Source="/Images/Backgrounds/buying.jpg" Stretch="Fill"/>
         <!--<Label x:Name="btnGold" Content="9999" HorizontalAlignment="Left" Margin="10,0,10,10" Width="auto" Height="auto" VerticalAlignment="Bottom" Foreground="Orange" BorderBrush="#FFE57B00" Background="Black" FontFamily="Harrington" FontSize="32" FontWeight="Bold" Padding="5,1"/>-->
+        <Image  x:Name="imgBackground" Source="/Images/Backgrounds/buying.jpg" Stretch="Fill">
+        </Image>
+        <Label x:Name="btnGold" Content="{Binding Gold}" HorizontalAlignment="Left" Margin="10,10,10,10" Width="auto" Height="auto" VerticalAlignment="Bottom" Foreground="Orange" BorderBrush="#FFE57B00" Background="Black" FontFamily="Harrington" FontSize="32" FontWeight="Bold" Padding="5,1" BorderThickness="2"/>
         <Button x:Name="btnHallway" Content="Hallway" Margin="0,0,10,10" HorizontalAlignment="Right" Width="auto" Height="auto" VerticalAlignment="Bottom" FontFamily="Harrington" FontSize="32" Background="Black" Foreground="#FF32DEFF" BorderBrush="#FF32DEFF" Padding="5,1" Click="btnHallway_Click"/>
         <Button x:Name="btnBuy" Content="Buy" Margin="0,0,170,10" HorizontalAlignment="Right" Width="auto" Height="auto" VerticalAlignment="Bottom" FontFamily="Harrington" FontSize="32" Background="Black" Foreground="#FF32DEFF" BorderBrush="#FF32DEFF" Padding="5,1"/>
         <Button x:Name="btnCancel" Content="Cancel" Margin="0,0,270,10" HorizontalAlignment="Right" Width="auto" Height="auto" VerticalAlignment="Bottom" FontFamily="Harrington" FontSize="32" Background="Black" Foreground="#FF32DEFF" BorderBrush="#FF32DEFF" Padding="5,1"/>
