@@ -8,7 +8,7 @@ namespace AlchymyShoppe.Models
 {
     public class TravelingMerchant
     {
-        private List<Order> orders;
+        private List<Order> orders = null;
         public string name = "Larry The Merchant";
         private int gold { get; set; }
         private Inventory inventory;
