@@ -82,6 +82,7 @@ namespace AlchymyShoppe.Models
                 for (int j = 0; j < numOfItem; j++)
                 {
                     newPlayerIngredients.Add(WorldController.allIngredients[ingredientIndex]);
+                    Ingredients.Add(WorldController.allIngredients[ingredientIndex]);
                 }
             }
             return newPlayerIngredients;
@@ -103,13 +104,48 @@ namespace AlchymyShoppe.Models
         {
             return Ingredients;
         } 
+        public void removeIngredientFromInventory(Ingredient ingredient)
+        {
+            Items.Remove(ingredient);
+            Ingredients.Remove(ingredient);
+        }
+        public void addIngredientToInventory(Ingredient ingredient)
+        {
+            Items.Add(ingredient);
+            Ingredients.Add(ingredient);
+        }
         public void removeItemFromInventory(Item item)
         {
-                Items.Remove(item);
+            if(typeof(Ingredient) == item.GetType())
+            {
+                Ingredients.Remove((Ingredient)item);
+            } else if(typeof(Potion) == item.GetType())
+            {
+                Potions.Remove((Potion)item);
+            } else if(typeof(MundaneItem) == item.GetType())
+            {
+                RegularItems.Remove((MundaneItem)item);
+            }
+
+            Items.Remove(item);
         }
         public void addItemToInventory(Item item)
         {
+            if (typeof(Ingredient) == item.GetType())
+            {
+                Ingredients.Add((Ingredient)item);
+            }
+            else if (typeof(Potion) == item.GetType())
+            {
+                Potions.Add((Potion)item);
+            }
+            else if (typeof(MundaneItem) == item.GetType())
+            {
+                RegularItems.Add((MundaneItem)item);
+            }
+
             Items.Add(item);
+
         }
     }
 }

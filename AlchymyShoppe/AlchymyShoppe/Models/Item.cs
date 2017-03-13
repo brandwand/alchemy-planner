@@ -11,6 +11,7 @@ namespace AlchymyShoppe.Models
    /// </summary>
     public abstract class Item
     {
+        public int Id { get; set; }
         public String name { get; set; }
         public String imagePath { get; set; }
         public int price { get; set; }

@@ -83,29 +83,6 @@ namespace AlchymyShoppe
             AlchymyTableScreen.Visibility = Visibility.Visible;
         }
 
-        private void listBox_Drop(object sender, DragEventArgs e)
-        {
-            //ListBox parent = (ListBox)sender;
-            //object data = (Controls.InventoryItem)e.Data.GetData(typeof(Controls.InventoryItem));
-            //Controls.InventoryItem item = (Controls.InventoryItem)data;
-            //string nam = item.ItemName;
-            //Models.Ingredient ing = new Models.Ingredient(((Controls.InventoryItem)data).ItemName, null, ((Controls.InventoryItem)data).ItemPrice, ((Controls.InventoryItem)data).ItemRarity, Models.AlchymicEffect.None);
-            //((IList)dragSource.ItemsSource).Remove(ing);
-            //List<Models.Item> inv = (List< Models.Item>)parent.ItemsSource;
-            //inv.Add(ing);
-            //parent.ItemsSource = inv;
-            //inv1.setitems(inv);
-
-            ListBox parent = (ListBox)sender;
-            object data = e.Data.GetData(typeof(string));
-            ((IList)dragSource.ItemsSource).Remove(data);
-            //List<string> s3 = (List<string>)parent.ItemsSource;
-            //s3.Add((string)data);
-            //parent.ItemsSource = s3;
-            //S2.Add((string)data);
-            parent.Items.Add("asdf");            
-        }
-
         private void listBox_MouseEnter(object sender, MouseEventArgs e)
         {
 
