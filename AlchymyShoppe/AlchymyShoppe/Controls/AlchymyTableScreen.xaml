@@ -9,7 +9,7 @@
              d:DesignHeight="600" d:DesignWidth="800">
     <Grid>
         <Image x:Name="imgBackground" Margin="0,0,0,0" Stretch="Fill"/>
-        <Viewbox Width="90" Height="90" Margin="367,72,343,0" Stretch="Uniform" VerticalAlignment="Top" Drop="Viewbox_Drop">
+        <Viewbox Width="90" Height="90" Margin="367,72,343,0" Stretch="Uniform" VerticalAlignment="Top">
             <controls:PotionIngredientBox x:Name="ingB1" Width="90" Height="90" PreviewMouseLeftButtonDown="ingB_PreviewMouseLeftButtonDown" Drop="ingB_Drop"/>
         </Viewbox>
         <Viewbox Width="90" Height="90" Margin="362,224,348,0" Stretch="Uniform" VerticalAlignment="Top">
@@ -34,7 +34,7 @@
                             <ColumnDefinition Width="2*" />
                             <ColumnDefinition Width="2*" />
                         </Grid.ColumnDefinitions>
-                        <controls:InventoryItem ItemName="{Binding name}" ItemPrice="{Binding price}" ItemRarity="{Binding rarity}" PreviewMouseLeftButtonDown="InventoryItem_PreviewMouseLeftButtonDown"></controls:InventoryItem>
+                        <controls:InventoryItem Ingredient="{Binding}" ItemName="{Binding name}" ItemPrice="{Binding price}" ItemRarity="{Binding rarity}" PreviewMouseLeftButtonDown="InventoryItem_PreviewMouseLeftButtonDown"></controls:InventoryItem>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

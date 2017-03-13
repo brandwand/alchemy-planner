@@ -42,12 +42,21 @@ namespace AlchymyShoppe.Controls
 
         //#region PropertyChangedProperties
 
+        private static int IdCount = 0;
+        public int id = 0;
+
         public Models.Ingredient Ingredient
         {
-            get { return (Models.Ingredient)this.GetValue(ItemNameProperty); }
+            get
+            {
+                Models.Ingredient ing = (Models.Ingredient)this.GetValue(IngredientProperty);
+                ing.Id = id;
+                return ing;
+            }
             set
             {
                 this.SetValue(ItemNameProperty, value);
+                SetId();
                 //itemName = value;
                 //OnPropertyChanged("ItemName");
             }
@@ -90,7 +99,7 @@ namespace AlchymyShoppe.Controls
         public static readonly DependencyProperty ItemNameProperty = DependencyProperty.Register(
             "ItemName", typeof(string), typeof(InventoryItem), new PropertyMetadata("Default"));
 
-        public static readonly DependencyProperty IngedientProperty = DependencyProperty.Register(
+        public static readonly DependencyProperty IngredientProperty = DependencyProperty.Register(
            "Ingredient", typeof(Models.Ingredient), typeof(InventoryItem), new PropertyMetadata(default(Models.Ingredient)));
 
         public static readonly DependencyProperty ItemPriceProperty = DependencyProperty.Register(
@@ -104,6 +113,18 @@ namespace AlchymyShoppe.Controls
         public InventoryItem()
         {
             InitializeComponent();
+            SetId();
+        }
+
+        private void SetId()
+        {
+            id = IdCount;
+            IdCount = ++IdCount;
+        }
+
+        public int GetId()
+        {
+            return id;
         }
     }
 }

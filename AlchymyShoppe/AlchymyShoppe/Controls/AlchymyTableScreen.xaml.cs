@@ -66,6 +66,7 @@ namespace AlchymyShoppe.Controls
             //Ingredient ing = new Ingredient(data.name, data.imagePath, data.price, data.rarity, ((Ingredient)data).effects);
             //collection.Add(ing);
             collection.Add(data);
+            ((ObservableCollection<Item>)source.ItemsSource).Remove(data);
             e.Effects = DragDropEffects.Move;
             //listBox.Items.Refresh();
             //listBox_Copy.Items.Refresh();
@@ -103,7 +104,7 @@ namespace AlchymyShoppe.Controls
                     // If the drop target said that we moved the item, remove it from the source list
                     if (effect == DragDropEffects.Move)
                     {
-                        //collection.Remove(itemContent);
+                        collection.Remove(ing);
 
                     }
 
@@ -137,24 +138,20 @@ namespace AlchymyShoppe.Controls
             //Ingredient ing = new Ingredient(data.name, data.imagePath, data.price, data.rarity, ((Ingredient)data).effects);
             //collection.Add(ing);
             collection.Add(data);
+            //((ObservableCollection<Ingredient>)source.ItemsSource).Remove(data);
             e.Effects = DragDropEffects.Move;
             //listBox.Items.Refresh();
             //listBox_Copy.Items.Refresh();
 
         }
 
-        private void Viewbox_Drop(object sender, DragEventArgs e)
-        {
-            int i = 10;
-        }
-
         private void InventoryItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             InventoryItem invI = (InventoryItem)sender;
-            Ingredient ingA = new Ingredient("Null", "", 10, Rarity.Common, AlchymicEffect.None);
-            for (int j = 0; j < WorldController.player.getInventory().getIngredients().Count; ++j)
+            Ingredient ingA = new Ingredient("Null", "", 0, Rarity.Common, AlchymicEffect.None);
+            for(int j = 0; j < WorldController.player.getInventory().getIngredients().Count; ++j)
             {
-                if (WorldController.player.getInventory().getIngredients()[j].name == invI.tblName.Text)
+                if (invI.ItemName == WorldController.player.getInventory().getIngredients()[j].name)
                 {
                     ingA = WorldController.player.getInventory().getIngredients()[j];
                 }
@@ -165,16 +162,19 @@ namespace AlchymyShoppe.Controls
                 {
                     ingB1.CraftingIngredient = ingA;
                     WorldController.table.SetIngredient(ingB1.CraftingIngredient, 0);
+                    WorldController.player.getInventory().removeIngredientFromInventory(ingA);
                 }
                 else if (ingB2.CraftingIngredient == null)
                 {
                     ingB2.CraftingIngredient = ingA;
                     WorldController.table.SetIngredient(ingB2.CraftingIngredient, 1);
+                    WorldController.player.getInventory().removeIngredientFromInventory(ingA);
                 }
                 else if (ingB3.CraftingIngredient == null)
                 {
                     ingB3.CraftingIngredient = ingA;
                     WorldController.table.SetIngredient(ingB2.CraftingIngredient, 2);
+                    WorldController.player.getInventory().removeIngredientFromInventory(ingA);
                 }
             }
         }
