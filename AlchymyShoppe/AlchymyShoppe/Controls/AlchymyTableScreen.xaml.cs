@@ -22,9 +22,6 @@ namespace AlchymyShoppe.Controls
     /// </summary>
     public partial class AlchymyTableScreen : UserControl
     {
-        Player p = new Player("Bob", 10);
-        ObservableCollection<Ingredient> ingredients = new ObservableCollection<Ingredient>();
-
         public AlchymyTableScreen()
         {
             InitializeComponent();
@@ -35,11 +32,8 @@ namespace AlchymyShoppe.Controls
             pbxPotion.imgPotion.Stretch = Stretch.UniformToFill;
             pbxPotion.imgPotionBackground.Source = ImageUtil.BitmapToImageSource(Resoures.emptyBoxFiller_600x800);
             pbxPotion.imgPotionBackground.Stretch = Stretch.UniformToFill;
-            foreach (Ingredient ing in WorldController.allIngredients)
-            {
-                ingredients.Add(ing);
-            }
-            lbInventory.ItemsSource = ingredients;
+
+            lbInventory.ItemsSource = WorldController.player.getInventory().getIngredients();
             ingB1.CraftingIngredient = null;
             ingB2.CraftingIngredient = null;
             ingB3.CraftingIngredient = null;
@@ -48,6 +42,7 @@ namespace AlchymyShoppe.Controls
         private void btnNext_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Collapsed;
+            Clear();
         }
 
         public void Update()
@@ -157,11 +152,11 @@ namespace AlchymyShoppe.Controls
         {
             InventoryItem invI = (InventoryItem)sender;
             Ingredient ingA = new Ingredient("Null", "", 10, Rarity.Common, AlchymicEffect.None);
-            for (int j = 0; j < ingredients.Count; ++j)
+            for (int j = 0; j < WorldController.player.getInventory().getIngredients().Count; ++j)
             {
-                if (ingredients[j].name == invI.tblName.Text)
+                if (WorldController.player.getInventory().getIngredients()[j].name == invI.tblName.Text)
                 {
-                    ingA = ingredients[j];
+                    ingA = WorldController.player.getInventory().getIngredients()[j];
                 }
             }
             if (ingA.name != "Null")
@@ -169,14 +164,17 @@ namespace AlchymyShoppe.Controls
                 if (ingB1.CraftingIngredient == null)
                 {
                     ingB1.CraftingIngredient = ingA;
+                    WorldController.table.SetIngredient(ingB1.CraftingIngredient, 0);
                 }
                 else if (ingB2.CraftingIngredient == null)
                 {
                     ingB2.CraftingIngredient = ingA;
+                    WorldController.table.SetIngredient(ingB2.CraftingIngredient, 1);
                 }
                 else if (ingB3.CraftingIngredient == null)
                 {
                     ingB3.CraftingIngredient = ingA;
+                    WorldController.table.SetIngredient(ingB2.CraftingIngredient, 2);
                 }
             }
         }
@@ -184,15 +182,23 @@ namespace AlchymyShoppe.Controls
         private void btnCraft_Click(object sender, RoutedEventArgs e)
         {
             if (ingB1.CraftingIngredient != null  && ingB2.CraftingIngredient != null && ingB3.CraftingIngredient != null)
-                pbxPotion.imgPotion.Source = ImageUtil.BitmapToImageSource(Resoures.potion);
+            {
+                WorldController.table.craftPotion();
+                pbxPotion.CraftedPotion = WorldController.table.Potion;
+            }
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
+            Clear();
+        }
+
+        private void Clear()
+        {
             ingB1.CraftingIngredient = null;
             ingB2.CraftingIngredient = null;
             ingB3.CraftingIngredient = null;
-            pbxPotion.imgPotion.Source = null;
+            pbxPotion.CraftedPotion = null;
         }
     }
 }

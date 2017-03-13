@@ -60,6 +60,7 @@ namespace AlchymyShoppe
                 OnPropertyChanged("Ingredient3");
             }
         }
+
         public Potion Potion
         {
             get { return craftedPotion; }
@@ -84,11 +85,51 @@ namespace AlchymyShoppe
             this.ingredients.Add(ingredient3);
         }
 
+        public AlchymyTable(Player player)
+        {
+            this.player = player;
 
+            this.ingredients = new List<Ingredient>();
+        }
+
+        public bool SetIngredient(Ingredient ingredient, int index)
+        {
+            bool tf = false;
+
+            if(index == 0)
+            {
+                Ingredient1 = ingredient;
+                ingredients.Insert(index, ingredient);
+                tf = true;
+            } else if(index == 1)
+            {
+                Ingredient2 = ingredient;
+                ingredients.Insert(index, ingredient);
+                tf = true;
+            }
+            else if(index == 2)
+            {
+                Ingredient3 = ingredient;
+                ingredients.Insert(index, ingredient);
+                tf = true;
+            }
+
+            return tf;
+        }
+
+        public void SetIngredients(Ingredient ingredient1, Ingredient ingedient2, Ingredient ingredient3)
+        {
+            this.Ingredient1 = ingredient1;
+            this.Ingredient2 = ingredient2;
+            this.Ingredient3 = ingredient3;
+
+            ingredients.Add(Ingredient1);
+            ingredients.Add(Ingredient2);
+            ingredients.Add(Ingredient3);
+        }
 
         public void craftPotion()
         {
-            
             craftedPotion.effects = Brew();
             craftedPotion.rarity = craftedPotion.GenerateRarity();
             craftedPotion.price = craftedPotion.GeneratePrice();
@@ -125,6 +166,5 @@ namespace AlchymyShoppe
 
             return appearedMoreThanOnce;
         }
-
     }
 }

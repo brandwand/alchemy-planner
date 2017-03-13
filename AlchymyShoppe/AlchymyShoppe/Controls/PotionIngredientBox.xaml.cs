@@ -104,7 +104,7 @@ namespace AlchymyShoppe.Controls
             imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.alchemy);
         }
 
-public void UnloadIngredientImage()
+        public void UnloadIngredientImage()
         {
             imgIngredient.Source = null;
         }

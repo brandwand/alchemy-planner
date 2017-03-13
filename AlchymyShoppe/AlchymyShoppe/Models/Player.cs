@@ -49,6 +49,7 @@ namespace AlchymyShoppe.Models
             inventory = new Inventory("Inventory");
             book = new RecipeBook();
         }
+
         public Inventory getInventory()
         {
             return inventory;

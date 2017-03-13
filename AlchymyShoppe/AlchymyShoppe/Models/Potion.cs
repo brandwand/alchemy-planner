@@ -39,6 +39,32 @@ namespace AlchymyShoppe.Models
             this.rarity = rarity;
             this.effects = effects;
         }
+
+        /// <summary>
+        /// Makes a Potion
+        /// </summary>
+        /// <param name="name">Name of the Potion</param>
+        /// <param name="price">Base Price of the Potion</param>
+        /// <param name="rarity">Rarity of the Item</param>
+        /// <param name="components">Ingredients used to make the Potion</param>
+        /// <param name="effects">Effects from the Ingredients that make the Potion</param>
+
+        public Potion(List<Ingredient> components) : base("", "", 0, Rarity.Common, AlchymicEffect.None)
+        {
+            if (name == null || name == "")
+            {
+                this.name = GenerateName();
+            }
+            else
+            {
+                this.name = name;
+            }
+            this.components = components;
+            this.price = price;
+            this.rarity = rarity;
+            this.effects = effects;
+            this.imagePath = imagePath;
+        }
         /*
         /// <summary>
         /// Makes a Potion
@@ -141,6 +167,7 @@ namespace AlchymyShoppe.Models
                         {
                             effectsString += ", " + effect.ToString();
                         }
+
                         addedCount++;
                     }
                 }

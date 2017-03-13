@@ -20,7 +20,7 @@ namespace AlchymyShoppe.Models
         //Gold is no longer part of the inventory
         public Inventory()
         {
-            this.Items = generateRandomeInventory();
+            this.Items = generateRandomInventory();
         }
         public Inventory(ObservableCollection<Item> ItemsForStartingInventory)
         {
@@ -64,24 +64,24 @@ namespace AlchymyShoppe.Models
         public Inventory(string name)
         {
             Name = name;
-            this.Items = generateRandomeInventory();
+            this.Items = generateRandomInventory();
         }
         public Inventory(string name, ObservableCollection<Item> ItemsForStartingInventory)
         {
             Name = name;
             this.Items = ItemsForStartingInventory;
         }
-        private ObservableCollection<Item> generateRandomeInventory()
+        private ObservableCollection<Item> generateRandomInventory()
         {
             Random rand = new Random();
             ObservableCollection<Item> newPlayerIngredients = new ObservableCollection<Item>();
             for(int i = 0; i < 15; i++)
             {
-         //       int temp = rand.Next(WorldController.allIngredients.Count);
-                int numOfItem = rand.Next(3) + 1;
+                int ingredientIndex = rand.Next(WorldController.allIngredients.Count);
+                int numOfItem = rand.Next(2) + 1;
                 for (int j = 0; j < numOfItem; j++)
                 {
-           //         newPlayerIngredients.Add(WorldController.allIngredients[temp]);
+                    newPlayerIngredients.Add(WorldController.allIngredients[ingredientIndex]);
                 }
             }
             return newPlayerIngredients;
