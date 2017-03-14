@@ -61,49 +61,47 @@ namespace AlchymyShoppe.Controls
 
         public void LoadIngredientImage()
         {
-            if(craftingIngedient.name.Equals("archane.png"))
+            if (craftingIngedient.imagePath.Equals("archane.png"))
             {
                 imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.archane);
-            } else if(craftingIngedient.name.Equals("beast.png"))
+            } else if(craftingIngedient.imagePath.Equals("beast.png"))
             {
                 imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.beast);
-            } else if(craftingIngedient.name.Equals("cloth.png"))
+            } else if(craftingIngedient.imagePath.Equals("cloth.png"))
             {
                 imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.cloth);
-            } else if(craftingIngedient.name.Equals("eagleegg.png"))
+            } else if(craftingIngedient.imagePath.Equals("eagleegg.png"))
             {
                 imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.eagleegg);
-            } else if(craftingIngedient.name.Equals("feather.png"))
+            } else if(craftingIngedient.imagePath.Equals("feather.png"))
             {
                 imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.feather);
-            } else if(craftingIngedient.name.Equals("fish.png"))
+            } else if(craftingIngedient.imagePath.Equals("fish.png"))
             {
                 imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.fish);
-            } else if(craftingIngedient.name.Equals("humanoid.png"))
+            } else if(craftingIngedient.imagePath.Equals("humanoid.png"))
             {
                 imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.humanoid);
-            } else if(craftingIngedient.name.Equals("insect.png"))
+            } else if(craftingIngedient.imagePath.Equals("insect.png"))
             {
                 imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.insect);
-            } else if(craftingIngedient.name.Equals("liquid.png"))
+            } else if(craftingIngedient.imagePath.Equals("liquid.png"))
             {
                 imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.liquid);
-            } else if(craftingIngedient.name.Equals("plant.png"))
+            } else if(craftingIngedient.imagePath.Equals("plant.png"))
             {
                 imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.plant);
-            } else if(craftingIngedient.name.Equals("powder.png"))
+            } else if(craftingIngedient.imagePath.Equals("powder.png"))
             {
                 imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.powder);
-            } else if(craftingIngedient.name.Equals("raven.png"))
+            } else if(craftingIngedient.imagePath.Equals("raven.png"))
             {
                 imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.raven);
-            } else if(craftingIngedient.name.Equals("reptile.png"))
+            } else if(craftingIngedient.imagePath.Equals("reptile.png"))
             {
                 imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.reptile);
             }
-            imgIngredient.Source = ImageUtil.BitmapToImageSource(Resoures.alchemy);
         }
-
         public void UnloadIngredientImage()
         {
             imgIngredient.Source = null;

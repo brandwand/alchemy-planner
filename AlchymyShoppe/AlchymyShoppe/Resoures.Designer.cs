@@ -93,16 +93,6 @@ namespace AlchymyShoppe {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap buying {
-            get {
-                object obj = ResourceManager.GetObject("buying", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap archane {
             get {
                 object obj = ResourceManager.GetObject("archane", resourceCulture);
@@ -126,6 +116,16 @@ namespace AlchymyShoppe {
         internal static System.Drawing.Bitmap beast {
             get {
                 object obj = ResourceManager.GetObject("beast", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buying {
+            get {
+                object obj = ResourceManager.GetObject("buying", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,6 +163,26 @@ namespace AlchymyShoppe {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap emptyBoxFiller_600x800 {
+            get {
+                object obj = ResourceManager.GetObject("emptyBoxFiller_600x800", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap emptyBoxFiller_800x800 {
+            get {
+                object obj = ResourceManager.GetObject("emptyBoxFiller_800x800", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap feather {
             get {
                 object obj = ResourceManager.GetObject("feather", resourceCulture);
@@ -183,32 +203,9 @@ namespace AlchymyShoppe {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap hubScreenBackground
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap hubScreenBackground {
+            get {
                 object obj = ResourceManager.GetObject("hubScreenBackground", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap emptyBoxFiller_600x800 {
-            get {
-                object obj = ResourceManager.GetObject("emptyBoxFiller_600x800", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap emptyBoxFiller_800x800 {
-            get {
-                object obj = ResourceManager.GetObject("emptyBoxFiller_800x800", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,9 +290,39 @@ namespace AlchymyShoppe {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap nice1 {
+            get {
+                object obj = ResourceManager.GetObject("nice1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap plant {
             get {
                 object obj = ResourceManager.GetObject("plant", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap potion {
+            get {
+                object obj = ResourceManager.GetObject("potion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap potion1 {
+            get {
+                object obj = ResourceManager.GetObject("potion1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -326,16 +353,6 @@ namespace AlchymyShoppe {
         internal static System.Drawing.Bitmap reptile {
             get {
                 object obj = ResourceManager.GetObject("reptile", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap potion {
-            get {
-                object obj = ResourceManager.GetObject("potion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
