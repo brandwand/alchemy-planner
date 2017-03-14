@@ -88,6 +88,7 @@ namespace AlchymyShoppe
         public AlchymyTable(Player player)
         {
             this.player = player;
+            this.craftedPotion = new Potion(null);
 
             this.ingredients = new List<Ingredient>();
         }
@@ -134,6 +135,51 @@ namespace AlchymyShoppe
             craftedPotion.rarity = craftedPotion.GenerateRarity();
             craftedPotion.price = craftedPotion.GeneratePrice();
             craftedPotion.name = craftedPotion.GenerateName();
+        }
+
+        public Potion craftPotion(Ingredient ingredient1, Ingredient ingredient2, Ingredient ingredient3)
+        {
+            List<Ingredient> ingredients = new List<Ingredient>();
+            ingredients.Add(ingredient1);
+            ingredients.Add(ingredient2);
+            ingredients.Add(ingredient3);
+            Potion potion = Brew(ingredients);
+            potion.GenerateRarity();
+            potion.GeneratePrice();
+            potion.GenerateName();
+            return potion;
+        }
+
+        private Potion Brew(List<Ingredient> ingredients)
+        {
+            List<AlchymicEffect> effects = new List<AlchymicEffect>();
+
+            foreach(Ingredient ingredient in ingredients)
+            {
+                effects.Add(ingredient.effects);
+            }
+
+            // List of effects that appear in the list more than once 
+            // we're going to keep these
+            AlchymicEffect appearedMoreThanOnce = new AlchymicEffect();
+
+            // List that will save whether that ingredient has appeared yet
+            AlchymicEffect appearedOnce = 0;
+
+            foreach (AlchymicEffect effect in effects)
+            {
+                if ((appearedOnce & effect) > 0)
+                {
+                    appearedMoreThanOnce = appearedMoreThanOnce | (appearedOnce & effect);
+                }
+                appearedOnce = appearedOnce | effect;
+
+            }
+
+            Potion potion = new Potion(ingredients);
+            potion.effects = appearedMoreThanOnce;
+
+            return potion;
         }
 
         public AlchymicEffect Brew()
