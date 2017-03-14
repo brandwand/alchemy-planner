@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AlchymyShoppe"
         xmlns:controls="clr-namespace:AlchymyShoppe.Controls"
         mc:Ignorable="d"
-        Title="Alchymy Shoppe" Height="600" Width="800">
+        Title="Alchymy Shoppe" Height="650" Width="850">
     <Grid>
         <Image x:Name="imgBackground" Margin="0" Stretch="Fill"/>
         <!--<Button x:Name="btnGold" Content="{Binding Gold}" HorizontalAlignment="Left" Margin="10,0,0,10" Width="90" Height="50" VerticalAlignment="Bottom" Foreground="Orange" BorderBrush="#FFE57B00" Background="Black" FontFamily="Harrington" FontSize="24" FontWeight="Bold"/>-->
