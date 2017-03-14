@@ -182,7 +182,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Sprites\alchemy.png" />
     <Resource Include="TextFiles\ingredients.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -217,9 +216,6 @@
     <None Include="Images\Sprites\potion.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Sprites\alchemy.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Images\Sprites\emptyBoxFiller_800x800.png" />
   </ItemGroup>
   <ItemGroup>
@@ -244,6 +240,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Sprites\alchemy.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
