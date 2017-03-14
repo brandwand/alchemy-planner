@@ -56,33 +56,33 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="bin\Controls\AlchymyShoppeScreen.xaml.cs">
+    <Compile Include="Controls\AlchymyShoppeScreen.xaml.cs">
       <DependentUpon>AlchymyShoppeScreen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="bin\Controls\AlchymyTableScreen.xaml.cs">
+    <Compile Include="Controls\AlchymyTableScreen.xaml.cs">
       <DependentUpon>AlchymyTableScreen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="bin\Controls\InventoryDisplay.xaml.cs">
+    <Compile Include="Controls\InventoryDisplay.xaml.cs">
       <DependentUpon>InventoryDisplay.xaml</DependentUpon>
     </Compile>
-    <Compile Include="bin\Controls\InventoryItem.xaml.cs">
+    <Compile Include="Controls\InventoryItem.xaml.cs">
       <DependentUpon>InventoryItem.xaml</DependentUpon>
     </Compile>
-    <Compile Include="bin\Controls\PotionBox.xaml.cs">
+    <Compile Include="Controls\PotionBox.xaml.cs">
       <DependentUpon>PotionBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="bin\Controls\PotionIngredientBox.xaml.cs">
+    <Compile Include="Controls\PotionIngredientBox.xaml.cs">
       <DependentUpon>PotionIngredientBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="bin\Controls\StartScreen.xaml.cs">
+    <Compile Include="Controls\StartScreen.xaml.cs">
       <DependentUpon>StartScreen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="bin\Controls\TravelingMerchantScreen.xaml.cs">
+    <Compile Include="Controls\TravelingMerchantScreen.xaml.cs">
       <DependentUpon>TravelingMerchantScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Managers\AlchymyTable.cs" />
     <Compile Include="Managers\Chest.cs" />
-    <Compile Include="bin\Controls\ImageUtil.cs" />
+    <Compile Include="Controls\ImageUtil.cs" />
     <Compile Include="Models\AlchymicItem.cs" />
     <Compile Include="Models\AlchymyShoppe.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -97,35 +97,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resoures.resx</DependentUpon>
     </Compile>
-    <Page Include="bin\Controls\AlchymyShoppeScreen.xaml">
+    <Page Include="Controls\AlchymyShoppeScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="bin\Controls\AlchymyTableScreen.xaml">
+    <Page Include="Controls\AlchymyTableScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="bin\Controls\InventoryDisplay.xaml">
+    <Page Include="Controls\InventoryDisplay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="bin\Controls\InventoryItem.xaml">
+    <Page Include="Controls\InventoryItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="bin\Controls\PotionBox.xaml">
+    <Page Include="Controls\PotionBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="bin\Controls\PotionIngredientBox.xaml">
+    <Page Include="Controls\PotionIngredientBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="bin\Controls\StartScreen.xaml">
+    <Page Include="Controls\StartScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="bin\Controls\TravelingMerchantScreen.xaml">
+    <Page Include="Controls\TravelingMerchantScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -241,6 +241,9 @@
     <Resource Include="Images\Sprites\cloth.png" />
     <Resource Include="Images\Sprites\eagleegg.png" />
     <Resource Include="Images\Sprites\feather.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
