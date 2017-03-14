@@ -14,5 +14,11 @@ namespace AlchymyShoppe.Models
         {
             return effects;
         }
+         
+        override
+        public string ToString()
+        {
+            return effects.ToString();
+        } 
     }
 }

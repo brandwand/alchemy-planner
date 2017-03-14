@@ -49,17 +49,22 @@ namespace AlchymyShoppe.Controls
         {
             get
             {
-                Models.Ingredient ing = (Models.Ingredient)this.GetValue(IngredientProperty);
-                ing.Id = id;
-                return ing;
+                return (Models.Ingredient)this.GetValue(IngredientProperty);
             }
             set
             {
                 this.SetValue(ItemNameProperty, value);
-                SetId();
+                SetTooltip();
                 //itemName = value;
                 //OnPropertyChanged("ItemName");
             }
+        }
+
+        public void SetTooltip()
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.Content = Ingredient.effects.ToString();
+            ToolTip = toolTip;
         }
 
         public string ItemName

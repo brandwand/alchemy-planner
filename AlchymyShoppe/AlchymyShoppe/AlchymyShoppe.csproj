@@ -86,6 +86,7 @@
     <Compile Include="Models\AlchymicItem.cs" />
     <Compile Include="Models\AlchymyShoppe.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\EffectToStringConverter.cs" />
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\Inventory.cs" />
     <Compile Include="Models\Item.cs" />
@@ -181,7 +182,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Sprites\alchemy.png" />
     <Resource Include="TextFiles\ingredients.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -216,9 +216,6 @@
     <None Include="Images\Sprites\potion.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Sprites\alchemy.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Images\Sprites\emptyBoxFiller_800x800.png" />
   </ItemGroup>
   <ItemGroup>
@@ -240,6 +237,12 @@
     <Resource Include="Images\Sprites\cloth.png" />
     <Resource Include="Images\Sprites\eagleegg.png" />
     <Resource Include="Images\Sprites\feather.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Sprites\alchemy.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

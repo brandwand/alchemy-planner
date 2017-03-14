@@ -74,7 +74,10 @@ namespace AlchymyShoppe.Controls
 
         private void lbInventory_MouseEnter(object sender, MouseEventArgs e)
         {
-
+            //ToolTip tooltip = new ToolTip();
+            //InventoryItem item = (InventoryItem)sender;
+            //tooltip.Content = item.Ingredient.effects.ToString();
+            //ToolTip = tooltip;
         }
 
         private void lbInventory_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -117,6 +120,7 @@ namespace AlchymyShoppe.Controls
             PotionIngredientBox ingB = (PotionIngredientBox)sender;
             if (ingB.CraftingIngredient != null)
             {
+                WorldController.player.getInventory().addIngredientToInventory(ingB.CraftingIngredient);
                 ingB.CraftingIngredient = null;
             }
         }
@@ -145,46 +149,16 @@ namespace AlchymyShoppe.Controls
 
         }
 
-        private void InventoryItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            InventoryItem invI = (InventoryItem)sender;
-            Ingredient ingA = new Ingredient("Null", "", 0, Rarity.Common, AlchymicEffect.None);
-            for(int j = 0; j < WorldController.player.getInventory().getIngredients().Count; ++j)
-            {
-                if (invI.ItemName == WorldController.player.getInventory().getIngredients()[j].name)
-                {
-                    ingA = WorldController.player.getInventory().getIngredients()[j];
-                }
-            }
-            if (ingA.name != "Null")
-            {
-                if (ingB1.CraftingIngredient == null)
-                {
-                    ingB1.CraftingIngredient = ingA;
-                    WorldController.table.SetIngredient(ingB1.CraftingIngredient, 0);
-                    WorldController.player.getInventory().removeIngredientFromInventory(ingA);
-                }
-                else if (ingB2.CraftingIngredient == null)
-                {
-                    ingB2.CraftingIngredient = ingA;
-                    WorldController.table.SetIngredient(ingB2.CraftingIngredient, 1);
-                    WorldController.player.getInventory().removeIngredientFromInventory(ingA);
-                }
-                else if (ingB3.CraftingIngredient == null)
-                {
-                    ingB3.CraftingIngredient = ingA;
-                    WorldController.table.SetIngredient(ingB2.CraftingIngredient, 2);
-                    WorldController.player.getInventory().removeIngredientFromInventory(ingA);
-                }
-            }
-        }
-
         private void btnCraft_Click(object sender, RoutedEventArgs e)
         {
             if (ingB1.CraftingIngredient != null  && ingB2.CraftingIngredient != null && ingB3.CraftingIngredient != null)
             {
-                WorldController.table.craftPotion();
-                pbxPotion.CraftedPotion = WorldController.table.Potion;
+                pbxPotion.CraftedPotion = WorldController.table.craftPotion(ingB1.CraftingIngredient, ingB2.CraftingIngredient, ingB3.CraftingIngredient);
+                pbxPotion.imgPotion.Source = ImageUtil.BitmapToImageSource(Resoures.potion);
+                pbxPotion.imgPotion.Stretch = Stretch.UniformToFill;
+                ingB1.CraftingIngredient = null;
+                ingB2.CraftingIngredient = null;
+                ingB3.CraftingIngredient = null;
             }
         }
 
@@ -195,10 +169,158 @@ namespace AlchymyShoppe.Controls
 
         private void Clear()
         {
-            ingB1.CraftingIngredient = null;
-            ingB2.CraftingIngredient = null;
-            ingB3.CraftingIngredient = null;
-            pbxPotion.CraftedPotion = null;
+            if(ingB1.CraftingIngredient != null)
+            {
+                WorldController.player.getInventory().addIngredientToInventory(ingB1.CraftingIngredient);
+                ingB1.CraftingIngredient = null;
+            }
+            if (ingB2.CraftingIngredient != null)
+            {
+                WorldController.player.getInventory().addIngredientToInventory(ingB2.CraftingIngredient);
+                ingB2.CraftingIngredient = null;
+            }
+            if (ingB3.CraftingIngredient != null)
+            {
+                WorldController.player.getInventory().addIngredientToInventory(ingB3.CraftingIngredient);
+                ingB3.CraftingIngredient = null;
+            }
+            if (pbxPotion.CraftedPotion != null)
+            {
+                WorldController.player.getInventory().addItemToInventory(pbxPotion.CraftedPotion);
+                pbxPotion.CraftedPotion = null;
+            }
+        }
+
+        private void lbInventory_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Ingredient selectedIngedient = (Ingredient)lbInventory.SelectedItem;  
+            
+            if(selectedIngedient != ingB1.CraftingIngredient 
+                && selectedIngedient != ingB2.CraftingIngredient
+                && selectedIngedient != ingB3.CraftingIngredient)
+            {
+                if (ingB1.CraftingIngredient == null)
+                {
+                    ingB1.CraftingIngredient = selectedIngedient;
+                    WorldController.player.getInventory().removeIngredientFromInventory(selectedIngedient);
+                }
+                else if (ingB2.CraftingIngredient == null)
+                {
+                    ingB2.CraftingIngredient = selectedIngedient;
+                    WorldController.player.getInventory().removeIngredientFromInventory(selectedIngedient);
+                }
+                else if (ingB3.CraftingIngredient == null)
+                {
+                    ingB3.CraftingIngredient = selectedIngedient;
+                    WorldController.player.getInventory().removeIngredientFromInventory(selectedIngedient);
+                }
+            }
+        }
+
+        private void InventoryItem_MouseEnter(object sender, MouseEventArgs e)
+        {
+            //ToolTip tooltip = new ToolTip();
+            //InventoryItem item = (InventoryItem)sender;
+            //tooltip.Content = item.Ingredient.effects.ToString();
+            //ToolTip = tooltip;
+        }
+
+        private void TooltipUpdate(object sender, ToolTipEventArgs e)
+        {
+            ToolTip tooltip = new ToolTip();
+            InventoryItem item = (InventoryItem)sender;
+            tooltip.Content = item.Ingredient.effects.ToString();
+            ToolTip = tooltip;
+        }
+
+        private void InventoryItem_MouseEnter_1(object sender, MouseEventArgs e)
+        {
+            InventoryItem invI = (InventoryItem)sender;
+            ToolTip tooltip = new ToolTip { Content = ConvertEffectsToString(invI.Ingredient.effects) };
+            invI.ToolTip = tooltip;
+        }
+
+        private String ConvertEffectsToString(AlchymicEffect effects)
+        {
+            Array allEffects = Enum.GetValues(typeof(AlchymicEffect));
+
+            String effectsString = "";
+            int addedCount = 0,
+                goalCount = this.countEffects(effects);
+
+
+
+            foreach (AlchymicEffect effect in allEffects)
+            {
+                if ((effects & effect) == effect)
+                {
+
+                    if (goalCount == 1)
+                    {
+                        return effect.ToString();
+                    }
+                    else
+                    {
+                        if (addedCount == 0)
+                        {
+                            effectsString = effect.ToString();
+                        }
+                        else if (addedCount == goalCount - 1)
+                        {
+                            if (goalCount >= 3)
+                            {
+                                effectsString += ", and " + effect.ToString();
+                            }
+                            else
+                            {
+                                effectsString += " and " + effect.ToString();
+                            }
+                        }
+                        else
+                        {
+                            effectsString += ", " + effect.ToString();
+                        }
+
+                        addedCount++;
+                    }
+                }
+
+            }
+
+            return effectsString;
+        }
+
+        public int countEffects(AlchymicEffect effects)
+        {
+            long effectValue = (long)effects;
+            int count = 0;
+
+            while (effectValue > 0)
+            {
+                effectValue &= (effectValue - 1);
+                count++;
+            }
+            return count;
+        }
+
+        private void ingB_MouseEnter(object sender, MouseEventArgs e)
+        {
+            PotionIngredientBox ingB = (PotionIngredientBox)sender;
+            if(ingB.CraftingIngredient != null)
+            {
+                ToolTip tooltip = new ToolTip { Content = ConvertEffectsToString(ingB.CraftingIngredient.effects) };
+                ingB.ToolTip = tooltip;
+            }
+        }
+
+        private void pbxPotion_MouseEnter(object sender, MouseEventArgs e)
+        {
+            PotionBox pbx = (PotionBox)sender;
+            if (pbx.CraftedPotion != null)
+            {
+                ToolTip tooltip = new ToolTip { Content = ConvertEffectsToString(pbx.CraftedPotion.effects) };
+                pbx.ToolTip = tooltip;
+            }
         }
     }
 }
