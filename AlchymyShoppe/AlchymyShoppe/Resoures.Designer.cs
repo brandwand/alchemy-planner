@@ -290,16 +290,6 @@ namespace AlchymyShoppe {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap nice1 {
-            get {
-                object obj = ResourceManager.GetObject("nice1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap plant {
             get {
                 object obj = ResourceManager.GetObject("plant", resourceCulture);
@@ -313,16 +303,6 @@ namespace AlchymyShoppe {
         internal static System.Drawing.Bitmap potion {
             get {
                 object obj = ResourceManager.GetObject("potion", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap potion1 {
-            get {
-                object obj = ResourceManager.GetObject("potion1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
