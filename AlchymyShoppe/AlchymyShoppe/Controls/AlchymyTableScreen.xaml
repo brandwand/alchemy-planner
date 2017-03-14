@@ -7,6 +7,13 @@
              xmlns:controls="clr-namespace:AlchymyShoppe.Controls"
              mc:Ignorable="d"
              d:DesignHeight="600" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="ToolTip" x:Name="ttStyle">
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="BorderBrush" Value="Turquoise"/>
+            <Setter Property="Foreground" Value="Turquoise"/>
+        </Style>
+    </UserControl.Resources>
     <Grid>
         <Image x:Name="imgBackground" Margin="0,0,0,0" Stretch="Fill"/>
         <Viewbox Width="90" Height="90" Margin="367,72,343,0" Stretch="Uniform" VerticalAlignment="Top">
